@@ -19,7 +19,6 @@ import Navbar from './components/Navbar.vue';
 import About from './components/About.vue';
 import Tokenomics from './components/Tokenomics.vue';
 import Whitepaper from './components/Whitepaper.vue';
-
 export default {
   components: {
     Navbar,
