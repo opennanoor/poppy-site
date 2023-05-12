@@ -1,6 +1,6 @@
 <template>
     <header class="fixed top-0 left-0 w-full bg-white">
-      <nav class="flex items-center justify-between h-16 px-4 sm:px-0" role="navigation" aria-label="Main Navigation">
+      <nav class="flex items-center justify-between h-16 px-4 sm:px-0 outlined-text" role="navigation" aria-label="Main Navigation">
         <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round">
           <image href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" x="0" y="0" width="34" height="34"></image>
         </svg>
@@ -84,6 +84,9 @@
   </script>
     
 <style>
+  .nav-link:hover {
+    color: rgb(102, 59, 255);
+  }
     nav {
         display: flex;
         justify-content: center; /* Center horizontally */
@@ -94,7 +97,7 @@
     .nav-link {
   margin: 0 1rem;
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #fff;
   cursor: pointer;

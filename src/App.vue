@@ -5,9 +5,14 @@
     <main>
       <section id="about" class="section">
         <div class="about-container">
-          <h1 class="about-text animate__animated animate__backInDown poppyText" style="animation-duration: 1s;">About Poppy</h1>
+          <div class="about-content">
+            <div class="about-text-container">
+              <h1 class="about-text animate__animated animate__fadeIn poppyText outlined-text" style="animation-duration: 3s;">About $Poppy</h1>
+              <div data-aos="fade-down-right"><About /></div>
+            </div>
+            <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106700296119398520/Low-Res-Huggy-Wuggy.webp" alt="About Poppy Image" class="about-image">
+          </div>
         </div>
-        <div data-aos="fade-down-right"><About /></div>
       </section>
       <section id="tokenomics" class="section">
         <div data-aos="fade-down-right"><Tokenomics /></div>
@@ -42,7 +47,7 @@ export default {
     initializeTyped() {
       const options = {
         strings: ['Poppy is a revolutionary meme token that brings joy and laughter to the crypto world.'],
-        typeSpeed: 10, // Adjust the typing speed as desired
+        typeSpeed: 15, // Adjust the typing speed as desired
         showCursor: false, // Set to false if you don't want a cursor
       };
 
@@ -58,8 +63,21 @@ export default {
   top: calc(50% - 120px);
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1; /* Ensure the About text is positioned above the shadow-box */
+  z-index: 1;
   text-align: center;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure the container takes up the full height */
 }
 
 .about-text {
@@ -126,7 +144,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #001659;
+  padding-top: 25px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.288); /* Adjust the shadow properties as desired */
 }
 
 /* Section styles */
@@ -143,14 +162,11 @@ header {
   width: 100%;
 }
 .shadow-box {
-  color: white;
+  color: rgba(255, 255, 255, 0);
   margin: 0 auto;
   max-width: 800px;
   padding: 2rem;
-  background: rgba(134, 134, 134, 0.404); /* Adjust the opacity as needed */
-  border-radius: 20px; /* Increase the border radius for a more round shape */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the box shadow properties as desired */
-  border: none; /* Remove the border property */
+
 }
 
 /* Apply the border colors to the pseudo-elements */
@@ -164,17 +180,17 @@ header {
 
 .shadow-box h2 {
   font-size: 2.2rem; /* Increase the font size for the heading */
-  font-family: Poppy Font Frompoppyplaytime, sans-serif; /* Specify the Michroma font and fallback to Sans-serif */
+  font-family: Playtime; /* Specify the Michroma font and fallback to Sans-serif */
 }
 
 .shadow-box p {
   font-size: 1.4rem; /* Increase the font size for the paragraphs */
-  font-family: Poppy Font Frompoppyplaytime, sans-serif; /* Specify the Michroma font and fallback to Sans-serif */
+  font-family: Playtime; /* Specify the Michroma font and fallback to Sans-serif */
 }
 
 .poppyText {
   font-size: 4rem; /* Increase the font size for the paragraphs */
-  font-family: Poppy Font Frompoppyplaytime, sans-serif; /* Specify the Michroma font and fallback to Sans-serif */
+  font-family: Playtime; /* Specify the Michroma font and fallback to Sans-serif */
 }
 
 .typed-text span {
@@ -187,5 +203,9 @@ header {
 .section.in-view .typed-text span {
   opacity: 1;
   transform: translateX(0%);
+}
+.outlined-text {
+  color: white; /* Set the text color */
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 </style>
