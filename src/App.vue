@@ -41,39 +41,6 @@ header {
   width: 100%;
   background-color: white;
 }
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 4rem;
-}
-
-.nav-link {
-  margin: 0 2rem;
-  text-decoration: none;
-  font-size: 2rem;
-  color: #333;
-  cursor: pointer;
-  position: relative; /* Add relative positioning */
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -0.25rem; /* Adjust the value to position the underline */
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #333; /* Change the color of the underline */
-  opacity: 0; /* Initially hide the underline */
-  transition: opacity 0.2s ease-in-out; /* Add transition for smooth animation */
-}
-
-.nav-link.active::after {
-  opacity: 1; /* Show the underline for the active nav link */
-}
-
 /* Section styles */
 .section {
   height: 100vh; /* Set each section to occupy full page height */
