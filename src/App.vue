@@ -34,6 +34,7 @@ body {
     background: linear-gradient(-45deg, #8b8b8b, #490149, #033d6d, #131ec5);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    scroll-behavior: smooth;
 }
 
 @keyframes gradient {
@@ -53,7 +54,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: #001659;
 }
 /* Section styles */
 .section {

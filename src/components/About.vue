@@ -7,9 +7,3 @@
     </section>
   </template>
   
-  <script>
-  export default {
-    // Component logic goes here
-  };
-  </script>
-  

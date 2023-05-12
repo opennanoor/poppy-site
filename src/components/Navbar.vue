@@ -62,10 +62,11 @@
       scrollToSection(sectionId) {
         const section = document.querySelector(sectionId);
         if (section) {
-          this.activeSection = sectionId.substring(1);
-          section.scrollIntoView({ behavior: "smooth" });
+            this.activeSection = sectionId.substring(1);
+            section.scrollIntoView({ behavior: "smooth" });
+            this.isMenuOpen = false; // Close the hamburger menu
         }
-      },
+        },
       observeSections() {
         // ...
       },
@@ -83,28 +84,33 @@
   </script>
     
     <style>
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 4rem;
-    }
+  nav {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    height: 4rem;
+  }
+
+  .nav-link {
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: bold; /* Added bold font weight */
+    color: #333;
+    cursor: pointer;
+    font-family: 'Your Font', sans-serif; /* Replace 'Your Font' with the desired font name */
+  }
     
-    .nav-link {
-      margin: 0 1rem;
-      text-decoration: none;
-      font-size: 1rem;
-      color: #333;
-      cursor: pointer;
-    }
-    
-    .hamburger {
-      display: block;
-      cursor: pointer;
-      width: 30px;
-      height: 22px;
-      position: relative;
-    }
+  .hamburger {
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  position: absolute;
+  right: 1rem; /* Adjust the value as needed */
+  top: 50%;
+  transform: translateY(-50%);
+}
     
     .hamburger span {
       display: block;
@@ -165,16 +171,16 @@
       display: flex;
     }
     
-    @media screen and (min-width: 640px) {
-      .hamburger {
-        display: none;
-      }
-    
-      .nav-items {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        background-color: transparent;
-      }
+ @media screen and (min-width: 640px) {
+    .hamburger {
+      display: none;
     }
+
+    .nav-items {
+      display: flex;
+      position: static;
+      flex-direction: row;
+      background-color: transparent;
+    }
+  }
     </style>
