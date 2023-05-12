@@ -1,5 +1,5 @@
 <template>
-   <div class="gradient-bg">
+   <body>
     <Navbar />
 
     <main>
@@ -7,11 +7,7 @@
       <Tokenomics />
       <Whitepaper />
     </main>
-
-    <aside class="sticky top-0 w-full py-4 text-center text-lg font-bold text-gray-800 bg-white shadow-md">
-      Follow Me!
-    </aside>
-  </div>
+  </body>
 </template>
 
 <script>
@@ -29,9 +25,27 @@ export default {
 }
 </script>
 <style>
-.gradient-bg {
-  min-height: 100vh;
-  transition: background-color 0.3s ease-in-out;
+html, body {
+  width: 100%;
+  height:100%;
+}
+
+body {
+    background: linear-gradient(-45deg, #8b8b8b, #490149, #033d6d, #131ec5);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 /* Navbar styles */
 header {
