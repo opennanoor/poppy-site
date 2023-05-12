@@ -24,42 +24,74 @@
   </template>
   
   <script>
-export default {
+  export default {
     data() {
-        return {
-            activeSection: "",
-        };
+      return {
+        activeSection: "about",
+        observer: null,
+      };
     },
     methods: {
-        scrollToSection(sectionId) {
-            const section = document.querySelector(sectionId);
-            if (section) {
-                this.activeSection = sectionId.substring(1);
-                section.scrollIntoView({ behavior: "smooth" });
+      scrollToSection(sectionId) {
+        const section = document.querySelector(sectionId);
+        if (section) {
+          this.activeSection = sectionId.substring(1);
+          this.scrollSmoothTo(section);
+        }
+      },
+      scrollSmoothTo(element) {
+        const targetPosition = element.offsetTop;
+        const startPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const distance = targetPosition - startPosition;
+        const duration = 500; // Adjust the scroll duration as desired
+        let start = null;
+  
+        const animateScroll = (timestamp) => {
+          if (!start) start = timestamp;
+          const progress = timestamp - start;
+          const percentage = Math.min(progress / duration, 1);
+          const easing = this.easeInOutQuad(percentage);
+          window.scrollTo(0, startPosition + distance * easing);
+  
+          if (progress < duration) {
+            requestAnimationFrame(animateScroll);
+          }
+        };
+  
+        requestAnimationFrame(animateScroll);
+      },
+      easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      },
+      observeSections() {
+        const options = {
+          root: null,
+          rootMargin: "-50% 0% -50% 0%", // Adjust the rootMargin as needed
+          threshold: 0.5,
+        };
+  
+        const callback = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.activeSection = entry.target.getAttribute("id");
             }
-        },
-        handleScroll() {
-            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            const sections = document.querySelectorAll("section");
-            for (let i = 0; i < sections.length; i++) {
-                const section = sections[i];
-                const sectionOffsetTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute("id");
-                if (scrollPosition >= sectionOffsetTop && scrollPosition < sectionOffsetTop + sectionHeight) {
-                    this.activeSection = sectionId;
-                    break;
-                }
-            }
-        },
+          });
+        };
+  
+        this.observer = new IntersectionObserver(callback, options);
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          this.observer.observe(section);
+        });
+      },
     },
     mounted() {
-        this.handleScroll();
-        window.addEventListener("scroll", this.handleScroll);
+      this.observeSections();
+      window.addEventListener("scroll", this.handleScroll);
     },
     beforeDestroy() {
-        window.removeEventListener("scroll", this.handleScroll);
+      window.removeEventListener("scroll", this.handleScroll);
+      this.observer.disconnect();
     },
-};
+  };
   </script>
-  
