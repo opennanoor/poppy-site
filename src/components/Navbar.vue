@@ -4,10 +4,12 @@
         <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round">
           <image href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" x="0" y="0" width="34" height="34"></image>
         </svg>
+        <div data-aos="fade-down">
         <div class="nav-items" :class="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }">
-          <a href="#about" class="nav-link" :class="{ active: activeSection === 'about' }" @click.prevent="scrollToSection('#about')">About Poppy</a>
+          <a href="#about" class="nav-link" :class="{ active: activeSection === 'about' }" @click.prevent="scrollToSection('#about')">About</a>
           <a href="#tokenomics" class="nav-link" :class="{ active: activeSection === 'tokenomics' }" @click.prevent="scrollToSection('#tokenomics')">Tokenomics</a>
           <a href="#whitepaper" class="nav-link" :class="{ active: activeSection === 'whitepaper' }" @click.prevent="scrollToSection('#whitepaper')">Whitepaper</a>
+        </div>
         </div>
       </nav>
     </header>
@@ -81,33 +83,33 @@
   };
   </script>
     
-    <style>
+<style>
     nav {
-      display: flex;
-      justify-content: center; /* Center horizontally */
-      align-items: center;
-      height: 4rem;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;
+        height: 4rem;
     }
-  
+
     .nav-link {
-      margin: 0 1rem;
-      text-decoration: none;
-      font-size: 1.5rem; /* Increased font size */
-      font-weight: bold; /* Added bold font weight */
-      color: #fff;
-      cursor: pointer;
-      font-family: 'Your Font', sans-serif; /* Replace 'Your Font' with the desired font name */
-    }
-      
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Poppy Font Frompoppyplaytime'; /* Use the 'Michroma' font, falling back to Sans-serif */
+}
+        
     .hamburger {
-      display: block;
-      cursor: pointer;
-      width: 30px;
-      height: 22px;
-      position: absolute;
-      right: 1rem; /* Adjust the value as needed */
-      top: 50%;
-      transform: translateY(-50%);
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    right: 1rem; /* Adjust the value as needed */
+    top: 50%;
+    transform: translateY(-50%);
     }
     
     .hamburger span {
@@ -169,25 +171,16 @@
       display: flex;
     }
     
-    @media screen and (min-width: 640px) {
-      .hamburger {
-        display: none;
-      }
-  
-      .nav-items {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        background-color: transparent;
-      }
-  
-      /* Font color for nav-items on small screens */
-      @media screen and (max-width: 640px) {
-        .nav-items a {
-          color: black;
-        }
-      }
+ @media screen and (min-width: 640px) {
+    .hamburger {
+      display: none;
     }
-  </style>
-  
-  
+
+    .nav-items {
+      display: flex;
+      position: static;
+      flex-direction: row;
+      background-color: transparent;
+    }
+  }
+    </style>

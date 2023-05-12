@@ -1,12 +1,7 @@
 <template>
     <div class="shadow-box">
-      <h2>About Poppy</h2>
-      <p class="typed-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="typed-text"></div>
     </div>
-</template>
+  </template>
 
-<script>
-export default {
-  // Component logic goes here
-};
-</script>
+  
