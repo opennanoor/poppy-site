@@ -180,13 +180,14 @@
         flex-direction: row;
         background-color: transparent;
       }
-    }
   
-    /* Font color for nav-items on small screens */
-    @media screen and (max-width: 640px) {
-      .nav-items a {
-        color: black;
+      /* Font color for nav-items on small screens */
+      @media screen and (max-width: 640px) {
+        .nav-items a {
+          color: black;
+        }
       }
     }
   </style>
+  
   
