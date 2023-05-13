@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import 'animate.css';
 import Typed from 'typed.js';
+import router from './router';
 // ..
 AOS.init({
     // Global settings:
@@ -20,4 +21,4 @@ AOS.init({
   
   });
 
-createApp(App).mount('#app');
+  createApp(App).use(router).mount('#app');

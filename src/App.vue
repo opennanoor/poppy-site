@@ -3,7 +3,7 @@
     <Navbar />
 
     <main>
-      <section id="about" class="section">
+      <section id="about_section1" class="section">
         <div class="about-container">
           <div class="about-content">
             <div class="about-text-container">
@@ -16,7 +16,7 @@
           </div>
         </div>
       </section>
-      <section id="tokenomics" class="section">
+      <section id="tokenomics_section2" class="section">
         <div class="about-container">
           <div class="about-content">
             <div class="about-text-container">
@@ -24,12 +24,12 @@
               <div data-aos="fade-down-right"><Tokenomics /></div>
             </div>
             <div class="about-image-container">
-              <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106702292029280316/poppy_playtime___mommy_long_legs_by_grimcrow205_df0jjlf-fullview.png" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
+              <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106700296119398520/Low-Res-Huggy-Wuggy.webp" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
             </div>
           </div>
         </div>
       </section>
-      <section id="whitepaper" class="section">
+      <section id="whitepaper_section3" class="section">
         <div data-aos="fade-down-left"><Whitepaper /></div>
       </section>
     </main>
@@ -235,17 +235,6 @@ header:before {
   align-items: flex-start; /* Align sections to the top of the screen */
   min-height: calc(100vh - 80px); /* Adjust the value to account for the height of the navbar */
   scroll-margin-top: 80px; /* Adjust the value to account for the height of the navbar */
-  padding-top: 4rem; /* Add top padding to center the section vertically */
-  box-sizing: border-box; /* Include padding in the section height calculation */
-  margin: 0 auto; /* Center the sections horizontally */
-  max-width: 1200px; /* Set a max-width for the sections */
-}
-
-@media screen and (max-width: 640px) {
-  .section {
-    padding-left: 1rem; /* Add left padding on smaller screens to create space */
-    padding-right: 1rem; /* Add right padding on smaller screens to create space */
-  }
 }
 
 .section > div {
