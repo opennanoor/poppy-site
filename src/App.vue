@@ -50,7 +50,7 @@ export default {
 }
 .about-content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
@@ -213,7 +213,8 @@ header:before {
   padding: 0 1rem; /* Adjust the horizontal padding as desired */
 }
 .shadow-box {
-  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 /* Apply the border colors to the pseudo-elements */

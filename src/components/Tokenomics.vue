@@ -23,10 +23,10 @@ export default {
 .shadow-box {
   background-color: rgba(0, 0, 0, 0.432);
   box-shadow: 0px 0px 5px rgb(255, 255, 255), 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border: 2px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.199);
   border-top-left-radius: 50px;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   border-bottom-right-radius: 50px;
   padding: 20px;
   width: 100%; /* Full width */
