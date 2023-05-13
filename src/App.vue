@@ -10,7 +10,7 @@
               <h1 class="about-text animate__animated animate__fadeIn poppyText outlined-text" style="animation-duration: 3s;">About $Poppy</h1>
               <div data-aos="fade-down-right"><About /></div>
             </div>
-            <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106700296119398520/Low-Res-Huggy-Wuggy.webp" alt="About Poppy Image" class="about-image">
+            <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106700296119398520/Low-Res-Huggy-Wuggy.webp" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
           </div>
         </div>
       </section>
@@ -59,17 +59,19 @@ export default {
 
 <style>
 .about-container {
-  position: absolute;
-  top: calc(50% - 120px);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
 }
 .about-content {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .about-text-container {
@@ -77,19 +79,52 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Ensure the container takes up the full height */
+  flex: 1 1 auto;
+  text-align: center;
 }
-
 .about-text {
   font-size: 3rem; /* Adjust the font size as needed */
   color: white; /* Adjust the text color as needed */
 }
+
+.about-image {
+  display: block;
+  width: auto;
+  height: 400px;
+  max-width: 100%;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 640px) {
+  .about-container {
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+  
+  .about-text-container {
+    margin-left: 0;
+  }
+}
+
 .typed-text {
   color: rgb(247, 247, 247);
   font-size: 1.5rem;
   font-family: Playtime; /* Specify the Michroma font and fallback to Sans-serif */
 
   /* Add any additional styles as desired */
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2rem;
+  }
+  
+  .about-text-container {
+    margin-bottom: 1rem;
+  }
+  
+  .about-image {
+    display: none;
+  }
 }
 
 @font-face {
@@ -114,16 +149,13 @@ export default {
   /* Make sure to update the font file name and format accordingly */
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
 
 body {
   background: linear-gradient(-45deg, #8b8b8b, #490149, #033d6d, #131ec5);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   scroll-behavior: smooth;
+  padding-top: 4rem
 }
 
 @keyframes gradient {
@@ -137,36 +169,63 @@ body {
     background-position: 0% 50%;
   }
 }
+.header-top:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 91, 209, 0.219); /* Adjust the color and opacity as needed */
+  pointer-events: none; /* So it doesn't interfere with interactions */
+}
 
+.header-scrolled:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #005bd1; /* Adjust the color as needed */
+  pointer-events: none; /* So it doesn't interfere with interactions */
+}
 /* Navbar styles */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 25px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.288); /* Adjust the shadow properties as desired */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 25px;
+}
+
+header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 91, 209, 0.219); /* Adjust the color and opacity as needed */
+    pointer-events: none; /* So it doesn't interfere with interactions */
 }
 
 /* Section styles */
 .section {
-  height: 100vh;
-  scroll-snap-align: start;
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: visible; /* explicitly set the visibility */
+  height: 100vh;
 }
 
 .section > div {
   width: 100%;
+  max-width: 1200px; /* Adjust the max-width as desired */
+  padding: 0 1rem; /* Adjust the horizontal padding as desired */
 }
 .shadow-box {
-  color: rgba(255, 255, 255, 0);
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 2rem;
-
+  width: 100%;
 }
 
 /* Apply the border colors to the pseudo-elements */
