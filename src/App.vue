@@ -4,17 +4,7 @@
 
     <main>
       <section id="about_section1" class="section">
-        <div class="about-container">
-          <div class="about-content">
-            <div class="about-text-container">
-              <h2 class="about-text animate__animated animate__fadeIn poppyText outlined-text" style="animation-duration: 3s;">Coming Soon...</h2>
               <div data-aos="fade-down-right"><About /></div>
-            </div>
-            <div class="about-image-container">
-              <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1107007468049014794/Poppy_Playtime_2D.webp" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
-            </div>
-          </div>
-        </div>
       </section>
       <section id="tokenomics_section2" class="section">
               <div data-aos="fade-down-right"><Tokenomics /></div> 
@@ -45,18 +35,6 @@ export default {
   mounted() {
     // Remove horizontal scrollbar on mount
     document.body.style.overflowX = 'hidden';
-    this.initializeTyped();
-  },
-  methods: {
-    initializeTyped() {
-      const options = {
-        strings: ['Poppy is a revolutionary meme token that brings joy and laughter to the crypto world.'],
-        typeSpeed: 0, // Adjust the typing speed as desired
-        showCursor: false, // Set to false if you don't want a cursor
-      };
-
-      const typed = new Typed('.typed-text', options);
-    },
   },
 }
 </script>
@@ -85,7 +63,6 @@ export default {
   align-items: flex-start;
 }
 .about-text {
-  font-size: 3rem; /* Adjust the font size as needed */
   color: white; /* Adjust the text color as needed */
 }
 
@@ -115,8 +92,8 @@ export default {
 
 .typed-text {
   color: rgb(247, 247, 247);
-  font-size: 1.5rem;
-  font-family: Playtime; /* Specify the Michroma font and fallback to Sans-serif */
+  font-size: 1.3rem;
+  font-family: 'Michroma'; /* Specify the Michroma font and fallback to Sans-serif */
 
   /* Add any additional styles as desired */
 }
@@ -159,7 +136,7 @@ export default {
 
 
 body {
-  background: linear-gradient(-45deg, #200101, #490149, #060053, #018a67);
+  background: linear-gradient(-45deg, #1f1f1f, #272727, #060053, #018a67);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   scroll-behavior: smooth;
@@ -196,7 +173,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #005bd1;
+  background-color: #202020;
   pointer-events: none;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }

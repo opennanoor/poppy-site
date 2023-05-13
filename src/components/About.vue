@@ -1,8 +1,11 @@
 <template>
   <div class="about-content">
+    <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
+      <span class="typed-text poppyText outlined-text" :style="{ fontSize: fontSize + 'rem' }">Coming soon...</span></h2>
     <div class="shadow-box">
-      <div class="typed-text outlined-text"></div>
-      <div class="svg-section">
+      <div class="typed-text outlined-text">Poppy is a revolutionary meme token that brings joy and laughter to the crypto world.</div>
+    </div>
+    <div class="svg-section">
         <div class="svg-wrapper">
           <div class="circle">
             <img src="/img/discord.svg" alt="Image 1" class="svg-image animate__animated animate__bounce">
@@ -22,10 +25,19 @@
           <span class="svg-text typed-text outlined-text">Uniswap</span>
         </div>
       </div>
-    </div>
   </div>
 </template>
+<script>
+import useFontSize from "../useFontSize"; // adjust the import path to match your file structure
 
+export default {
+    name: "About",
+    setup() {
+        const { fontSize } = useFontSize(1, 0.75, 3, 0.01); // adjust these values as needed
+        return { fontSize };
+    }
+}
+</script>
 <style>
 /* Existing styles... */
 

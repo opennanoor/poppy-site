@@ -2,18 +2,17 @@
   <header :class="scrolled ? 'header-scrolled' : 'header-top'">
     <nav class="flex items-center justify-between h-16 px-4 sm:px-0 outlined-text" role="navigation" aria-label="Main Navigation">
       <div class="logo-container">
-        <img src="https://cdn.discordapp.com/attachments/1106185526584823918/1106714435751514182/Low-Res-Huggy-Wuggy-Head.png" alt="Logo" class="logo" @mouseover="activateBounce" @mouseout="deactivateBounce">
+        <img :src="currentLogo" alt="Logo" :class="{ 'logo': true, 'bounce': isBouncing }" @mouseover="activateBounce" @mouseout="deactivateBounce">
       </div>
       <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <image href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" x="0" y="0" width="34" height="34"></image>
       </svg>
       <div data-aos="fade-down">
         <div :class="['nav-items', { 'hidden': !isMenuOpen, 'block': isMenuOpen, 'animate__animated animate__fadeInRight': isMenuOpen } ]">
-  <router-link to="/about" class="nav-link" :class="{ 'nav-link-active': $route.path === '/about' }" @click="closeMenu">About</router-link>
-  <router-link to="/tokenomics" class="nav-link" :class="{ 'nav-link-active': $route.path === '/tokenomics' }" @click="closeMenu">Tokenomics</router-link>
-  <router-link to="/whitepaper" class="nav-link" :class="{ 'nav-link-active': $route.path === '/whitepaper' }" @click="closeMenu">Whitepaper</router-link>
-</div>
-
+          <router-link to="/about" class="nav-link" :class="navLinkClass('/about')" @mouseover="activateBounce('/about')" @mouseout="deactivateBounce('/about')" @click="closeMenu">About</router-link>
+          <router-link to="/tokenomics" class="nav-link" :class="navLinkClass('/tokenomics')" @mouseover="activateBounce('/tokenomics')" @mouseout="deactivateBounce('/tokenomics')" @click="closeMenu">Tokenomics</router-link>
+          <router-link to="/whitepaper" class="nav-link" :class="navLinkClass('/whitepaper')" @mouseover="activateBounce('/whitepaper')" @mouseout="deactivateBounce('/whitepaper')" @click="closeMenu">Whitepaper</router-link>
+        </div>
       </div>
     </nav>
   </header>
@@ -24,15 +23,29 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-      scrolled: false // new data property for header transparency
+      scrolled: false,
+      logoImages: [
+        "https://cdn.discordapp.com/attachments/1107007792033828924/1107010857365418174/glenn1.png",
+        "https://cdn.discordapp.com/attachments/1107007792033828924/1107010886348054578/glenn2.png",
+      ],
+      currentLogo: "https://cdn.discordapp.com/attachments/1107007792033828924/1107010886348054578/glenn2.png",
+      imageIndex: 0,
+      intervalId: null,
+      bouncingLink: '',
     };
   },
   methods: {
-    activateBounce(event) {
-      event.target.classList.add('animate__animated', 'animate__pulse');
+    activateBounce(path) {
+      this.bouncingLink = path;
     },
-    deactivateBounce(event) {
-      event.target.classList.remove('animate__animated', 'animate__pulse');
+    deactivateBounce() {
+      this.bouncingLink = '';
+    },
+    navLinkClass(path) {
+      return {
+        'nav-link-active': this.$route.path === path,
+        'animate__animated animate__pulse': this.bouncingLink === path
+      };
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
@@ -50,11 +63,27 @@ export default {
       if (!menu.contains(e.target) && !button.contains(e.target)) {
         this.closeMenu();
       }
-    }
+    },
+    startLogoTransition() {
+      this.intervalId = setInterval(() => {
+        this.changeLogoImage();
+      }, 2000);
+    },
+    stopLogoTransition() {
+      clearInterval(this.intervalId);
+    },
+    changeLogoImage() {
+      this.imageIndex = (this.imageIndex + 1) % this.logoImages.length;
+      this.currentLogo = this.logoImages[this.imageIndex];
+    },
   },
   mounted() {
+    this.startLogoTransition();
     window.addEventListener('scroll', this.handleScroll);
     document.addEventListener('click', this.handleClickOutside);
+  },
+  beforeUnmount() {
+    this.stopLogoTransition();
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -70,13 +99,33 @@ export default {
 }
 
 .logo {
+  transition: opacity 0.5s ease-in-out;
   width: 170px; /* Adjust the width as needed */
   height: auto;
   margin-right: 10px; /* Adjust the margin as needed */
   z-index: 10000;
 }
+.active {
+  opacity: 1;
+}
+
+.inactive {
+  opacity: 0;
+}
+.bounce {
+  animation: bounce-animation 0.5s infinite alternate;
+}
+
+@keyframes bounce-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
   .nav-link:hover {
-    color: rgb(102, 59, 255);
+    color: rgb(0, 98, 239);
   }
     nav {
         display: flex;
@@ -230,6 +279,6 @@ export default {
 }
 
   .nav-link-active {
-  color: rgb(102, 59, 255);
+  color: rgb(0, 98, 239);
 }
     </style>
