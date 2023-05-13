@@ -7,7 +7,7 @@
         <div class="about-container">
           <div class="about-content">
             <div class="about-text-container">
-              <h1 class="about-text animate__animated animate__fadeIn poppyText outlined-text" style="animation-duration: 3s;">About $Poppy</h1>
+              <h2 class="about-text animate__animated animate__fadeIn poppyText outlined-text" style="animation-duration: 3s;">Coming Soon..</h2>
               <div data-aos="fade-down-right"><About /></div>
             </div>
             <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106700296119398520/Low-Res-Huggy-Wuggy.webp" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
@@ -215,8 +215,9 @@ header:before {
 .section {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start; /* Align sections to the top of the screen */
+  min-height: calc(100vh - 80px); /* Adjust the value to account for the height of the navbar */
+  scroll-margin-top: 80px; /* Adjust the value to account for the height of the navbar */
 }
 
 .section > div {
