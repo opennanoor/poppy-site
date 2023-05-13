@@ -81,17 +81,17 @@ export default {
 }
 .about-content {
   display: flex;
-  align-items: flex-start; /* Align items at the top */
-  justify-content: space-between; /* Adjust the spacing between text and image */
+  align-items: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 }
 
 .about-text-container {
-  flex-basis: 50%; /* Adjust the value as needed */
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Adjust the alignment to the left */
+  align-items: flex-start;
 }
 .about-text {
   font-size: 3rem; /* Adjust the font size as needed */
@@ -99,10 +99,10 @@ export default {
 }
 
 .about-image-container {
-  flex-basis: 50%; /* Adjust the value as needed */
+  flex-basis: 50%;
   display: flex;
-  align-items: flex-start; /* Align items at the top */
-  justify-content: flex-end; /* Align image to the bottom of the container */
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .about-image {
@@ -193,7 +193,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 91, 209, 0.219); /* Adjust the color and opacity as needed */
+  background-color: rgba(0, 91, 209, 0); /* Adjust the color and opacity as needed */
   pointer-events: none; /* So it doesn't interfere with interactions */
 }
 
@@ -232,9 +232,9 @@ header:before {
 .section {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align sections to the top of the screen */
-  min-height: calc(100vh - 80px); /* Adjust the value to account for the height of the navbar */
-  scroll-margin-top: 80px; /* Adjust the value to account for the height of the navbar */
+  align-items: flex-start;
+  min-height: calc(100vh - 80px); /* Adjusted height calculation without bottom space */
+  margin-bottom: 200px; /* Added margin-bottom for the space between sections */
 }
 
 .section > div {

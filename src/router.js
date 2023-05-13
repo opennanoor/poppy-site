@@ -5,37 +5,67 @@ import Whitepaper from './components/Whitepaper.vue';
 
 const routes = [
     {
-      path: '/',
+      path: '/about',
       component: About,
-      alias: '/#about_section1'
+      meta: {
+        scrollTo: '#about_section1' // Specify the ID of the section to scroll to
+      }
     },
     {
-      path: '/',
+      path: '/tokenomics',
       component: Tokenomics,
-      alias: '/#tokenomics_section2'
+      meta: {
+        scrollTo: '#tokenomics_section2' // Specify the ID of the section to scroll to
+      }
     },
     {
-      path: '/',
+      path: '/whitepaper',
       component: Whitepaper,
-      alias: '/#whitepaper_section3'
+      meta: {
+        scrollTo: '#whitepaper_section3' // Specify the ID of the section to scroll to
+      }
+    },
+    // Add a catch-all route to redirect to the home page if the path is not found
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/about'
     }
   ];
-
-const router = createRouter({
-  history: createWebHistory('/'),
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-      };
-    } else if (savedPosition) {
-      return savedPosition;
-    } else {
-      return { top: 0 };
+  
+  const router = createRouter({
+    history: createWebHistory('/'),
+    routes: [
+      {
+        path: '/about',
+        component: About,
+        meta: { scrollTo: '#about_section1' } // Add meta field with scrollTo value
+      },
+      {
+        path: '/tokenomics',
+        component: Tokenomics,
+        meta: { scrollTo: '#tokenomics_section2' } // Add meta field with scrollTo value
+      },
+      {
+        path: '/whitepaper',
+        component: Whitepaper,
+        meta: { scrollTo: '#whitepaper_section3' } // Add meta field with scrollTo value
+      },
+      // Other route definitions...
+    ],
+    scrollBehavior(to, from, savedPosition) {
+      if (to.meta.scrollTo) {
+        const sectionElement = document.querySelector(to.meta.scrollTo);
+        const offset = 10; // Adjust the offset value as needed
+        return {
+          top: sectionElement.offsetTop - offset,
+          behavior: 'smooth',
+        };
+      } else if (savedPosition) {
+        return savedPosition;
+      } else {
+        return { top: 0 };
+      }
     }
-  }
-});
-
-export default router;
+  });
+  
+  export default router;

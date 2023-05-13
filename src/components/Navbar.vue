@@ -9,11 +9,11 @@
       </svg>
       <div data-aos="fade-down">
         <div :class="['nav-items', { 'hidden': !isMenuOpen, 'block': isMenuOpen, 'animate__animated animate__fadeInRight': isMenuOpen } ]">
-          <router-link to="/#about_section1" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#about_section1' }">About</router-link>
-          <router-link to="/#tokenomics_section2" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#tokenomics_section2' }">Tokenomics</router-link>
-          <router-link to="/#whitepaper_section3" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#whitepaper_section3' }">Whitepaper</router-link>
+  <router-link to="/about" class="nav-link" :class="{ 'nav-link-active': $route.path === '/about' }" @click="closeMenu">About</router-link>
+  <router-link to="/tokenomics" class="nav-link" :class="{ 'nav-link-active': $route.path === '/tokenomics' }" @click="closeMenu">Tokenomics</router-link>
+  <router-link to="/whitepaper" class="nav-link" :class="{ 'nav-link-active': $route.path === '/whitepaper' }" @click="closeMenu">Whitepaper</router-link>
+</div>
 
-        </div>
       </div>
     </nav>
   </header>
@@ -37,15 +37,28 @@ export default {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
     },
+    closeMenu() {
+      this.isMenuOpen = false;
+    },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
+    },
+    handleClickOutside(e) {
+      const menu = this.$el.querySelector('.nav-items');
+      const button = this.$el.querySelector('.hamburger');
+
+      if (!menu.contains(e.target) && !button.contains(e.target)) {
+        this.closeMenu();
+      }
     }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    document.addEventListener('click', this.handleClickOutside);
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
+    document.removeEventListener('click', this.handleClickOutside);
   },
 };
 </script>
@@ -169,6 +182,53 @@ export default {
       background-color: transparent;
     }
   }
+  @media screen and (max-width: 639px) {
+  .hamburger {
+    display: visible;
+  }
+  .nav-items {
+  width: 80%;
+  height: calc(100vh - 4rem);
+  display: none;
+  flex-direction: column;
+  right: -75%;
+  position: fixed;
+  top: 5.5rem;
+  left: 25%;
+  padding-top: 2rem;
+  background-color: #005bd1ea;
+  overflow-y: auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a box-shadow for the nav bar */
+}
+
+.nav-items .nav-link {
+  position: relative;
+  margin-bottom: 1rem; /* Adjust the value to increase or decrease the spacing between items */
+}
+
+.nav-items .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); /* Add a box-shadow for the underline */
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-items .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-items.block {
+  display: flex;
+  right: 0;
+}
+}
+
   .nav-link-active {
   color: rgb(102, 59, 255);
 }
