@@ -125,7 +125,7 @@ export default {
     .nav-link {
   margin: 0 1rem;
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
