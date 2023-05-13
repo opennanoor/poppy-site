@@ -10,8 +10,8 @@
       <div data-aos="fade-down">
         <div :class="['nav-items', { 'hidden': !isMenuOpen, 'block': isMenuOpen, 'animate__animated animate__fadeInRight': isMenuOpen } ]">
           <router-link to="/#about_section1" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#about_section1' }">About</router-link>
-<router-link to="/#tokenomics_section2" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#tokenomics_section2' }">Tokenomics</router-link>
-<router-link to="/#whitepaper_section3" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#whitepaper_section3' }">Whitepaper</router-link>
+          <router-link to="/#tokenomics_section2" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#tokenomics_section2' }">Tokenomics</router-link>
+          <router-link to="/#whitepaper_section3" class="nav-link" :class="{ 'nav-link-active': $route.hash === '#whitepaper_section3' }">Whitepaper</router-link>
 
         </div>
       </div>
