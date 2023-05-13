@@ -11,26 +11,17 @@
               <div data-aos="fade-down-right"><About /></div>
             </div>
             <div class="about-image-container">
-              <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106700296119398520/Low-Res-Huggy-Wuggy.webp" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
+              <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1107007468049014794/Poppy_Playtime_2D.webp" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
             </div>
           </div>
         </div>
       </section>
       <section id="tokenomics_section2" class="section">
-        <div class="about-container">
-          <div class="about-content">
-            <div class="about-text-container">
-              <h2 class="about-text animate__animated animate__fadeIn poppyText outlined-text" style="animation-duration: 3s;">Tokenomics</h2>
-              <div data-aos="fade-down-right"><Tokenomics /></div>
-            </div>
-            <div class="about-image-container">
-              <img style="width: auto; height: 400px; max-width: 100%;" src="https://cdn.discordapp.com/attachments/1106185526584823918/1106700296119398520/Low-Res-Huggy-Wuggy.webp" alt="About Poppy Image" class="about-image animate__animated animate__rotateInUpRight">
-            </div>
-          </div>
-        </div>
+              <div data-aos="fade-down-right"><Tokenomics /></div> 
+            
       </section>
       <section id="whitepaper_section3" class="section">
-        <div data-aos="fade-down-left"><Whitepaper /></div>
+        <div data-aos="fade-down-left "><Whitepaper /></div>
       </section>
     </main>
   </body>
@@ -168,11 +159,12 @@ export default {
 
 
 body {
-  background: linear-gradient(-45deg, #8b8b8b, #490149, #033d6d, #131ec5);
+  background: linear-gradient(-45deg, #200101, #490149, #060053, #018a67);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   scroll-behavior: smooth;
-  padding-top: 4rem
+  padding-top: 4rem;
+  overflow-x: hidden;
 }
 
 @keyframes gradient {
@@ -197,15 +189,16 @@ body {
   pointer-events: none; /* So it doesn't interfere with interactions */
 }
 
-.header-scrolled:before {
+.header-scrolled::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #005bd1; /* Adjust the color as needed */
-  pointer-events: none; /* So it doesn't interfere with interactions */
+  background-color: #005bd1;
+  pointer-events: none;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 /* Navbar styles */
 header {
