@@ -13,9 +13,9 @@
           height="34"></image>
       </svg>
       <div data-aos="fade-down">
-        <div :class="navItemsClass">
+        <div :class="getNavItemsClass">
           <router-link v-for="link in links" :key="link.path" :to="link.path" class="nav-link"
-            :class="navLinkClass(link.path)" @mouseover="activateBounce(link.path)" @mouseout="deactivateBounce"
+            :class="getNavLinkClass(link.path)" @mouseover="activateBounce(link.path)" @mouseout="deactivateBounce"
             @click="closeMenu">
             {{ link.name }}
           </router-link>
@@ -36,7 +36,6 @@ export default {
         "https://cdn.discordapp.com/attachments/1107007792033828924/1107010886348054578/glenn2.png",
       ],
       currentLogo: "https://cdn.discordapp.com/attachments/1107007792033828924/1107010886348054578/glenn2.png",
-      imageIndex: 0,
       intervalId: null,
       bouncingLink: '',
       links: [
@@ -47,13 +46,13 @@ export default {
     };
   },
   computed: {
-    navItemsClass() {
+    getNavItemsClass() {
       return [
         'nav-items',
         { 'hidden': !this.isMenuOpen, 'block': this.isMenuOpen, 'animate__animated animate__fadeInRight': this.isMenuOpen }
       ];
     },
-    navLinkClass() {
+    getNavLinkClass() {
       return (path) => ({
         'nav-link-active': this.$route.path === path,
         'animate__animated animate__pulse': this.bouncingLink === path
@@ -74,27 +73,25 @@ export default {
       this.isMenuOpen = false;
     },
     handleScroll() {
-      this.scrolled = window.scrollY > 0;
+      requestAnimationFrame(() => {
+        this.scrolled = window.scrollY > 0;
+      });
     },
     handleClickOutside(e) {
       const menu = this.$el.querySelector('.nav-items');
       const button = this.$el.querySelector('.hamburger');
-
       if (!menu.contains(e.target) && !button.contains(e.target)) {
         this.closeMenu();
       }
     },
     startLogoTransition() {
-      this.intervalId = setInterval(() => {
-        this.changeLogoImage();
-      }, 2000);
+      this.intervalId = setInterval(this.changeLogoImage, 2000);
+    },
+    changeLogoImage() {
+      this.currentLogo = this.logoImages[(this.logoImages.indexOf(this.currentLogo) + 1) % this.logoImages.length];
     },
     stopLogoTransition() {
       clearInterval(this.intervalId);
-    },
-    changeLogoImage() {
-      this.imageIndex = (this.imageIndex + 1) % this.logoImages.length;
-      this.currentLogo = this.logoImages[this.imageIndex];
     },
   },
   mounted() {
@@ -109,8 +106,6 @@ export default {
   },
 };
 </script>
-
-
     
 <style>
 .logo-container {
