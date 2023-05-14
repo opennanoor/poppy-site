@@ -1,6 +1,6 @@
 <template>
   <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
-    <span class="typed-text poppyText outlined-text" :style="{ fontSize: fontSize + 'rem' }">Tokenomics</span>
+    <span class="typed-text poppyText outlined-text" style="font-size:3rem">Tokenomics</span>
   </h2>
   <div class="shadow-box">
     <div class="typed-text outlined-text">No Taxes, No Bullshit. It’s that simple.
@@ -9,19 +9,6 @@
       listings, bridges, and liquidity pools. This wallet is easily trackable with the ENS name “pepecexwallet.eth”</div>
   </div>
 </template>
-
-<script>
-import useFontSize from "../useFontSize"; // adjust the import path to match your file structure
-
-export default {
-  name: "Tokenomics",
-  setup() {
-    const { fontSize } = useFontSize(1, 0.75, 3, 0.01); // adjust these values as needed
-    return { fontSize };
-  }
-}
-</script>
-
 <style>
 .shadow-box {
   background-color: rgba(0, 0, 0, 0.432);

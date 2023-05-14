@@ -14,99 +14,91 @@
       </svg>
       <div data-aos="fade-down">
         <div :class="getNavItemsClass">
-          <router-link v-for="link in links" :key="link.path" :to="link.path" class="nav-link"
-            :class="getNavLinkClass(link.path)" @mouseover="activateBounce(link.path)" @mouseout="deactivateBounce"
-            @click="closeMenu">
+          <NuxtLink :to="{ path: '/', hash: '#' + link.name }" v-for="link in links" class="nav-link" @click="closeMenu">
             {{ link.name }}
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
     </nav>
   </header>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isMenuOpen: false,
-      scrolled: false,
-      logoImages: [
-        "/img/logo.webp",
-        "/img/logo1.webp",
-      ],
-      currentLogo: "/img/logo.webp",
-      intervalId: null,
-      bouncingLink: '',
-      links: [
-        { path: '/about', name: 'About' },
-        { path: '/tokenomics', name: 'Tokenomics' },
-        { path: '/whitepaper', name: 'Whitepaper' },
-      ],
-    };
-  },
-  computed: {
-    getNavItemsClass() {
-      return [
-        'nav-items',
-        { 'hidden': !this.isMenuOpen, 'block': this.isMenuOpen, 'animate__animated animate__fadeInRight': this.isMenuOpen }
-      ];
-    },
-    getNavLinkClass() {
-      return (path) => ({
-        'nav-link-active': this.$route.path === path,
-        'animate__animated animate__pulse': this.bouncingLink === path
-      });
+
+<script setup>
+import { ref, reactive, onMounted, onBeforeUnmount, computed } from 'vue'
+
+const isMenuOpen = ref(false)
+const scrolled = ref(false)
+const logoImages = ref(["/images/logo.webp", "/images/logo1.webp"])
+const currentLogo = ref("/img/logo.webp")
+const intervalId = ref(null)
+const bouncingLink = ref('')
+
+const links = reactive([
+  { path: '/about', name: 'About' },
+  { path: '/tokenomics', name: 'Tokenomics' },
+  { path: '/whitepaper', name: 'Whitepaper' },
+])
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false
+}
+
+const handleScroll = () => {
+  requestAnimationFrame(() => {
+    scrolled.value = window.scrollY > 0
+  })
+}
+
+const handleClickOutside = (e) => {
+  const menu = document.querySelector('.nav-items')
+  const button = document.querySelector('.hamburger')
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    closeMenu()
+  }
+}
+
+const startLogoTransition = () => {
+  intervalId.value = setInterval(changeLogoImage, 2000)
+}
+
+const changeLogoImage = () => {
+  currentLogo.value = logoImages.value[(logoImages.value.indexOf(currentLogo.value) + 1) % logoImages.value.length]
+}
+
+const stopLogoTransition = () => {
+  clearInterval(intervalId.value)
+}
+
+const getNavItemsClass = computed(() => {
+  return [
+    'nav-items',
+    {
+      'hidden': !isMenuOpen.value,
+      'block': isMenuOpen.value,
+      'animate__animated animate__fadeInRight': isMenuOpen.value
     }
-  },
-  methods: {
-    activateBounce(path) {
-      this.bouncingLink = path;
-    },
-    deactivateBounce() {
-      this.bouncingLink = '';
-    },
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-    closeMenu() {
-      this.isMenuOpen = false;
-    },
-    handleScroll() {
-      requestAnimationFrame(() => {
-        this.scrolled = window.scrollY > 0;
-      });
-    },
-    handleClickOutside(e) {
-      const menu = this.$el.querySelector('.nav-items');
-      const button = this.$el.querySelector('.hamburger');
-      if (!menu.contains(e.target) && !button.contains(e.target)) {
-        this.closeMenu();
-      }
-    },
-    startLogoTransition() {
-      this.intervalId = setInterval(this.changeLogoImage, 2000);
-    },
-    changeLogoImage() {
-      this.currentLogo = this.logoImages[(this.logoImages.indexOf(this.currentLogo) + 1) % this.logoImages.length];
-    },
-    stopLogoTransition() {
-      clearInterval(this.intervalId);
-    },
-  },
-  mounted() {
-    this.startLogoTransition();
-    window.addEventListener('scroll', this.handleScroll);
-    document.addEventListener('click', this.handleClickOutside);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-    document.removeEventListener('click', this.handleClickOutside);
-    this.stopLogoTransition();
-  },
-};
+  ]
+})
+
+onMounted(() => {
+  startLogoTransition()
+  window.addEventListener('scroll', handleScroll)
+  document.addEventListener('click', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+  document.removeEventListener('click', handleClickOutside)
+  stopLogoTransition()
+})
 </script>
-    
+
+
 <style>
 .logo-container {
   display: flex;
