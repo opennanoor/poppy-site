@@ -40,9 +40,9 @@ export default {
   name: "About",
   setup() {
     const images = ref([
-      '/img/chars/7_Kissy_missy_head.png',
-      '/img/chars/8_Kissy_missy_head.png',
-      '/img/chars/9_Kissy_missy_head.png'
+      '/img/chars/7_Kissy_missy_head.webp',
+      '/img/chars/8_Kissy_missy_head.webp',
+      '/img/chars/9_Kissy_missy_head.webp'
     ]);
     const currentImage = ref(images.value[0]);
     const imageKey = ref(0); // a key for forcing the re-rendering of the img tag

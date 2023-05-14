@@ -32,10 +32,10 @@ export default {
       isMenuOpen: false,
       scrolled: false,
       logoImages: [
-        "https://cdn.discordapp.com/attachments/1107007792033828924/1107010857365418174/glenn1.png",
-        "https://cdn.discordapp.com/attachments/1107007792033828924/1107010886348054578/glenn2.png",
+        "/img/logo.webp",
+        "/img/logo1.webp",
       ],
-      currentLogo: "https://cdn.discordapp.com/attachments/1107007792033828924/1107010886348054578/glenn2.png",
+      currentLogo: "/img/logo.webp",
       intervalId: null,
       bouncingLink: '',
       links: [
