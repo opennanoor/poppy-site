@@ -3,8 +3,7 @@
     <nav class="flex items-center justify-between h-16 px-4 sm:px-0 outlined-text" role="navigation"
       aria-label="Main Navigation">
       <div class="logo-container">
-        <img :src="currentLogo" alt="Logo" :class="{ 'logo': true, 'bounce': isBouncing }" @mouseover="activateBounce"
-          @mouseout="deactivateBounce">
+        <img :src="currentLogo" alt="Logo" :class="{ 'logo': true }">
       </div>
       <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -86,6 +85,12 @@ const getNavItemsClass = computed(() => {
 })
 
 onMounted(() => {
+  logoImages.value.forEach((logoImage) => {
+    const img = new Image();
+    img.src = logoImage;
+  });
+
+  changeLogoImage(); // Change the logo immediately on mount
   startLogoTransition()
   window.addEventListener('scroll', handleScroll)
   document.addEventListener('click', handleClickOutside)
