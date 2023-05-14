@@ -25,16 +25,10 @@
   </header>
 </template>
 
-
 <script>
 export default {
   data() {
     return {
-      links: [
-        { path: '/about', name: 'About' },
-        { path: '/tokenomics', name: 'Tokenomics' },
-        { path: '/whitepaper', name: 'Whitepaper' },
-      ],
       isMenuOpen: false,
       scrolled: false,
       logoImages: [
@@ -45,7 +39,20 @@ export default {
       imageIndex: 0,
       intervalId: null,
       bouncingLink: '',
+      links: [
+        { path: '/about', name: 'About' },
+        { path: '/tokenomics', name: 'Tokenomics' },
+        { path: '/whitepaper', name: 'Whitepaper' },
+      ],
     };
+  },
+  computed: {
+    navItemsClass() {
+      return [
+        'nav-items',
+        { 'hidden': !this.isMenuOpen, 'block': this.isMenuOpen, 'animate__animated animate__fadeInRight': this.isMenuOpen }
+      ];
+    }
   },
   methods: {
     activateBounce(path) {
@@ -96,14 +103,13 @@ export default {
     document.addEventListener('click', this.handleClickOutside);
   },
   beforeUnmount() {
-    this.stopLogoTransition();
-  },
-  beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
     document.removeEventListener('click', this.handleClickOutside);
+    this.stopLogoTransition();
   },
 };
 </script>
+
     
 <style>
 .logo-container {
