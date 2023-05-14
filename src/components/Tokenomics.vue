@@ -31,6 +31,7 @@ export default {
   padding: 20px;
   width: 100%; /* Full width */
   max-width: 850px;
+  max-width: auto;
   box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 

@@ -11,6 +11,7 @@
         <div :class="['nav-items', { 'hidden': !isMenuOpen, 'block': isMenuOpen, 'animate__animated animate__fadeInRight': isMenuOpen } ]">
           <router-link to="/about" class="nav-link" :class="navLinkClass('/about')" @mouseover="activateBounce('/about')" @mouseout="deactivateBounce('/about')" @click="closeMenu">About</router-link>
           <router-link to="/tokenomics" class="nav-link" :class="navLinkClass('/tokenomics')" @mouseover="activateBounce('/tokenomics')" @mouseout="deactivateBounce('/tokenomics')" @click="closeMenu">Tokenomics</router-link>
+          <router-link to="/tokenomics" class="nav-link" :class="navLinkClass('/tokenomics')" @mouseover="activateBounce('/tokenomics')" @mouseout="deactivateBounce('/tokenomics')" @click="closeMenu">How to buy</router-link>
           <router-link to="/whitepaper" class="nav-link" :class="navLinkClass('/whitepaper')" @mouseover="activateBounce('/whitepaper')" @mouseout="deactivateBounce('/whitepaper')" @click="closeMenu">Whitepaper</router-link>
         </div>
       </div>
@@ -139,7 +140,7 @@ export default {
     .nav-link {
   margin: 0 1rem;
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
