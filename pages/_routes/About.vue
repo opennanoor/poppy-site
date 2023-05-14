@@ -37,9 +37,9 @@ import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import Typed from 'typed.js'
 
 const images = ref([
-  '/images/chars/7_Kissy_missy_head.webp',
-  '/images/chars/8_Kissy_missy_head.webp',
-  '/images/chars/9_Kissy_missy_head.webp'
+  '/images/chars/16_Mommy_long_legs.png',
+  '/images/chars/16_Mommy_long_legs.png',
+  '/images/chars/16_Mommy_long_legs.png'
 ])
 
 const currentImage = ref(images.value[0])

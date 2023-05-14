@@ -5,6 +5,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         if (savedPosition) {
             return savedPosition;
         }
+
         const findEl = async (hash, x = 0) => {
             return (
                 document.querySelector(hash) ||
@@ -14,20 +15,25 @@ export default defineNuxtPlugin((nuxtApp) => {
                     }
                     setTimeout(() => {
                         resolve(findEl(hash, 1));
-                    }, 300);
+                    }, 500);
                 })
             );
         };
-        if (to.hash) {
-            const el = await findEl(to.hash);
 
-            if ("scrollBehavior" in document.documentElement.style) {
-                console.log("hash path hit scroll to");
-                return window.scrollTo({ top: el.offsetTop, behavior: "smooth" });
-            } else {
-                return window.scrollTo(0, el.offsetTop);
-            }
+        if (to.hash) {
+            // Delay scrolling to allow the DOM to update
+            setTimeout(async () => {
+                const el = await findEl(to.hash);
+
+                if ("scrollBehavior" in document.documentElement.style) {
+                    console.log("hash path hit scroll to");
+                    window.scrollTo({ top: el.offsetTop, behavior: "smooth" });
+                } else {
+                    window.scrollTo(0, el.offsetTop);
+                }
+            }, 0);
         }
         return { left: 0, top: 0, behaviour: "smooth" };
     };
+
 })

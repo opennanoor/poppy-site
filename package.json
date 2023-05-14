@@ -11,8 +11,7 @@
   "devDependencies": {
     "@types/aos": "^3.0.4",
     "@types/node": "^18",
-    "nuxt": "^3.4.3",
-    "sass": "^1.62.1"
+    "nuxt": "^3.4.3"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

@@ -136,26 +136,13 @@ import Whitepaper from './_routes/Whitepaper.vue'
 
 
 body {
-    background: linear-gradient(-45deg, #1f1f1f, #272727, #060053, #018a67);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    scroll-behavior: smooth;
+    background-image: url('https://cdn.discordapp.com/attachments/1106185526584823918/1107407824998379520/animegan_toon_ezgifcom-webp-to-png_1684096940261.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     padding-top: 4rem;
     overflow-x: hidden;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    overflow-x: hidden;
 }
 
 .header-top:before {
@@ -178,7 +165,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #202020;
+    background-color: #353535ab;
+    ;
     pointer-events: none;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }

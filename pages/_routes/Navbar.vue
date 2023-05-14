@@ -31,7 +31,6 @@ const scrolled = ref(false)
 const logoImages = ref(["/images/logo.webp", "/images/logo1.webp"])
 const currentLogo = ref("/img/logo.webp")
 const intervalId = ref(null)
-const bouncingLink = ref('')
 
 const links = reactive([
   { path: '/about', name: 'About' },
@@ -83,6 +82,11 @@ const getNavItemsClass = computed(() => {
     }
   ]
 })
+watch(isMenuOpen, (newVal, oldVal) => {
+  if (newVal !== oldVal && !newVal) {
+    closeMenu();
+  }
+});
 
 onMounted(() => {
   logoImages.value.forEach((logoImage) => {
@@ -126,20 +130,6 @@ onBeforeUnmount(() => {
 
 .inactive {
   opacity: 0;
-}
-
-.bounce {
-  animation: bounce-animation 0.5s infinite alternate;
-}
-
-@keyframes bounce-animation {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.1);
-  }
 }
 
 .nav-link:hover {
@@ -245,7 +235,7 @@ nav {
   right: 0;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 850px) {
   .hamburger {
     display: none;
   }
@@ -258,7 +248,7 @@ nav {
   }
 }
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 849px) {
   .hamburger {
     display: visible;
   }
