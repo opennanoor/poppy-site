@@ -52,6 +52,12 @@ export default {
         'nav-items',
         { 'hidden': !this.isMenuOpen, 'block': this.isMenuOpen, 'animate__animated animate__fadeInRight': this.isMenuOpen }
       ];
+    },
+    navLinkClass() {
+      return (path) => ({
+        'nav-link-active': this.$route.path === path,
+        'animate__animated animate__pulse': this.bouncingLink === path
+      });
     }
   },
   methods: {
@@ -60,12 +66,6 @@ export default {
     },
     deactivateBounce() {
       this.bouncingLink = '';
-    },
-    navLinkClass(path) {
-      return {
-        'nav-link-active': this.$route.path === path,
-        'animate__animated animate__pulse': this.bouncingLink === path
-      };
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
@@ -109,6 +109,7 @@ export default {
   },
 };
 </script>
+
 
     
 <style>
