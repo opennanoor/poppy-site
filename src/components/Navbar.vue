@@ -13,29 +13,28 @@
           height="34"></image>
       </svg>
       <div data-aos="fade-down">
-        <div
-          :class="['nav-items', { 'hidden': !isMenuOpen, 'block': isMenuOpen, 'animate__animated animate__fadeInRight': isMenuOpen }]">
-          <router-link to="/about" class="nav-link" :class="navLinkClass('/about')" @mouseover="activateBounce('/about')"
-            @mouseout="deactivateBounce('/about')" @click="closeMenu">About</router-link>
-          <router-link to="/tokenomics" class="nav-link" :class="navLinkClass('/tokenomics')"
-            @mouseover="activateBounce('/tokenomics')" @mouseout="deactivateBounce('/tokenomics')"
-            @click="closeMenu">Tokenomics</router-link>
-          <router-link to="/tokenomics" class="nav-link" :class="navLinkClass('/tokenomics')"
-            @mouseover="activateBounce('/tokenomics')" @mouseout="deactivateBounce('/tokenomics')" @click="closeMenu">How
-            to buy</router-link>
-          <router-link to="/whitepaper" class="nav-link" :class="navLinkClass('/whitepaper')"
-            @mouseover="activateBounce('/whitepaper')" @mouseout="deactivateBounce('/whitepaper')"
-            @click="closeMenu">Whitepaper</router-link>
+        <div :class="navItemsClass">
+          <router-link v-for="link in links" :key="link.path" :to="link.path" class="nav-link"
+            :class="navLinkClass(link.path)" @mouseover="activateBounce(link.path)" @mouseout="deactivateBounce"
+            @click="closeMenu">
+            {{ link.name }}
+          </router-link>
         </div>
       </div>
     </nav>
   </header>
 </template>
 
+
 <script>
 export default {
   data() {
     return {
+      links: [
+        { path: '/about', name: 'About' },
+        { path: '/tokenomics', name: 'Tokenomics' },
+        { path: '/whitepaper', name: 'Whitepaper' },
+      ],
       isMenuOpen: false,
       scrolled: false,
       logoImages: [

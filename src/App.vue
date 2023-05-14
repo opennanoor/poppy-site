@@ -260,4 +260,5 @@ header:before {
   color: white;
   /* Set the text color */
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-}</style>
+}
+</style>
