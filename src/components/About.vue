@@ -4,9 +4,10 @@
       <span class="typed-text poppyText outlined-text" :style="{ fontSize: fontSize + 'rem' }">Coming soon...</span>
     </h2>
     <div class="shadow-box">
-           <div id="typedTextAbout" class="typed-text outlined-text"></div>
-           <div class="image-text-wrapper">
-           <img :key="imageKey" :src="currentImage" style="opacity: 0.5;" class="revolutionary-image animate__animated animate__fadeIn" alt="Revolutionary Image"/>
+      <div id="typedTextAbout" class="typed-text outlined-text"></div>
+      <div class="image-text-wrapper">
+        <img :key="imageKey" :src="currentImage" style="opacity: 0.5;"
+          class="revolutionary-image animate__animated animate__fadeIn" alt="Revolutionary Image" />
       </div>
     </div>
     <div class="svg-section">
@@ -80,7 +81,8 @@ export default {
 .image-text-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Distribute items equally */
+  justify-content: space-between;
+  /* Distribute items equally */
 }
 
 .revolutionary-image {
@@ -88,7 +90,8 @@ export default {
   height: auto;
   max-width: 200px;
   object-fit: cover;
-  margin-left: 20px; /* Margin from the text */
+  margin-left: 20px;
+  /* Margin from the text */
 }
 
 .shadow-box {
@@ -144,26 +147,27 @@ export default {
 
 @media screen and (max-width: 640px) {
   .image-text-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.revolutionary-image {
-  width: 100%;
-  height: auto;
-  max-width: 200px;
-  object-fit: cover;
-  margin: 0 auto;
-}
-.shadow-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  box-sizing: border-box;
-}
+  .revolutionary-image {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .shadow-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 
   .svg-section {
     flex-direction: column;
@@ -181,6 +185,5 @@ export default {
 }
 
 /* Rest of your styles... */
-
 </style>
 
