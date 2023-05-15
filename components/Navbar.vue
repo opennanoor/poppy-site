@@ -6,11 +6,8 @@
       <div class="logo-container">
         <img :src="currentLogo" alt="Logo" :class="{ 'logo': true }">
       </div>
-      <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu" xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round">
-        <image href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg" x="0" y="0" width="34"
-          height="34"></image>
+      <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu">
+        <Icon name="uil:github" color="black" />
       </svg>
       <div data-aos="fade-down">
         <div :class="getNavItemsClass">
@@ -229,6 +226,7 @@ nav {
   left: 0;
   transform: rotate(0deg);
   transition: .25s ease-in-out;
+  pointer-events: none;
 }
 
 .hamburger span:nth-child(1) {
@@ -294,54 +292,49 @@ nav {
 
 @media screen and (max-width: 849px) {
   .hamburger {
+    z-index: 9999;
     display: visible;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    right: 1rem;
+    /* Adjust the value as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    /* Add this line */
   }
 
   .nav-items {
-    width: 80%;
-    height: calc(100vh - 4rem);
+    width: 100%;
+    height: 100vh;
     display: none;
     flex-direction: column;
-    right: -75%;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    top: 5.5rem;
-    left: 25%;
-    padding-top: 2rem;
-    background-color: #005bd1ea;
+    top: 0;
+    padding-top: 5.5rem;
+    background-color: #005bd1;
     overflow-y: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    /* Add a box-shadow for the nav bar */
-  }
-
-  .nav-items .nav-link {
-    position: relative;
-    margin-bottom: 1rem;
-    /* Adjust the value to increase or decrease the spacing between items */
-  }
-
-  .nav-items .nav-link::after {
-    content: "";
-    position: absolute;
+    z-index: 999;
     left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 2px;
-    background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-    /* Add a box-shadow for the underline */
-    transform: scaleX(0);
-    transition: transform 0.2s ease-in-out;
   }
+
 
   .nav-items .nav-link:hover::after {
     transform: scaleX(1);
+    transition: transform 0.2s ease-in-out;
+    /* Add back the transition only for hover state */
   }
 
   .nav-items.block {
     display: flex;
-    right: 0;
   }
 }
+
 
 .nav-link-active {
   color: rgb(0, 98, 239);

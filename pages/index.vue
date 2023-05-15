@@ -6,34 +6,28 @@ import Whitepaper from '../components/Whitepaper.vue'
 </script>
 <template>
     <body>
-        <div class="custom-cursor">
-            <Navbar />
-            <main>
-                <section id="About" class="section">
-                    <div data-aos="fade-down-right">
-                        <About />
-                    </div>
-                </section>
-                <section id="Tokenomics" class="section">
-                    <div data-aos="fade-down-right">
-                        <Tokenomics />
-                    </div>
-                </section>
-                <section id="Whitepaper" class="section">
-                    <div data-aos="fade-down-left ">
-                        <Whitepaper />
-                    </div>
-                </section>
-            </main>
-        </div>
+        <Navbar />
+        <main>
+            <section id="About" class="section">
+                <div data-aos="fade-down-right">
+                    <About />
+                </div>
+            </section>
+            <section id="Tokenomics" class="section">
+                <div data-aos="fade-down-right">
+                    <Tokenomics />
+                </div>
+            </section>
+            <section id="Whitepaper" class="section">
+                <div data-aos="fade-down-left ">
+                    <Whitepaper />
+                </div>
+            </section>
+        </main>
     </body>
 </template>
   
 <style>
-.custom-cursor {
-    cursor: url(/img/chars/cursor.png), auto;
-}
-
 .about-container {
     display: flex;
     flex-direction: column;
