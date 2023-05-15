@@ -1,3 +1,4 @@
+
 <template>
   <header :class="scrolled ? 'header-scrolled' : 'header-top'">
     <nav class="flex items-center justify-between h-16 px-4 sm:px-0 outlined-text" role="navigation"
@@ -13,24 +14,36 @@
       </svg>
       <div data-aos="fade-down">
         <div :class="getNavItemsClass">
-          <NuxtLink :to="{ path: '/', hash: '#' + link.name }" v-for="link in links" class="nav-link" @click="closeMenu">
+          <NuxtLink :to="{ path: '/', hash: '#' + link.name }" v-for="link in links" class="nav-link"
+            :class="{ 'nav-link-active': activeLink === link.name }" @click="closeMenu">
             {{ link.name }}
           </NuxtLink>
+
         </div>
       </div>
     </nav>
   </header>
 </template>
 
-
 <script setup>
-import { ref, reactive, onMounted, onBeforeUnmount, computed } from 'vue'
+import { ref, reactive, onMounted, onBeforeUnmount, computed, watch, nextTick } from 'vue'
+
+const debounce = (func, delay) => {
+  let debounceTimer;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+  }
+}
 
 const isMenuOpen = ref(false)
 const scrolled = ref(false)
 const logoImages = ref(["/images/logo.webp", "/images/logo1.webp"])
-const currentLogo = ref("/img/logo.webp")
+const currentLogo = ref("/images/logo.webp")
 const intervalId = ref(null)
+const activeLink = ref(null)
 
 const links = reactive([
   { path: '/about', name: 'About' },
@@ -46,18 +59,20 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
-const handleScroll = () => {
+const handleScroll = debounce(() => {
   requestAnimationFrame(() => {
     scrolled.value = window.scrollY > 0
   })
-}
+}, 100)
 
 const handleClickOutside = (e) => {
-  const menu = document.querySelector('.nav-items')
-  const button = document.querySelector('.hamburger')
-  if (!menu.contains(e.target) && !button.contains(e.target)) {
-    closeMenu()
-  }
+  nextTick(() => {
+    const menu = document.querySelector('.nav-items')
+    const button = document.querySelector('.hamburger')
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+      closeMenu()
+    }
+  })
 }
 
 const startLogoTransition = () => {
@@ -82,28 +97,53 @@ const getNavItemsClass = computed(() => {
     }
   ]
 })
-watch(isMenuOpen, (newVal, oldVal) => {
-  if (newVal !== oldVal && !newVal) {
-    closeMenu();
-  }
-});
+
+let stopWatchIsMenuOpen;
+let observer;
 
 onMounted(() => {
+  stopWatchIsMenuOpen = watch(isMenuOpen, (newVal, oldVal) => {
+    if (newVal !== oldVal && !newVal) {
+      closeMenu();
+    }
+  });
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activeLink.value = entry.target.id
+      }
+    })
+  }, {
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0
+  })
+
+  links.forEach(link => {
+    const element = document.getElementById(link.name)
+    if (element) {
+      observer.observe(element)
+    }
+  })
+
   logoImages.value.forEach((logoImage) => {
     const img = new Image();
     img.src = logoImage;
   });
 
-  changeLogoImage(); // Change the logo immediately on mount
   startLogoTransition()
   window.addEventListener('scroll', handleScroll)
   document.addEventListener('click', handleClickOutside)
 })
 
 onBeforeUnmount(() => {
+  stopWatchIsMenuOpen();
   window.removeEventListener('scroll', handleScroll)
   document.removeEventListener('click', handleClickOutside)
   stopLogoTransition()
+  if (observer) {
+    observer.disconnect()
+  }
 })
 </script>
 
@@ -133,6 +173,10 @@ onBeforeUnmount(() => {
 }
 
 .nav-link:hover {
+  color: rgb(0, 98, 239);
+}
+
+.nav-link:active {
   color: rgb(0, 98, 239);
 }
 
