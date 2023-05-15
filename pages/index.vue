@@ -1,8 +1,8 @@
 <script setup>
-import Navbar from './_routes/Navbar.vue'
-import About from './_routes/About.vue'
-import Tokenomics from './_routes/Tokenomics.vue'
-import Whitepaper from './_routes/Whitepaper.vue'
+import Navbar from '../components/Navbar.vue'
+import About from '../components/About.vue'
+import Tokenomics from '../components/Tokenomics.vue'
+import Whitepaper from '../components/Whitepaper.vue'
 </script>
 <template>
     <body>
