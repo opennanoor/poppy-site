@@ -4,10 +4,10 @@
     <nav class="flex items-center justify-between h-16 px-4 sm:px-0 outlined-text" role="navigation"
       aria-label="Main Navigation">
       <div class="logo-container">
-        <img :src="currentLogo" alt="Logo" :class="{ 'logo': true }">
+        <nuxt-img :src="currentLogo" alt="Logo" :class="{ 'logo': true }" />
       </div>
       <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu">
-        <Icon name="uil:github" color="black" />
+        <Icon name="ion:navicon-round" size=48 color="white" />
       </svg>
       <div data-aos="fade-down">
         <div :class="getNavItemsClass">
@@ -15,7 +15,17 @@
             :class="{ 'nav-link-active': activeLink === link.name }" @click="closeMenu">
             {{ link.name }}
           </NuxtLink>
-
+          <div class="social-icons-mobile">
+            <a href="#">
+              <Icon name="ion:logo-facebook" size=48 color="white" />
+            </a>
+            <a href="#">
+              <Icon name="ion:logo-twitter" size=48 color="white" />
+            </a>
+            <a href="#">
+              <Icon name="ion:logo-instagram" size=48 color="white" />
+            </a>
+          </div>
         </div>
       </div>
     </nav>
@@ -146,6 +156,11 @@ onBeforeUnmount(() => {
 
 
 <style>
+.social-icon:hover svg {
+  fill: red;
+  /* Replace "red" with the desired color */
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -170,11 +185,7 @@ onBeforeUnmount(() => {
 }
 
 .nav-link:hover {
-  color: rgb(0, 98, 239);
-}
-
-.nav-link:active {
-  color: rgb(0, 98, 239);
+  color: rgb(239, 135, 0);
 }
 
 nav {
@@ -277,7 +288,17 @@ nav {
   right: 0;
 }
 
+.social-icons-mobile {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
 @media screen and (min-width: 850px) {
+  .social-icons-mobile {
+    display: none;
+  }
+
   .hamburger {
     display: none;
   }
@@ -291,12 +312,35 @@ nav {
 }
 
 @media screen and (max-width: 849px) {
+  .social-icons-mobile a {
+    margin: 0 10px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+  }
+
   .hamburger {
     z-index: 9999;
     display: visible;
     cursor: pointer;
-    width: 30px;
-    height: 22px;
+    width: 48px;
+    height: 48px;
     position: absolute;
     right: 1rem;
     /* Adjust the value as needed */
@@ -306,22 +350,30 @@ nav {
     /* Add this line */
   }
 
+  .nav-link {
+    font-size: 4rem;
+  }
+
   .nav-items {
     width: 100%;
     height: 100vh;
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: fixed;
     top: 0;
-    padding-top: 5.5rem;
-    background-color: #005bd1;
+    /* Change to 50% */
+    transform: translateY(-50%);
+    /* Add this line */
+    padding-top: 40%;
+    background-color: #c4a80eef;
     overflow-y: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 999;
     left: 0;
   }
+
 
 
   .nav-items .nav-link:hover::after {
@@ -337,6 +389,6 @@ nav {
 
 
 .nav-link-active {
-  color: rgb(0, 98, 239);
+  color: rgb(239, 135, 0);
 }
 </style>

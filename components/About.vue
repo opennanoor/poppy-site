@@ -6,26 +6,26 @@
     <div class="shadow-box">
       <div id="typedTextAbout" class="typed-text outlined-text"></div>
       <div class="image-text-wrapper">
-        <img :key="imageKey" :src="currentImage" style="opacity: 0.5;"
+        <nuxt-img :key="imageKey" :src="currentImage" style="opacity: 0.5;"
           class="revolutionary-image animate__animated animate__fadeIn" alt="Revolutionary Image" />
       </div>
     </div>
     <div class="svg-section">
       <div class="svg-wrapper">
         <div class="circle">
-          <img src="/images/discord.svg" alt="Image 1" class="svg-image animate__animated animate__bounce">
+          <nuxt-img src="/images/discord.svg" alt="Image 1" class="svg-image animate__animated animate__bounce" />
         </div>
         <span class="svg-text typed-text outlined-text">Discord</span>
       </div>
       <div class="svg-wrapper">
         <div class="circle">
-          <img src="/images/telegram.svg" alt="Image 2" class="svg-image animate__animated animate__bounce">
+          <nuxt-img src="/images/telegram.svg" alt="Image 2" class="svg-image animate__animated animate__bounce" />
         </div>
         <span class="svg-text typed-text outlined-text">Telegram</span>
       </div>
       <div class="svg-wrapper">
         <div class="circle">
-          <img src="/images/uniswap.svg" alt="Image 3" class="svg-image animate__animated animate__bounce">
+          <nuxt-img src="/images/uniswap.svg" alt="Image 3" class="svg-image animate__animated animate__bounce" />
         </div>
         <span class="svg-text typed-text outlined-text">Uniswap</span>
       </div>
