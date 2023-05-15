@@ -47,8 +47,8 @@ const debounce = (func, delay) => {
 
 const isMenuOpen = ref(false)
 const scrolled = ref(false)
-const logoImages = ref(["/images/logo.webp", "/images/logo1.webp"])
-const currentLogo = ref("/images/logo.webp")
+const currentLogo = ref("/images/logo.webp");
+const logoImages = ref(["/images/logo.webp", "/images/logo1.webp"]);
 const intervalId = ref(null)
 const activeLink = ref(null)
 
