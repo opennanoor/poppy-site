@@ -3,6 +3,8 @@ import 'animate.css';
 import Index from './pages/index.vue'
 </script>
 <template>
+  <Html lang="en">
+
   <Head>
     <Meta charset="UTF-8" />
     <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,4 +19,6 @@ import Index from './pages/index.vue'
   <ClientOnly>
     <Index />
   </ClientOnly>
+
+  </Html>
 </template>
