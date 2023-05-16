@@ -152,17 +152,31 @@ body {
     /* So it doesn't interfere with interactions */
 }
 
-.header-scrolled::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #353535ab;
-    ;
-    pointer-events: none;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+@media screen and (min-width: 849px) {
+    .header-scrolled::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #353535ab;
+        ;
+        pointer-events: none;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width: 849px) and (orientation: landscape) {
+    .header-scrolled::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff00;
+    }
 }
 
 /* Navbar styles */

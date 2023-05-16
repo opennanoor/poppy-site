@@ -73,7 +73,7 @@ const handleScroll = debounce(() => {
   requestAnimationFrame(() => {
     scrolled.value = window.scrollY > 0
   })
-}, 100)
+})
 
 const handleClickOutside = (e) => {
   nextTick(() => {
@@ -184,6 +184,12 @@ onBeforeUnmount(() => {
   margin-right: 10px;
   /* Adjust the margin as needed */
   z-index: 10000;
+}
+
+@media screen and (max-width: 849px) and (orientation: landscape) {
+  .logo {
+    display: none;
+  }
 }
 
 .active {
@@ -369,20 +375,21 @@ nav {
     height: 100vh;
     display: none;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    /* Adjust this from flex-start to center */
     align-items: center;
     position: fixed;
     top: 0;
-    /* Change to 50% */
-    transform: translateY(-50%);
-    /* Add this line */
-    padding-top: 40%;
+    /* Let's keep this as 0 */
+    padding-top: 0;
+    /* Adjust the padding as necessary, but initially setting it to 0 */
     background-color: #c4a80eef;
     overflow-y: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 999;
     left: 0;
   }
+
 
 
 

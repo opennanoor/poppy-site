@@ -3,8 +3,6 @@ import 'animate.css';
 import Index from './pages/index.vue'
 </script>
 <template>
-  <Html lang="en">
-
   <Head>
     <Meta charset="UTF-8" />
     <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,11 +12,9 @@ import Index from './pages/index.vue'
     <Meta name="author" content="Poppy Token" />
     <Meta name="robots" content="index, follow" />
     <Meta property="og:title" content="Poppy Token" />
-    <Meta property="og:description" content="Poppy Token is a community driven token on the Binance Smart Chain." />
+    <Meta property="og:description" content="Poppy Token is a community driven token on Ethereum network." />
   </Head>
   <ClientOnly>
     <Index />
   </ClientOnly>
-
-  </Html>
 </template>
