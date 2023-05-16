@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, onBeforeUnmount, computed, watch, nextTick } from 'vue'
+import { ref, reactive, onMounted, onBeforeUnmount, computed, watch, nextTick, watchEffect } from 'vue'
 
 const debounce = (func, delay) => {
   let debounceTimer;
@@ -46,6 +46,7 @@ const debounce = (func, delay) => {
   }
 }
 
+const titlePrefix = ref("Poppy - ")
 const isMenuOpen = ref(false)
 const scrolled = ref(false)
 const currentLogo = ref("/images/logo.png");
@@ -113,6 +114,12 @@ onMounted(() => {
   stopWatchIsMenuOpen = watch(isMenuOpen, (newVal, oldVal) => {
     if (newVal !== oldVal && !newVal) {
       closeMenu();
+    }
+  });
+
+  watchEffect(() => {
+    if (activeLink.value) {
+      document.title = titlePrefix.value + activeLink.value;
     }
   });
 
