@@ -186,12 +186,6 @@ onBeforeUnmount(() => {
   z-index: 10000;
 }
 
-@media screen and (max-width: 849px) and (orientation: landscape) {
-  .logo {
-    display: none;
-  }
-}
-
 .active {
   opacity: 1;
 }
@@ -328,6 +322,10 @@ nav {
 }
 
 @media screen and (max-width: 849px) {
+  .logo {
+    display: none;
+  }
+
   .social-icons-mobile a {
     margin: 0 10px;
   }

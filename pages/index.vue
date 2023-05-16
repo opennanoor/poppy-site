@@ -165,6 +165,19 @@ body {
         pointer-events: none;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
     }
+
+    header:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 91, 209, 0.219);
+        /* Adjust the color and opacity as needed */
+        pointer-events: none;
+        /* So it doesn't interfere with interactions */
+    }
 }
 
 @media screen and (max-width: 849px) and (orientation: landscape) {
@@ -189,18 +202,6 @@ header {
     padding-top: 25px;
 }
 
-header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 91, 209, 0.219);
-    /* Adjust the color and opacity as needed */
-    pointer-events: none;
-    /* So it doesn't interfere with interactions */
-}
 
 /* Section styles */
 .section {
