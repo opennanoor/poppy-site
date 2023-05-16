@@ -6,7 +6,7 @@
     <div class="shadow-box">
       <div id="typedTextAbout" class="typed-text outlined-text"></div>
       <div class="image-text-wrapper">
-        <nuxt-img :key="imageKey" :src="currentImage" style="opacity: 0.5;"
+        <nuxt-img :key="imageKey" :src="currentImage" width="200px" height="200px"
           class="revolutionary-image animate__animated animate__fadeIn" alt="Revolutionary Image" />
       </div>
     </div>

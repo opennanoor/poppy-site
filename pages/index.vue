@@ -130,7 +130,7 @@ import Whitepaper from '../components/Whitepaper.vue'
 
 
 body {
-    background-image: url('https://cdn.discordapp.com/attachments/1106185526584823918/1107407824998379520/animegan_toon_ezgifcom-webp-to-png_1684096940261.png');
+    background-image: url('/images/bg.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

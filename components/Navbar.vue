@@ -4,7 +4,7 @@
     <nav class="flex items-center justify-between h-16 px-4 sm:px-0 outlined-text" role="navigation"
       aria-label="Main Navigation">
       <div class="logo-container">
-        <nuxt-img :src="currentLogo" alt="Logo" :class="{ 'logo': true }" />
+        <nuxt-img :src="currentLogo" format="webp" sizes="sm:100px md:50vw lg:164px" :class="{ 'logo': true }" />
       </div>
       <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu">
         <Icon name="ion:navicon-round" size=48 color="white" />
@@ -47,8 +47,8 @@ const debounce = (func, delay) => {
 
 const isMenuOpen = ref(false)
 const scrolled = ref(false)
-const currentLogo = ref("/images/logo.webp");
-const logoImages = ref(["/images/logo.webp", "/images/logo1.webp"]);
+const currentLogo = ref("/images/logo.png");
+const logoImages = ref(["/images/logo.png", "/images/logo1.png"]);
 const intervalId = ref(null)
 const activeLink = ref(null)
 
