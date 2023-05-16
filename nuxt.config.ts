@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     { src: "/plugins/router.scrollBehaviour.ts", ssr: false, mode: "client" }
     ],
 
-    modules: ['nuxt-icon', '@nuxt/image-edge'],
+    modules: ['nuxt-icon', '@nuxt/image-edge', '@nuxtjs/robots'],
 
     image: {
         provider: 'netlify',

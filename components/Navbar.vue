@@ -4,7 +4,8 @@
     <nav class="flex items-center justify-between h-16 px-4 sm:px-0 outlined-text" role="navigation"
       aria-label="Main Navigation">
       <div class="logo-container">
-        <nuxt-img :src="currentLogo" format="webp" sizes="sm:100px md:50vw lg:164px" :class="{ 'logo': true }" />
+        <nuxt-img :src="currentLogo" format="webp" sizes="sm:100px md:50vw lg:164px" alt="PoppyToken logo"
+          :class="{ 'logo': true }" />
       </div>
       <svg class="hamburger" :class="{ 'is-active': isMenuOpen }" @click="toggleMenu">
         <Icon name="ion:navicon-round" size=48 color="white" />
