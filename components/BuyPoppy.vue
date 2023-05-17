@@ -27,8 +27,6 @@
             </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
-                Get a wallet
-
                 Go to Uniswap
 
                 connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app.
@@ -76,7 +74,6 @@
 }
 
 .box-image {
-    display: hidden;
     position: absolute;
     left: 10px;
     /* Adjust as needed */
@@ -118,5 +115,26 @@
     border-radius: 50%;
     background: rgb(31, 31, 31);
     text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .box-image {
+        display: none;
+        padding-left: 0;
+        left: 0;
+    }
+
+    .box-content {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .step {
+        left: calc(50% - 35px);
+        /* Adjust the value to center the circle horizontally */
+        transform: none;
+        /* Reset the transform */
+    }
 }
 </style>

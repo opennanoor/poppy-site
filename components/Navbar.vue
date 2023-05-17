@@ -16,15 +16,16 @@
             :class="{ 'nav-link-active': activeLink === link.sectionId }" @click="closeMenu">
             {{ link.name }}
           </NuxtLink>
+
           <div class="social-icons-mobile">
             <a href="#">
-              <Icon name="ion:logo-facebook" size=48 color="white" />
+              <Icon name="line-md:discord" size=48 color="white" />
             </a>
             <a href="#">
-              <Icon name="ion:logo-twitter" size=48 color="white" />
+              <Icon name="line-md:twitter" size=48 color="white" />
             </a>
             <a href="#">
-              <Icon name="ion:logo-instagram" size=48 color="white" />
+              <Icon name="line-md:telegram" size=48 color="white" />
             </a>
           </div>
         </div>
