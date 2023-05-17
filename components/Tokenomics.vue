@@ -12,7 +12,6 @@
 <style>
 .shadow-box {
   background-color: rgba(0, 0, 0, 0.726);
-  box-shadow: 0px 0px 5px rgb(0, 0, 0), 0px 0px 10px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.548);
   border-top-left-radius: 50px;
   border-top-right-radius: 5px;
@@ -22,7 +21,6 @@
   width: 100%;
   /* Full width */
   max-width: 850px;
-  max-width: auto;
   box-sizing: border-box;
   /* Include padding and border in element's total width and height */
 }

@@ -12,8 +12,8 @@
       </svg>
       <div data-aos="fade-down">
         <div :class="getNavItemsClass">
-          <NuxtLink :to="{ path: '/', hash: '#' + link.name }" v-for="link in links" class="nav-link"
-            :class="{ 'nav-link-active': activeLink === link.name }" @click="closeMenu">
+          <NuxtLink :to="{ path: '/', hash: '#' + link.sectionId }" v-for="link in links" class="nav-link"
+            :class="{ 'nav-link-active': activeLink === link.sectionId }" @click="closeMenu">
             {{ link.name }}
           </NuxtLink>
           <div class="social-icons-mobile">
@@ -56,10 +56,10 @@ const intervalId = ref(null)
 const activeLink = ref(null)
 
 const links = reactive([
-  { path: '/about', name: 'About' },
-  { path: '/tokenomics', name: 'Tokenomics' },
-  { path: '/whitepaper', name: 'Whitepaper' },
-])
+  { sectionId: 'about', name: 'About' },
+  { sectionId: 'buy-poppy', name: 'How to buy' },
+  { sectionId: 'tokenomics', name: 'Tokenomics' },
+  { sectionId: 'whitepaper', name: 'Whitepaper' }])
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -136,7 +136,7 @@ onMounted(() => {
   })
 
   links.forEach(link => {
-    const element = document.getElementById(link.name)
+    const element = document.getElementById(link.sectionId)
     if (element) {
       observer.observe(element)
     }
@@ -166,6 +166,69 @@ onBeforeUnmount(() => {
 
 
 <style>
+.header-top:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 91, 209, 0);
+  /* Adjust the color and opacity as needed */
+  pointer-events: none;
+  /* So it doesn't interfere with interactions */
+}
+
+@media screen and (min-width: 849px) {
+  .header-scrolled::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #353535ab;
+    ;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 91, 209, 0.219);
+    /* Adjust the color and opacity as needed */
+    pointer-events: none;
+    /* So it doesn't interfere with interactions */
+  }
+}
+
+@media screen and (max-width: 849px) and (orientation: landscape) {
+  .header-scrolled::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff00;
+  }
+}
+
+/* Navbar styles */
+header {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 25px;
+}
+
 .social-icon:hover svg {
   fill: red;
   /* Replace "red" with the desired color */
@@ -217,6 +280,8 @@ nav {
   font-weight: bold;
   color: #fff;
   cursor: pointer;
+  white-space: nowrap;
+  /* Add this line */
   font-family: 'Poppy Font Frompoppyplaytime';
   /* Use the 'Michroma' font, falling back to Sans-serif */
   z-index: 999;
@@ -304,7 +369,7 @@ nav {
   padding: 20px 0;
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 970px) {
   .social-icons-mobile {
     display: none;
   }
@@ -321,7 +386,7 @@ nav {
   }
 }
 
-@media screen and (max-width: 849px) {
+@media screen and (max-width: 970px) {
   .logo {
     display: none;
   }

@@ -1,6 +1,7 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import About from '../components/About.vue'
+import BuyPoppy from '../components/BuyPoppy.vue'
 import Tokenomics from '../components/Tokenomics.vue'
 import Whitepaper from '../components/Whitepaper.vue'
 </script>
@@ -8,17 +9,22 @@ import Whitepaper from '../components/Whitepaper.vue'
     <body>
         <Navbar />
         <main>
-            <section id="About" class="section">
+            <section id="about" class="section">
                 <div data-aos="fade-down-right">
                     <About />
                 </div>
             </section>
-            <section id="Tokenomics" class="section">
+            <section id="buy-poppy" class="section">
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">
+                    <BuyPoppy />
+                </div>
+            </section>
+            <section id="tokenomics" class="section">
                 <div data-aos="fade-down-right">
                     <Tokenomics />
                 </div>
             </section>
-            <section id="Whitepaper" class="section">
+            <section id="whitepaper" class="section">
                 <div data-aos="fade-down-left ">
                     <Whitepaper />
                 </div>
@@ -138,70 +144,6 @@ body {
     overflow-x: hidden;
     overflow-x: hidden;
 }
-
-.header-top:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 91, 209, 0);
-    /* Adjust the color and opacity as needed */
-    pointer-events: none;
-    /* So it doesn't interfere with interactions */
-}
-
-@media screen and (min-width: 849px) {
-    .header-scrolled::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: #353535ab;
-        ;
-        pointer-events: none;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    header:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 91, 209, 0.219);
-        /* Adjust the color and opacity as needed */
-        pointer-events: none;
-        /* So it doesn't interfere with interactions */
-    }
-}
-
-@media screen and (max-width: 849px) and (orientation: landscape) {
-    .header-scrolled::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: #ffffff00;
-    }
-}
-
-/* Navbar styles */
-header {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 25px;
-}
-
 
 /* Section styles */
 .section {
