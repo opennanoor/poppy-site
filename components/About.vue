@@ -1,101 +1,51 @@
 <template>
-  <div class="about-content">
-    <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
-      <span class="typed-text poppyText outlined-text" style="font-size:3rem">About $Poppy</span>
-    </h2>
-    <div class="shadow-box">
-      <div id="typedTextAbout" class="typed-text outlined-text"></div>
-      <div class="image-text-wrapper">
-        <nuxt-img :key="imageKey" :src="currentImage" width="200px" height="200px"
-          class="revolutionary-image animate__animated animate__fadeIn" alt="Revolutionary Image" />
-      </div>
+  <div class="image-section">
+    <img class="revolutionary-image"
+      src="https://cdn.discordapp.com/attachments/1107007792033828924/1108493765292871710/07f41dffdad45c7d548681cbf9376416.png"
+      alt="Poppy Image">
+  </div>
+  <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
+    <span class="typed-text poppyText outlined-text" style="font-size:3rem">About $Poppy</span>
+  </h2>
+  <div class="shadow-box">
+    <span class="typed-text outlined-text">Please note that $Poppy Token has no affiliation with the game Poppy Playtime
+      or its creators. This token is
+      simply paying homage to the popular game we all love and recognize. $Poppy Token is a game-inspired coin with no
+      intrinsic value or expectation of financial return. There is no formal team or roadmap. The token holds no
+      practical use and is solely for entertainment purposes.</span>
+  </div>
+  <div class="svg-section">
+    <div class="svg-wrapper">
+      <Icon name="line-md:discord" size=72 color="white" />
+      <span class="svg-text typed-text outlined-text">Discord</span>
     </div>
-    <div class="svg-section">
-      <div class="svg-wrapper">
-        <div class="circle">
-          <nuxt-img src="/images/discord.svg" alt="Image 1" class="svg-image animate__animated animate__bounce" />
-        </div>
-        <span class="svg-text typed-text outlined-text">Discord</span>
-      </div>
-      <div class="svg-wrapper">
-        <div class="circle">
-          <nuxt-img src="/images/telegram.svg" alt="Image 2" class="svg-image animate__animated animate__bounce" />
-        </div>
-        <span class="svg-text typed-text outlined-text">Telegram</span>
-      </div>
-      <div class="svg-wrapper">
-        <div class="circle">
-          <nuxt-img src="/images/uniswap.svg" alt="Image 3" class="svg-image animate__animated animate__bounce" />
-        </div>
-        <span class="svg-text typed-text outlined-text">Uniswap</span>
-      </div>
+    <div class="svg-wrapper">
+      <Icon name="line-md:twitter" size=72 color="white" />
+      <span class="svg-text typed-text outlined-text">Telegram</span>
+    </div>
+    <div class="svg-wrapper">
+      <Icon name="line-md:telegram" size=72 color="white" />
+      <span class="svg-text typed-text outlined-text">Uniswap</span>
     </div>
   </div>
 </template>
-<script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
-import Typed from 'typed.js'
-
-const images = ref([
-  '/images/chars/16_Mommy_long_legs.png',
-  '/images/chars/16_Mommy_long_legs.png',
-  '/images/chars/16_Mommy_long_legs.png'
-])
-
-const currentImage = ref(images.value[0])
-const imageKey = ref(0) // a key for forcing the re-rendering of the img tag
-let imageIndex = 0
-let intervalId
-
-onMounted(async () => {
-  // Wait until the next DOM update cycle before trying to access #typedTextAbout
-  await nextTick()
-
-  const typedElement = document.querySelector('#typedTextAbout')
-  if (typedElement) {
-    new Typed(typedElement, {
-      //strings: ["$Poppy meets Ethereum! <br> Hop on and ride the joyful, community-driven Poppy wave!"],
-      strings: ["$Poppy meets Ethereum! The strange and exciting decentralized crypto project."],
-      typeSpeed: 0,
-    })
-  } else {
-    console.error('Could not find #typedTextAbout element')
-  }
-
-  // Pre-load images
-  images.value.forEach(image => {
-    const img = new Image()
-    img.src = image
-  })
-
-  intervalId = setInterval(() => {
-    imageIndex = (imageIndex + 1) % images.value.length
-    currentImage.value = images.value[imageIndex]
-    imageKey.value++ // increment the key each time we change the image
-  }, 5000)
-})
-
-onUnmounted(() => {
-  clearInterval(intervalId)
-})
-</script>
-
 
 <style>
-.image-text-wrapper {
+.displayIcon {
+  display: inline-block;
+  /* Ensure the icon is displayed as an inline element */
+}
+
+.image-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* Distribute items equally */
+  justify-content: center;
 }
 
 .revolutionary-image {
-  width: auto;
+  width: 50%;
   height: auto;
-  max-width: 200px;
   object-fit: cover;
-  margin-left: 20px;
-  /* Margin from the text */
 }
 
 .shadow-box {
@@ -125,10 +75,11 @@ onUnmounted(() => {
 
 .svg-section {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  /* Ensure the section covers the full height of the viewport */
 }
+
 
 .svg-wrapper {
   display: flex;
@@ -150,6 +101,11 @@ onUnmounted(() => {
 }
 
 @media screen and (max-width: 640px) {
+  .svg-wrapper {
+    display: none;
+    /* Hide the icon on small screens */
+  }
+
   .image-text-wrapper {
     display: flex;
     align-items: center;

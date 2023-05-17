@@ -11,18 +11,17 @@
 </template>
 <style>
 .shadow-box {
+  display: flex;
+  position: relative;
+  border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.726);
-  border: 1px solid rgba(255, 255, 255, 0.548);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 50px;
+  border: 4px solid rgb(31, 31, 31);
   padding: 20px;
-  width: 100%;
-  /* Full width */
-  max-width: 850px;
+  max-width: 1100px;
+  text-align: center;
   box-sizing: border-box;
   /* Include padding and border in element's total width and height */
+  margin-bottom: 70px;
 }
 
 @media (max-width: 600px) {
