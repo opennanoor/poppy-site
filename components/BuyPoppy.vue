@@ -2,22 +2,37 @@
     <h2 class="about-text animate__animated animate__fadeIn poppyText outlined-text"
         style="animation-duration: 3s;font-size:3rem">How to buy
     </h2>
-    <div class="shadow-box">\
+    <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         <div class="showIcon">
-            <Icon class="box-image icon"
-                name="streamline:money-currency-bitcoin-circle-1-crypto-circle-payment-blockchain-finance-bitcoin-currency-money"
-                size=120 color="white" />
+
+            <Icon class="box-image" name="arcticons:metamask" size=120 color="white" />
         </div>
+
         <div class="box-content">
             <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">1
             </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
-                Get a wallet
-
-                download metamask or your wallet of choice from the app store or google play store for free. Desktop users,
-                download
-                the google chrome extension by going to metamask.io.</p>
+            <h2 class="outlined-text" style="animation-duration: 3s;">Mobile Users
+            </h2>
+            <ol>
+                <li>Visit the App Store or Google Play Store.</li>
+                <li>Search for "MetaMask" or your desired wallet.</li>
+                <li>Download the app for free.</li>
+                <li>Open the app and follow the on-screen instructions to create a wallet.</li>
+            </ol>
+            <h2 class="outlined-text" style="animation-duration: 3s;">Desktop Users
+            </h2>
+            <ol>
+                <li>Open Google Chrome on your computer.</li>
+                <li>Go to metamask.io.</li>
+                <li>Download the Google Chrome extension and follow the setup instructions.</li>
+            </ol>
+            <p class="warning">
+                <Icon name="material-symbols:warning-outline-rounded" size=40 color="red" />
+                Remember to secure your wallet with a strong password and keep backup phrases safe.
+            </p>
+            </p>
         </div>
     </div>
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
@@ -32,11 +47,14 @@
             <ol>
                 <li>Visit Uniswap: Open app.uniswap.org in Google Chrome or in your Metamask app browser.</li>
                 <li>Connect Wallet: Link your digital wallet to Uniswap.</li>
-                <li>Find $POPPY Token: Paste the $POPPY token address into the Uniswap search bar, select "Pepe", and
+                <li>Find $POPPY Token: Paste the $POPPY token address into the Uniswap search bar, select "Poppy", and
                     confirm.</li>
                 <li>Sign the Prompt: When Metamask asks for a wallet signature, sign to confirm.</li>
             </ol>
-            <p class="warning">Remember to ensure the token address is correct before confirming the transaction.</p>
+            <p class="warning">
+                <Icon name="material-symbols:warning-outline-rounded" size=40 color="red" />
+                Remember to ensure the token address is correct before confirming the transaction.
+            </p>
             </p>
         </div>
     </div>
@@ -87,19 +105,29 @@ li {
     counter-increment: item;
     margin-bottom: 10px;
     display: flex;
+    align-items: flex-start;
 }
 
 li:before {
+    content: counter(item) ".";
     margin-right: 10px;
-    content: " - ";
-    font-weight: bold;
-    white-space: nowrap;
+    text-align: left;
+    display: inline-block;
+    min-width: 30px;
+}
+
+li::after {
+    content: '';
+    flex-grow: 1;
 }
 
 .warning {
-    color: red;
+    color: rgb(228, 48, 16);
     font-weight: bold;
 }
+
+
+
 
 .box-content {
     margin-left: 20%;

@@ -11,18 +11,29 @@
 </template>
 <style>
 .shadow-box {
+  font-size: 28px;
+  /* Increase base font size */
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   border-radius: 50px;
-  background-color: rgba(0, 0, 0, 0.726);
-  border: 4px solid rgb(31, 31, 31);
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.815);
+  border: 8px solid rgb(31, 31, 31);
+  padding: 40px;
   max-width: 1100px;
-  text-align: center;
+  text-align: left;
   box-sizing: border-box;
-  /* Include padding and border in element's total width and height */
   margin-bottom: 70px;
+  box-shadow: inset 0px 0px 20px #050505;
+  /* Yellow inner glow */
+  color: #ffffff;
+  /* White text */
+  text-shadow: 2px 2px 5px #000000;
+  /* Heavier black outline */
+  /* Updated font */
 }
+
 
 @media (max-width: 600px) {
   .shadow-box {

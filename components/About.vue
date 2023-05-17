@@ -5,14 +5,20 @@
       alt="Poppy Image">
   </div>
   <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
-    <span class="typed-text poppyText outlined-text" style="font-size:3rem">About $Poppy</span>
+    <span class="typed-text poppyText outlined-text" style="font-size:3rem">$Poppy</span>
   </h2>
   <div class="shadow-box">
-    <span class="typed-text outlined-text">Please note that $Poppy Token has no affiliation with the game Poppy Playtime
-      or its creators. This token is
-      simply paying homage to the popular game we all love and recognize. $Poppy Token is a game-inspired coin with no
-      intrinsic value or expectation of financial return. There is no formal team or roadmap. The token holds no
-      practical use and is solely for entertainment purposes.</span>
+    <span class="typed-text outlined-text">
+      <div class="disclaimer">
+        <p>As an enthusiastic homage to the game we all love - Poppy Playtime - we introduce $Poppy Token.</p>
+        <p>Please be aware that there is no affiliation between $Poppy Token and the game Poppy Playtime or its creators.
+        </p>
+        <p>$Poppy Token is a game-inspired cryptocurrency. However, it holds no intrinsic value or expectation of
+          financial return. It's purely for entertainment purposes.</p>
+        <p>There is no formal team or roadmap, and the token does not have any practical use. Enjoy $Poppy Token as part
+          of your entertainment experience.</p>
+      </div>
+    </span>
   </div>
   <div class="svg-section">
     <div class="svg-wrapper">
@@ -31,6 +37,25 @@
 </template>
 
 <style>
+.disclaimer {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.disclaimer h1 {
+  font-size: 1.5em;
+  color: #ff5252;
+  margin-bottom: 20px;
+}
+
+.disclaimer p {
+  margin-bottom: 20px;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
 .displayIcon {
   display: inline-block;
   /* Ensure the icon is displayed as an inline element */
