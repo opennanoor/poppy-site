@@ -7,7 +7,8 @@
             src="https://static.wixstatic.com/media/1f3f2b_af81019501c549d5b192536bb8680fc5~mv2.png/v1/fill/w_138,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Untitled%20design%20-%202023-03-30T212906_738.png"
             alt="description of image">
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text">1</div>
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">1
+            </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
                 Get a wallet
@@ -17,12 +18,13 @@
                 the google chrome extension by going to metamask.io.</p>
         </div>
     </div>
-    <div class="buy-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">
+    <div class="buy-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         <img class="box-image"
             src="https://static.wixstatic.com/media/1f3f2b_48f30828b7d740d98efb1a2f8febc010~mv2.png/v1/fill/w_138,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Untitled%20design%20-%202023-03-30T213620_680.png"
             alt="description of image">
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text">2</div>
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">2
+            </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
                 Get a wallet
@@ -34,12 +36,13 @@
                 prompts you for a wallet signature, sign.</p>
         </div>
     </div>
-    <div class="buy-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">
+    <div class="buy-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         <img class="box-image"
             src="https://static.wixstatic.com/media/1f3f2b_9d0d4341170c4640b3663065417b3700~mv2.png/v1/fill/w_138,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/uniswap%20(2).png"
             alt="description of image">
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text">3</div>
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">3
+            </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
                 Get a wallet
@@ -49,12 +52,13 @@
                 the google chrome extension by going to metamask.io.</p>
         </div>
     </div>
-    <div class="buy-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">
+    <div class="buy-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         <img class="box-image"
             src="https://static.wixstatic.com/media/1f3f2b_af81019501c549d5b192536bb8680fc5~mv2.png/v1/fill/w_138,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Untitled%20design%20-%202023-03-30T212906_738.png"
             alt="description of image">
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text">4</div>
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">4
+            </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
                 Get a wallet
