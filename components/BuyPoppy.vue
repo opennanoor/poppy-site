@@ -29,11 +29,15 @@
             </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
-                Go to Uniswap
-
-                connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your Metamask app.
-                Connect your wallet. Paste the $PEPE token address into Uniswap, select Pepe, and confirm. When Metamask
-                prompts you for a wallet signature, sign.</p>
+            <ol>
+                <li>Visit Uniswap: Open app.uniswap.org in Google Chrome or in your Metamask app browser.</li>
+                <li>Connect Wallet: Link your digital wallet to Uniswap.</li>
+                <li>Find $POPPY Token: Paste the $POPPY token address into the Uniswap search bar, select "Pepe", and
+                    confirm.</li>
+                <li>Sign the Prompt: When Metamask asks for a wallet signature, sign to confirm.</li>
+            </ol>
+            <p class="warning">Remember to ensure the token address is correct before confirming the transaction.</p>
+            </p>
         </div>
     </div>
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
@@ -46,11 +50,14 @@
             </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 sdata-aos-duration="1000">
-                Get a wallet
-
-                download metamask or your wallet of choice from the app store or google play store for free. Desktop users,
-                download
-                the google chrome extension by going to metamask.io.</p>
+            <ol>
+                <li>Select Wallet: Choose Metamask or your preferred digital wallet.</li>
+                <li>Mobile Users: Download the wallet app from App Store or Google Play Store.</li>
+                <li>Desktop Users: Visit Metamask.io to download the Chrome extension.</li>
+                <li>Install and Set Up: Open the app or extension, follow setup instructions.</li>
+            </ol>
+            <p class="warning">Remember to secure your wallet with a strong password and keep backup phrases safe.</p>
+            </p>
         </div>
     </div>
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
@@ -70,6 +77,30 @@
     </div>
 </template>
 <style>
+ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    counter-increment: item;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+li:before {
+    margin-right: 10px;
+    content: " - ";
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+}
+
 .box-content {
     margin-left: 20%;
     padding-left: 10px;
