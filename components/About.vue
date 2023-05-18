@@ -5,11 +5,12 @@
       alt="Poppy Image">
   </div>
   <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
-    <span class="typed-text poppyText outlined-text" style="font-size:3rem">$Poppy</span>
   </h2>
   <div class="shadow-box">
     <span class="typed-text outlined-text">
       <div class="disclaimer">
+        <span class="typed-text poppyText outlined-text" style="font-size:3rem">$Poppy</span>
+
         <p>As an enthusiastic homage to the game we all love - Poppy Playtime - we introduce $Poppy Token.</p>
         <p>Please be aware that there is no affiliation between $Poppy Token and the game Poppy Playtime or its creators.
         </p>

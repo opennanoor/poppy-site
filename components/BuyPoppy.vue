@@ -44,21 +44,18 @@
             </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 data-aos-duration="1000">
+            <h2 class="outlined-text" data-aos="fade-up">Get ETH
+            </h2>
             <ol>
-                <h2 class="outlined-text" data-aos="fade-up">Get ETH
-                </h2>
-                <p data-aos="fade-up">
-                <ol>
-                    <li>Obtain ETH by purchasing it directly in MetaMask, transferring from another
-                        wallet, or buying
-                        from an exchange and withdrawing it to your wallet.</li>
-                    <li>Make sure you have enough ETH for the swap.
-                        Remember to use the
-                        ERC-20 Network, as $POPPY is an ERC-20 token.
-                    </li>
-                </ol>
-                </p>
+                <li data-aos="fade-up">Obtain ETH by purchasing it directly in MetaMask, transferring from another wallet,
+                    or buying from an exchange and withdrawing it to your wallet.
+                </li>
+                <li data-aos="fade-up">Make sure you have enough ETH for the swap. Remember to use the ERC-20 Network, as
+                    $POPPY is an ERC-20 token.</li>
             </ol>
+            <p class="warning" data-aos="fade-up">
+                <Icon name="" size=40 color="red" />
+            </p>
             </p>
         </div>
     </div>
