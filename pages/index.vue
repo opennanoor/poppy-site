@@ -15,7 +15,7 @@ import Whitepaper from '../components/Whitepaper.vue'
                 </div>
             </section>
             <section id="buy-poppy" class="section">
-                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500">
+                <div>
                     <BuyPoppy />
                 </div>
             </section>

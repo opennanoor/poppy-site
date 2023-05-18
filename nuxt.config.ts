@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-    ssr: false,
+    ssr: true,
 
     plugins: [{ src: "/plugins/aos.client.ts", ssr: false, mode: "client" },
     { src: "/plugins/router.scrollBehaviour.ts", ssr: false, mode: "client" }

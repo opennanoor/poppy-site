@@ -1,5 +1,5 @@
 import { defineNuxtPlugin } from "#app";
-import { nextTick } from 'vue'
+import { nextTick } from 'vue';
 
 export default defineNuxtPlugin((nuxtApp) => {
 
@@ -8,10 +8,10 @@ export default defineNuxtPlugin((nuxtApp) => {
             return savedPosition;
         }
 
-        const findEl = async (hash, x = 0) => {
+        const findEl = async (hash: string, x = 0): Promise<Element> => {
             return (
                 document.querySelector(hash) ||
-                new Promise((resolve,) => {
+                new Promise((resolve) => {
                     if (x > 0) {
                         return resolve(document.querySelector("#app"));
                     }
@@ -19,7 +19,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                         resolve(findEl(hash, 1));
                     }, 300);
                 })
-            );
+            ) as Promise<Element>;
         };
 
         if (to.hash) {
@@ -30,11 +30,10 @@ export default defineNuxtPlugin((nuxtApp) => {
             } catch (err) {
                 console.error(err);
                 // If the element wasn't found, scroll to the top of the page as a fallback.
-                return { x: 0, y: 0 }
+                return { x: 0, y: 0 };
             }
         }
-        return { left: 0, top: 0, behaviour: "smooth" };
+        return { left: 0, top: 0, behavior: "smooth" };
     };
-}
-);
+});
 
