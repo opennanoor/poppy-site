@@ -9,7 +9,7 @@
   <div class="shadow-box">
     <span class="typed-text outlined-text">
       <div class="disclaimer">
-        <p class="typed-text poppyText outlined-text" style="font-size:3rem; text-align: center;">$Poppy</p>
+        <p class="typed-text poppyText outlined-text" style="font-size:3rem; text-align: center;">About</p>
 
         <p>As an enthusiastic homage to the game we all love - Poppy Playtime - we introduce $Poppy Token.</p>
         <p>Please be aware that there is no affiliation between $Poppy Token and the game Poppy Playtime or its creators.
