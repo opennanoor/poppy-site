@@ -10,14 +10,13 @@
 <style>
 .shadow-box {
   font-size: 28px;
-  /* Increase base font size */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   border-radius: 50px;
-  background-color: rgba(0, 0, 0, 0.815);
-  border: 8px solid rgb(31, 31, 31);
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgb(255, 253, 253);
   padding-bottom: 40px;
   padding-left: 10px;
   padding-right: 10px;
@@ -25,13 +24,9 @@
   text-align: left;
   box-sizing: border-box;
   margin-bottom: 70px;
-  box-shadow: inset 0px 0px 20px #050505;
-  /* Yellow inner glow */
+  box-shadow: inset 0px 0px 20px #fff;
   color: #ffffff;
-  /* White text */
   text-shadow: 2px 2px 5px #000000;
-  /* Heavier black outline */
-  /* Updated font */
 }
 
 
