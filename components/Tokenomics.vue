@@ -20,7 +20,9 @@
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.815);
   border: 8px solid rgb(31, 31, 31);
-  padding: 40px;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
   max-width: 1100px;
   text-align: left;
   box-sizing: border-box;
