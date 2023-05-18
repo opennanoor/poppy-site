@@ -8,34 +8,42 @@
   </div>
 </template>
 <style>
-.shadow-box {
-  font-size: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-radius: 50px;
-  background-color: rgba(0, 0, 0, 0);
-  border: 2px solid rgb(255, 253, 253);
-  padding-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
-  max-width: 1100px;
-  text-align: left;
-  box-sizing: border-box;
-  margin-bottom: 70px;
-  box-shadow: inset 0px 0px 20px #fff;
-  color: #ffffff;
-  text-shadow: 2px 2px 5px #000000;
+@media (min-width: 600px) {
+
+  .shadow-box {
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50px;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1100px;
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 70px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
+  }
 }
 
 
 @media (max-width: 600px) {
   .shadow-box {
     padding: 10px;
-    /* Reduce padding for small screens */
     font-size: 0.8rem;
-    /* Reduce font-size for small screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1100px;
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 70px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #000000;
   }
 }
 </style>

@@ -9,7 +9,10 @@
         </div>
 
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">1
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
+                <div class="line-left"></div>
+                <div class="line-right"></div>
+                1
             </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 data-aos-duration="1000">
@@ -40,7 +43,10 @@
             <Icon class="box-image" name="majesticons:etherium-circle-line" size=120 color="white" />
         </div>
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">2
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
+                <div class="line-left"></div>
+                <div class="line-right"></div>
+                2
             </div>
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 data-aos-duration="1000">
@@ -64,8 +70,12 @@
             <Icon class="box-image" name="majesticons:etherium-circle-line" size=120 color="white" />
         </div>
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">3
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
+                <div class="line-left"></div>
+                <div class="line-right"></div>
+                3
             </div>
+
             <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 data-aos-duration="1000">
             <h2 class="outlined-text" data-aos="fade-up">Uniswap
@@ -92,20 +102,27 @@
             <Icon class="box-image" name="ic:twotone-rocket-launch" size=120 color="white" />
         </div>
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">4
+            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
+                <div class="line-left"></div>
+                <div class="line-right"></div>
+                3
             </div>
-            <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+            <span class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                 data-aos-duration="1000">
-            <h2 class="outlined-text" data-aos="fade-up">Swap ETH for $POPPY
-            </h2>
-            <ol>
-                Enjoy tax-free swapping of ETH for $POPPY tokens. <br>No need to worry about specific slippage, although
-                it's
-                recommended to adjust during market volatility.<br><br> Get ready for an exhilarating journey into the world
-                of
-                Poppy, where your adventure may take you to the moon and beyond!
-            </ol>
-            </p>
+                <h2 class="outlined-text" data-aos="fade-up">Swap ETH for $POPPY
+                </h2>
+                <ol>
+                    <p data-aos="fade-up">
+                        Enjoy tax-free swapping of ETH for $POPPY tokens. <br>No need to worry about specific slippage,
+                        although
+                        it's
+                        recommended to adjust during market volatility.<br><br> Get ready for an exhilarating journey into
+                        the
+                        world
+                        of
+                        Poppy, where your adventure may take you to the moon and beyond!</p>
+                </ol>
+            </span>
         </div>
     </div>
     <p class="typed-text poppyText outlined-text" style="font-size:3rem; text-align: center;">Uniswap</p>
@@ -113,14 +130,15 @@
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         <iframe
             src="https://app.uniswap.org/#/swap?exactField=input&exactAmount=10&inputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f"
-            loading="lazy" height="660px" width="100%" style="
-                                                          border: 0;
-                                                          margin: 0 auto;
-                                                          display: block;
-                                                          border-radius: 50px;
-                                                          max-width: auto;
-                                                          min-width: auto;
-                                                        " />
+            loading="lazy" height="660px" width="100%"
+            style="
+                                                                                                                                                                                                                                                                                                                                  border: 0;
+                                                                                                                                                                                                                                                                                                                                  margin: 0 auto;
+                                                                                                                                                                                                                                                                                                                                  display: block;
+                                                                                                                                                                                                                                                                                                                                  border-radius: 50px;
+                                                                                                                                                                                                                                                                                                                                  max-width: auto;
+                                                                                                                                                                                                                                                                                                                                  min-width: auto;
+                                                                                                                                                                                                                                                                                                                                " />
     </div>
 </template>
 <style>
@@ -178,8 +196,8 @@ li::after {
     position: absolute;
     top: calc(-35px);
     /* 50% of the box's height minus half of the circle's height */
-    left: 50%;
-    transform: translateX(-50%);
+    left: calc(50% - 225px);
+    transform: translate(-50% - 35px);
     width: 70px;
     /* adjust as needed */
     height: 70px;
@@ -189,9 +207,66 @@ li::after {
     border-radius: 50%;
     background: rgb(31, 31, 31);
     text-align: center;
+    position: relative;
+    overflow: visible;
+    /* Allow pseudo-elements to extend outside the circle */
+    z-index: 1;
+    /* Try adjusting this value */
 }
 
+.step::before {
+    content: '';
+    position: absolute;
+    width: 74px;
+    /* width + twice the border-width */
+    height: 74px;
+    /* height + twice the border-width */
+    border: 4px solid white;
+    border-radius: 50%;
+    top: -2px;
+    /* Move it up by the border-width */
+    left: -2px;
+    /* Move it left by the border-width */
+    box-sizing: border-box;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    /* This clips the bottom half of the border */
+}
+
+.line-left {
+    content: '';
+    position: absolute;
+    top: 35px;
+    /* Same as border-width */
+    left: -198px;
+    /* Move it left by border-width + line length */
+    width: 200px;
+    /* line length */
+    height: 4px;
+    /* same as border-width */
+    background: white;
+}
+
+.line-right {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 68px;
+    /* Same as border-width */
+    right: -24px;
+    /* Move it right by border-width + line length */
+    width: 200px;
+    /* line length */
+    height: 4px;
+    /* same as border-width */
+    background: white;
+}
+
+
+
+
+
 @media only screen and (max-width: 600px) {
+
     .showIcon {
         display: none;
     }
