@@ -4,36 +4,45 @@ import About from '../components/About.vue'
 import BuyPoppy from '../components/BuyPoppy.vue'
 import Tokenomics from '../components/Tokenomics.vue'
 import Whitepaper from '../components/Whitepaper.vue'
+
 </script>
 <template>
     <body>
-        <Navbar />
-        <main>
-            <section id="about" class="section">
-                <div data-aos="fade-down-right">
-                    <About />
+        <div class="mainbg">
+            <Navbar />
+            <main>
+                <div class="padding">
+                    <section id="about" class="section">
+                        <div data-aos="fade-down-right">
+                            <About />
+                        </div>
+                    </section>
+                    <section id="buy-poppy" class="section">
+                        <div>
+                            <BuyPoppy />
+                        </div>
+                    </section>
+                    <section id="tokenomics" class="section">
+                        <div data-aos="fade-down-right">
+                            <Tokenomics />
+                        </div>
+                    </section>
+                    <section id="whitepaper" class="section">
+                        <div data-aos="fade-down-left ">
+                            <Whitepaper />
+                        </div>
+                    </section>
                 </div>
-            </section>
-            <section id="buy-poppy" class="section">
-                <div>
-                    <BuyPoppy />
-                </div>
-            </section>
-            <section id="tokenomics" class="section">
-                <div data-aos="fade-down-right">
-                    <Tokenomics />
-                </div>
-            </section>
-            <section id="whitepaper" class="section">
-                <div data-aos="fade-down-left ">
-                    <Whitepaper />
-                </div>
-            </section>
-        </main>
+            </main>
+        </div>
     </body>
 </template>
   
 <style>
+.padding {
+    padding-top: 8rem;
+}
+
 .about-container {
     display: flex;
     flex-direction: column;
@@ -134,16 +143,32 @@ import Whitepaper from '../components/Whitepaper.vue'
     /* Make sure to update the font file name and format accordingly */
 }
 
-
-body {
-    background-image: url('/images/bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding-top: 4rem;
-    overflow-x: hidden;
-    overflow-x: hidden;
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
+
+.mainbg {
+    position: relative;
+}
+
+.mainbg::before {
+    content: "";
+    background: url("/images/bg.webp") 100% top no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    background-color: #1f1f1f;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
 
 /* Section styles */
 .section {
