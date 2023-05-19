@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.vue'
 import About from '../components/About.vue'
 import BuyPoppy from '../components/BuyPoppy.vue'
 import Tokenomics from '../components/Tokenomics.vue'
-import Whitepaper from '../components/Whitepaper.vue'
+import Roadmap from '../components/Roadmap.vue'
 
 </script>
 <template>
@@ -27,9 +27,9 @@ import Whitepaper from '../components/Whitepaper.vue'
                             <Tokenomics />
                         </div>
                     </section>
-                    <section id="whitepaper" class="section">
+                    <section id="roadmap" class="section">
                         <div data-aos="fade-down-left ">
-                            <Whitepaper />
+                            <Roadmap />
                         </div>
                     </section>
                 </div>

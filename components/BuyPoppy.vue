@@ -3,7 +3,7 @@
         style="animation-duration: 3s;font-size:3rem">How to buy
     </h2>
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon">
+        <div class="showIcon" data-aos="flip-left">
 
             <Icon class="box-image" name="arcticons:metamask" size=120 color="white" />
         </div>
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon">
+        <div class="showIcon" data-aos="flip-left">
             <Icon class="box-image" name="majesticons:etherium-circle-line" size=120 color="white" />
         </div>
         <div class="box-content">
@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon">
+        <div class="showIcon" data-aos="flip-left">
             <Icon class="box-image" name="majesticons:etherium-circle-line" size=120 color="white" />
         </div>
         <div class="box-content">
@@ -97,7 +97,7 @@
         </div>
     </div>
     <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon">
+        <div class="showIcon" data-aos="flip-left">
 
             <Icon class="box-image" name="ic:twotone-rocket-launch" size=120 color="white" />
         </div>
@@ -127,18 +127,15 @@
     </div>
     <p class="typed-text poppyText outlined-text" style="font-size:3rem; text-align: center;">Uniswap</p>
 
-    <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+    <div class="shadow-box" data-aos="zoom-in" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         <iframe
             src="https://app.uniswap.org/#/swap?exactField=input&exactAmount=10&inputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f"
             loading="lazy" height="660px" width="100%"
-            style="
-                                                                                                                                                                                                                                                                                                                                  border: 0;
-                                                                                                                                                                                                                                                                                                                                  margin: 0 auto;
-                                                                                                                                                                                                                                                                                                                                  display: block;
-                                                                                                                                                                                                                                                                                                                                  border-radius: 50px;
-                                                                                                                                                                                                                                                                                                                                  max-width: auto;
-                                                                                                                                                                                                                                                                                                                                  min-width: auto;
-                                                                                                                                                                                                                                                                                                                                " />
+            style="border: 0;                                                                                                                                                                                                                                                                                                                               margin: 0 auto;
+                                                                                                                                                                                                                                                                                                                                                          display: block;
+                                                                                                                                                                                                                                                                                                                                                          border-radius: 50px;
+                                                                                                                                                                                                                                                                                                                                                          max-width: auto;
+                                                                                                                                                                                                                                                                                                              min-width: auto;                                                                                                                                                                                                                                                                                                                           " />
     </div>
 </template>
 <style>

@@ -11,13 +11,13 @@ export default defineNuxtPlugin((nuxtApp) => {
         const findEl = async (hash: string, x = 0): Promise<Element> => {
             return (
                 document.querySelector(hash) ||
-                new Promise((resolve) => {
-                    if (x > 0) {
-                        return resolve(document.querySelector("#app"));
+                new Promise((resolve, reject) => {
+                    if (x > 50) {
+                        return reject('Failed to find the element');
                     }
                     setTimeout(() => {
-                        resolve(findEl(hash, 1));
-                    }, 300);
+                        resolve(findEl(hash, x + 1));
+                    }, 100);
                 })
             ) as Promise<Element>;
         };
@@ -26,14 +26,15 @@ export default defineNuxtPlugin((nuxtApp) => {
             await nextTick();
             try {
                 const el = await findEl(to.hash);
-                return el.scrollIntoView({ top: el.offsetTop, behavior: "smooth" });
+                // Here return the position instead of manipulating the scroll directly
+                return { x: 0, y: el.getBoundingClientRect().top, behavior: 'smooth' };
             } catch (err) {
                 console.error(err);
                 // If the element wasn't found, scroll to the top of the page as a fallback.
                 return { x: 0, y: 0 };
             }
         }
-        return { left: 0, top: 0, behavior: "smooth" };
+        return { x: 0, y: 0, behavior: 'smooth' };
     };
 });
 

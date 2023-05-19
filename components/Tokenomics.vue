@@ -1,6 +1,6 @@
 <template>
   <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
-    <span class="typed-text poppyText outlined-text" style="font-size:3rem">Connect</span>
+    <span class="typed-text poppyText outlined-text" style="font-size:3rem">Tokenomics</span>
   </h2>
   <div class="shadow-box">
     <div class="typed-text outlined-text">

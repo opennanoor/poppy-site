@@ -12,8 +12,8 @@
       </svg>
       <div data-aos="fade-down">
         <div :class="getNavItemsClass">
-          <NuxtLink :to="{ path: '/', hash: '#' + link.sectionId }" v-for="link in links" class="nav-link"
-            :class="{ 'nav-link-active': activeLink === link.sectionId }" @click="closeMenu">
+          <NuxtLink v-for="link in links" class="nav-link" :class="{ 'nav-link-active': activeLink === link.sectionId }"
+            @click.prevent="navigateToSection(link)">
             {{ link.name }}
           </NuxtLink>
 
@@ -37,6 +37,7 @@
 <script setup>
 import { ref, reactive, onMounted, onBeforeUnmount, computed, watch, nextTick, watchEffect } from 'vue'
 
+const router = useRouter()
 
 const debounce = (func, delay) => {
   let debounceTimer;
@@ -56,11 +57,22 @@ const logoImages = ref(["/images/logo.png", "/images/logo1.png"]);
 const intervalId = ref(null)
 const activeLink = ref(null)
 
+const navigateToSection = (link) => {
+  router.push('/', () => { }).then(() => {
+    nextTick().then(() => {
+      const el = document.getElementById(link.sectionId)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+    })
+  })
+}
+
 const links = reactive([
   { sectionId: 'about', name: 'About' },
   { sectionId: 'buy-poppy', name: 'How to buy' },
   { sectionId: 'tokenomics', name: 'Tokenomics' },
-  { sectionId: 'whitepaper', name: 'Whitepaper' }])
+  { sectionId: 'roadmap', name: 'Roadmap' }])
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
