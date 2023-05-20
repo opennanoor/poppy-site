@@ -145,6 +145,7 @@ import Roadmap from '../components/Roadmap.vue'
 
 body,
 html {
+
     margin: 0;
     padding: 0;
     height: 100%;

@@ -1,5 +1,8 @@
 import { defineNuxtPlugin } from "#app";
 import { nextTick } from 'vue';
+import {
+    atan2, chain, derivative, e, evaluate, log, pi, pow, round, sqrt
+} from 'mathjs'
 
 export default defineNuxtPlugin((nuxtApp) => {
 

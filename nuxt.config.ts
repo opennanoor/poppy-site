@@ -6,10 +6,9 @@ export default defineNuxtConfig({
         // Add corsheaders on API routes
         '/*': { cors: true },
     },
-
     plugins: [
         { src: "/plugins/aos.client.ts", mode: "client" },
-        { src: "/plugins/router.scrollBehaviour.ts", mode: "client" }
+        { src: "/plugins/router.scrollBehaviour.ts", mode: "client" },
     ],
 
     modules: ['nuxt-icon', '@nuxt/image-edge', '@vueuse/nuxt'],
@@ -19,6 +18,5 @@ export default defineNuxtConfig({
         netlify: {
             baseURl: process.env.IMAGES_URL
         },
-
     }
 })

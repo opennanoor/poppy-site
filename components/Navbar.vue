@@ -258,8 +258,9 @@ header {
   /* Adjust the width as needed */
   height: auto;
   margin-right: 10px;
+  margin-top: 35px;
   /* Adjust the margin as needed */
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .active {
