@@ -1,44 +1,104 @@
 <template>
+    <div class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
+        <span class="typed-text poppyText outlined-text" style="font-size:3rem">Roadmap</span>
+    </div>
     <div class="container">
-        <div class="inner-container" v-for="(bigCircle, index) in bigCircles" :key="index">
-            <div class="circle circle-big" :style="getBigCircleStyle(bigCircle)">
-                <div v-for="(smallCircle, index) in bigCircle.smallCircles" :key="index" class="circle circle-small"
-                    :style="getSmallCircleStyle(bigCircle, smallCircle)">
-                    <span class="circle-number">{{ index + 1 }}</span>
+        <!-- Phase 1 roadmap-->
+        <div class="inner-container">
+            <div class="circle circle-big" style="margin-right: 100px" :style="getBigCircleStyle(bigCircles[0])">
+                <div class="big-circle-text">Phase 1</div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[0])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">1</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[1])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">2</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[2])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">3</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[3])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">4</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[4])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">5</span>
+                </div>
+            </div>
+        </div>
+        <!-- Phase 2 roadmap-->
+        <div class="inner-container">
+            <div class="circle circle-big" style="margin-left: 430px;" :style="getBigCircleStyle(bigCircles[1])">
+                <div class="big-circle-text">Phase 2</div>
+
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[0])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">5</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[1])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">4</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[2])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">3</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[3])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">2</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[4])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">1</span>
+                </div>
+            </div>
+        </div>
+        <!-- Phase 3 roadmap-->
+        <div class="inner-container">
+            <div class="circle circle-big" style="margin-right: 100px;" :style="getBigCircleStyle(bigCircles[2])">
+                <div class="big-circle-text">Phase 3</div>
+
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[0])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">1</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[1])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">2</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[2])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">3</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[3])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">4</span>
+                </div>
+                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[4])">
+                    <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">5</span>
                 </div>
             </div>
         </div>
     </div>
 </template>
-  
+
+
 <script setup>
 import { onMounted, reactive } from 'vue';
 import * as math from 'mathjs';
-
 const smallCircleRadius = 30;
-const circleSpacing = 105; // Distance between small circles
+const circleSpacing = 100; // Distance between small circles
 
 const bigCircles = reactive([
     {
-        diameter: 320,
-        color: 'green',
+        diameter: 300,
+        color: '#3F4E4F',
         smallCircles: Array.from({ length: 5 }, (_, i) => ({ top: 0, left: 0, angle: i * (2 * Math.PI) / 5 })),
-        startAngle: 270,
-        spacing: 50
+        startAngle: 292,
+        spacing: 100
     },
     {
-        diameter: 320,
-        color: 'grey',
+        diameter: 300,
+        color: '#A27B5C',
         smallCircles: Array.from({ length: 5 }, (_, i) => ({ top: 0, left: 0, angle: i * (2 * Math.PI) / 5 })),
-        startAngle: 105,
-        spacing: 50
+        startAngle: 109,
+        spacing: 100
     },
     {
-        diameter: 320,
-        color: 'blue',
+        diameter: 300,
+        color: '#DCD7C9',
         smallCircles: Array.from({ length: 5 }, (_, i) => ({ top: 0, left: 0, angle: i * (2 * Math.PI) / 5 })),
-        startAngle: 245,
-        spacing: 50
+        startAngle: 292,
+        spacing: 100
     },
     // Add more big circles here as needed
 ]);
@@ -85,12 +145,24 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
         transform: 'translate(-50%, -50%)',
         top: `${smallCircle.top}px`,
         left: `${smallCircle.left}px`,
-        backgroundColor: bigCircle.color
+        backgroundColor: bigCircle.color,
+        border: `10px solid #2f2f2f`,
     };
 };
+
 </script>
   
 <style>
+.big-circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    /* adjust as necessary */
+    color: white;
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -117,9 +189,11 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
 }
 
 .circle-small {
-    width: 65px;
-    height: 65px;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
 }
+
 
 .circle-number {
     top: 50%;

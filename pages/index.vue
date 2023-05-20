@@ -178,7 +178,7 @@ html {
     align-items: flex-start;
     min-height: calc(100vh - 80px);
     /* Adjusted height calculation without bottom space */
-    margin-bottom: 200px;
+    padding-bottom: 200px;
     /* Added margin-bottom for the space between sections */
 }
 
