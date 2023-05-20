@@ -117,8 +117,6 @@
         </div>
     </div>
 </template>
-
-
 <script setup>
 import { onMounted, reactive } from 'vue';
 import * as math from 'mathjs';
@@ -196,9 +194,7 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
         border: `10px solid #2f2f2f`,
     };
 };
-
 </script>
-  
 <style>
 .box {
     max-width: 500px;
@@ -212,7 +208,7 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    z-index: 1;
+    z-index: 0;
 }
 
 .box-right {
@@ -260,7 +256,7 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
 .circle-small,
 .circle-number {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
 
 .circle-small {

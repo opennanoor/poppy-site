@@ -8,32 +8,34 @@ import Roadmap from '../components/Roadmap.vue'
 </script>
 <template>
     <body>
-        <div class="mainbg">
-            <Navbar />
-            <main>
-                <div class="padding">
-                    <section id="about" class="section">
-                        <div data-aos="fade-down-right">
-                            <About />
-                        </div>
-                    </section>
-                    <section id="buy-poppy" class="section">
-                        <div>
-                            <BuyPoppy />
-                        </div>
-                    </section>
-                    <section id="tokenomics" class="section">
-                        <div data-aos="fade-down-right">
-                            <Tokenomics />
-                        </div>
-                    </section>
-                    <section id="roadmap" class="section">
-                        <div data-aos="fade-down-left ">
-                            <Roadmap />
-                        </div>
-                    </section>
-                </div>
-            </main>
+        <div class="cursor">
+            <div class="mainbg">
+                <Navbar />
+                <main>
+                    <div class="padding">
+                        <section id="about" class="section">
+                            <div data-aos="fade-down-right">
+                                <About />
+                            </div>
+                        </section>
+                        <section id="buy-poppy" class="section">
+                            <div>
+                                <BuyPoppy />
+                            </div>
+                        </section>
+                        <section id="tokenomics" class="section">
+                            <div data-aos="fade-down-right">
+                                <Tokenomics />
+                            </div>
+                        </section>
+                        <section id="roadmap" class="section">
+                            <div data-aos="fade-down-left ">
+                                <Roadmap />
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            </div>
         </div>
     </body>
 </template>
@@ -145,11 +147,14 @@ import Roadmap from '../components/Roadmap.vue'
 
 body,
 html {
-
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+}
+
+.cursor {
+    cursor: url('/images/cursor.png'), auto;
 }
 
 .mainbg {
