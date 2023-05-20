@@ -5,66 +5,113 @@
     <div class="container">
         <!-- Phase 1 roadmap-->
         <div class="inner-container">
-            <div class="circle circle-big" style="margin-right: 100px" :style="getBigCircleStyle(bigCircles[0])">
+            <div class="circle circle-big" data-aos="fade-right" data-aos-anchor-placement="top-bottom"
+                style="margin-right: 100px" :style="getBigCircleStyle(bigCircles[0])">
                 <div class="big-circle-text">Phase 1</div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[0])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[0])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">1</span>
+                    <div class="box box-right">Content</div>
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[1])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[1])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">2</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[2])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[2])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">3</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[3])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[3])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">4</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[4])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[0], bigCircles[0].smallCircles[4])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">5</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
             </div>
         </div>
         <!-- Phase 2 roadmap-->
         <div class="inner-container">
-            <div class="circle circle-big" style="margin-left: 430px;" :style="getBigCircleStyle(bigCircles[1])">
+            <div class="circle circle-big" data-aos="fade-left" data-aos-duration="1000"
+                data-aos-anchor-placement="top-bottom" style="margin-left: 430px;"
+                :style="getBigCircleStyle(bigCircles[1])">
                 <div class="big-circle-text">Phase 2</div>
 
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[0])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[0])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">5</span>
+                    <div class="box box-left">Content</div>
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[1])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[1])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">4</span>
+                    <div class="box box-left">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[2])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[2])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">3</span>
+                    <div class="box box-left">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[3])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[3])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">2</span>
+                    <div class="box box-left">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[4])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[1], bigCircles[1].smallCircles[4])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">1</span>
+                    <div class="box box-left">Content</div>
                 </div>
             </div>
         </div>
         <!-- Phase 3 roadmap-->
         <div class="inner-container">
-            <div class="circle circle-big" style="margin-right: 100px;" :style="getBigCircleStyle(bigCircles[2])">
+            <div class="circle circle-big" data-aos="fade-right" data-aos-duration="1000"
+                data-aos-anchor-placement="top-bottom" style="margin-right: 100px;"
+                :style="getBigCircleStyle(bigCircles[2])">
                 <div class="big-circle-text">Phase 3</div>
 
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[0])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[0])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">1</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[1])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[1])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">2</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[2])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[2])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">3</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[3])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[3])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">4</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
-                <div class="circle circle-small" :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[4])">
+                <div class="circle circle-small" data-aos="fade-up"
+                    :style="getSmallCircleStyle(bigCircles[2], bigCircles[2].smallCircles[4])">
                     <span class="circle-number typed-text poppyText outlined-text" style="text-align: center;">5</span>
+                    <div class="box box-right">Content</div>
+
                 </div>
             </div>
         </div>
@@ -153,6 +200,33 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
 </script>
   
 <style>
+.box {
+    max-width: 500px;
+    width: 300px;
+    /* adjust as necessary */
+    height: 50px;
+    /* adjust as necessary */
+    background-color: #5353535e;
+    border: 1px solid #000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.box-right {
+    left: 100%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.box-left {
+    right: 100%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
 .big-circle-text {
     position: absolute;
     top: 50%;
@@ -186,6 +260,7 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
 .circle-small,
 .circle-number {
     position: absolute;
+    z-index: 2;
 }
 
 .circle-small {
@@ -193,7 +268,6 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
     width: 70px;
     height: 70px;
 }
-
 
 .circle-number {
     top: 50%;
