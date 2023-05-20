@@ -293,7 +293,7 @@ nav {
   font-size: 2.5rem;
   font-weight: bold;
   color: #fff;
-  cursor: pointer;
+  cursor: url('/images/cursor.png'), auto;
   white-space: nowrap;
   /* Add this line */
   font-family: 'Poppy Font Frompoppyplaytime';

@@ -260,7 +260,7 @@ const getSmallCircleStyle = (bigCircle, smallCircle) => {
 }
 
 .circle-small {
-    cursor: pointer;
+    cursor: url('/images/cursor.png'), auto;
     width: 70px;
     height: 70px;
 }
