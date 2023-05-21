@@ -24,7 +24,6 @@
     "d3": "^7.8.4",
     "mathjs": "^11.8.0",
     "particles.js": "^2.0.0",
-    "typenpm d.js": "^2.0.16",
     "vue-scrollto": "^2.20.0"
   }
 }
