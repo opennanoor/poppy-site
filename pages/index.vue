@@ -1,10 +1,9 @@
-<script setup>
+<script>
 import Navbar from '../components/Navbar.vue'
 import About from '../components/About.vue'
 import BuyPoppy from '../components/BuyPoppy.vue'
 import Tokenomics from '../components/Tokenomics.vue'
 import Roadmap from '../components/Roadmap.vue'
-
 </script>
 <template>
     <body>
@@ -17,7 +16,25 @@ import Roadmap from '../components/Roadmap.vue'
                             <div data-aos="fade-down-right">
                                 <About />
                             </div>
+
                         </section>
+                        <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 24 150 28" preserveAspectRatio="none">
+                            <defs>
+                                <path id="gentle-wave" d="M-160 44c30 0 
+                                        58-18 88-18s
+                                        58 18 88 18 
+                                        58-18 88-18 
+                                        58 18 88 18
+                                        v44h-352z" />
+                            </defs>
+                            <g class="parallax">
+                                <use xlink:href="#gentle-wave" x="50" y="0" fill="#D5BE88" />
+                                <use xlink:href="#gentle-wave" x="50" y="3" fill="#d0ba84" />
+                                <use xlink:href="#gentle-wave" x="50" y="6" fill="#a5956f" />
+                                <use xlink:href="#gentle-wave" x="50" y="6" fill="#ab9766" />
+                            </g>
+                        </svg>
                         <section id="buy-poppy" class="section">
                             <div>
                                 <BuyPoppy />
@@ -41,6 +58,90 @@ import Roadmap from '../components/Roadmap.vue'
 </template>
   
 <style>
+::selection {
+    background-color: #D5BE88;
+    color: white;
+}
+
+.parallax>use {
+    animation: move-forever 12s linear infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -2s;
+    animation-duration: 5s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 3s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 2s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+
+    100% {
+        transform: translate(85px, 0%);
+    }
+}
+
+.editorial {
+    display: block;
+    width: 100%;
+    height: 50px;
+    max-height: 100vh;
+    margin: 0;
+}
+
+
+.content {
+    font-size: 1em;
+}
+
+.content h1 {
+    margin-top: -1.3em;
+    font-weight: 100;
+    font-size: 5em;
+    user-select: none;
+    cursor: default;
+}
+
+/*prevent many large-by-comparison ripples by shrinking the height*/
+@media (max-width: 50em) {
+    .content h1 {
+        font-size: 12vmax;
+    }
+
+    .editorial {
+        height: 17vw;
+    }
+}
+
+h1 {
+    outline: none;
+}
+
+
+#line {
+    height: 100px;
+    width: 10px;
+    background-color: white;
+    position: relative;
+    top: 0;
+    display: block;
+}
+
 .padding {
     padding-top: 8rem;
 }
@@ -166,7 +267,6 @@ html {
     background: url("/images/bg.webp") 100% top no-repeat;
     background-size: 100% auto;
     position: absolute;
-    background-color: #1f1f1f;
     top: 0;
     right: 0;
     bottom: 0;

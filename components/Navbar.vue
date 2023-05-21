@@ -204,6 +204,7 @@ onBeforeUnmount(() => {
     ;
     pointer-events: none;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
   }
 
   header:before {

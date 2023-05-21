@@ -132,13 +132,18 @@
             src="https://app.uniswap.org/#/swap?exactField=input&exactAmount=10&inputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f"
             loading="lazy" height="660px" width="100%"
             style="border: 0;                                                                                                                                                                                                                                                                                                                               margin: 0 auto;
-                                                                                                                                                                                                                                                                                                                                                          display: block;
-                                                                                                                                                                                                                                                                                                                                                          border-radius: 50px;
-                                                                                                                                                                                                                                                                                                                                                          max-width: auto;
-                                                                                                                                                                                                                                                                                                              min-width: auto;                                                                                                                                                                                                                                                                                                                           " />
+                                                                                                                                                                                                                                                                                                                                                                                      display: block;
+                                                                                                                                                                                                                                                                                                                                                                                      border-radius: 50px;
+                                                                                                                                                                                                                                                                                                                                                                                      max-width: auto;
+                                                                                                                                                                                                                                                                                                                                          min-width: auto;                                                                                                                                                                                                                                                                                                                           " />
     </div>
 </template>
 <style>
+.shadow-box {
+    backdrop-filter: blur(7px);
+
+}
+
 ol {
     counter-reset: item;
     list-style-type: none;
