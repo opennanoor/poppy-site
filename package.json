@@ -18,14 +18,13 @@
     "nuxt-icon": "^0.4.0"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^3.0.0",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "d3": "^7.8.4",
     "mathjs": "^11.8.0",
-    "particles.vue3": "^2.9.3",
-    "tsparticles": "^2.9.3",
-    "tsparticles-engine": "^2.9.3",
-    "typed.js": "^2.0.16",
+    "particles.js": "^2.0.0",
+    "typenpm d.js": "^2.0.16",
     "vue-scrollto": "^2.20.0"
   }
 }

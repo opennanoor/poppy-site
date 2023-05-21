@@ -1,62 +1,60 @@
 <template>
-    <h2 class="about-text animate__animated animate__fadeIn poppyText outlined-text"
-        style="animation-duration: 3s;font-size:3rem">How to buy
+    <h2 class="about-text animate__animated animate__fadeIn poppyText " style="animation-duration: 3s;font-size:3rem">How to
+        buy
     </h2>
-    <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon" data-aos="flip-left">
-
-            <Icon class="box-image" name="arcticons:metamask" size=120 color="white" />
-        </div>
+    <div @click="toggleShadowBox(1)" data-aos="fade-up"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+            1
+        </div>Create a wallet
+        <Icon style="align-items: right;right:0" name="typcn:plus" size=24 color="white" />
+    </div>
+    <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
 
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
-                <div class="line-left"></div>
-                <div class="line-right"></div>
-                1
-            </div>
-            <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="1000">
-            <h2 class="outlined-text" data-aos="fade-up">Mobile Users
-            </h2>
+
+            <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <h2 data-aos="fade-up">Mobile Users</h2>
             <ol>
                 <li data-aos="fade-up">Visit the App Store or Google Play Store.</li>
                 <li data-aos="fade-up">Search for "MetaMask" or your desired wallet.</li>
                 <li data-aos="fade-up">Download the app for free.</li>
                 <li data-aos="fade-up">Open the app and follow the on-screen instructions to create a wallet.</li>
             </ol>
-            <h2 class="outlined-text" data-aos="fade-up">Desktop Users
-            </h2>
+            <h2 data-aos="fade-up">Desktop Users</h2>
             <ol>
                 <li data-aos="fade-up">Open Google Chrome on your computer.</li>
                 <li data-aos="fade-up">Go to metamask.io.</li>
                 <li data-aos="fade-up">Download the Google Chrome extension and follow the setup instructions.</li>
             </ol>
             <p class="warning" data-aos="fade-up">
-                <Icon name="material-symbols:warning-outline-rounded" size=40 color="red" />
+                <Icon name="material-symbols:warning-outline-rounded" size="40" color="red" />
                 Remember to secure your wallet with a strong password and keep backup phrases safe.
             </p>
             </p>
         </div>
     </div>
-    <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon" data-aos="flip-left">
-            <Icon class="box-image" name="majesticons:etherium-circle-line" size=120 color="white" />
+    <div class="create-wallet" data-aos="fade-up" @click="toggleShadowBox(2)"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+            2
         </div>
+        Obtain ETH
+    </div>
+    <div v-if="isShadowBoxVisible === 2" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+        data-aos-duration="1500">
+
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
-                <div class="line-left"></div>
-                <div class="line-right"></div>
-                2
-            </div>
-            <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="1000">
-            <h2 class="outlined-text" data-aos="fade-up">Get ETH
+            <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+            <h2 data-aos="fade-up">Get ETH
             </h2>
             <ol>
-                <li data-aos="fade-up">Obtain ETH by purchasing it directly in MetaMask, transferring from another wallet,
+                <li data-aos="fade-up">Obtain ETH by purchasing it directly in MetaMask, transferring from another
+                    wallet,
                     or buying from an exchange and withdrawing it to your wallet.
                 </li>
-                <li data-aos="fade-up">Make sure you have enough ETH for the swap. Remember to use the ERC-20 Network, as
+                <li data-aos="fade-up">Make sure you have enough ETH for the swap. Remember to use the ERC-20 Network,
+                    as
                     $POPPY is an ERC-20 token.</li>
             </ol>
             <p class="warning" data-aos="fade-up">
@@ -65,26 +63,27 @@
             </p>
         </div>
     </div>
-    <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon" data-aos="flip-left">
-            <Icon class="box-image" name="majesticons:etherium-circle-line" size=120 color="white" />
+    <div class="create-wallet" data-aos="fade-up" @click="toggleShadowBox(3)"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+            3
         </div>
-        <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
-                <div class="line-left"></div>
-                <div class="line-right"></div>
-                3
-            </div>
+        Visit uniswap
+    </div>
+    <div v-if="isShadowBoxVisible === 3" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+        data-aos-duration="1500">
 
-            <p class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="1000">
-            <h2 class="outlined-text" data-aos="fade-up">Uniswap
+        <div class="box-content">
+            <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+            <h2 data-aos="fade-up">Uniswap
             </h2>
             <ol>
-                <li data-aos="fade-up">Visit Uniswap: Open app.uniswap.org in Google Chrome or in your Metamask app browser.
+                <li data-aos="fade-up">Visit Uniswap: Open app.uniswap.org in Google Chrome or in your Metamask app
+                    browser.
                 </li>
                 <li data-aos="fade-up">Connect Wallet: Link your digital wallet to Uniswap.</li>
-                <li data-aos="fade-up">Find $POPPY Token: Paste the $POPPY token address into the Uniswap search bar, select
+                <li data-aos="fade-up">Find $POPPY Token: Paste the $POPPY token address into the Uniswap search bar,
+                    select
                     "Poppy", and
                     confirm.</li>
                 <li data-aos="fade-up">Sign the Prompt: When Metamask asks for a wallet signature, sign to confirm.</li>
@@ -96,27 +95,27 @@
             </p>
         </div>
     </div>
-    <div class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <div class="showIcon" data-aos="flip-left">
+    <div class="create-wallet" data-aos="fade-up" @click="toggleShadowBox(4)"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+            4
+        </div>Swap Eth for $POPPY
+    </div>
+    <div v-if="isShadowBoxVisible === 4" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+        data-aos-duration="1500">
 
-            <Icon class="box-image" name="ic:twotone-rocket-launch" size=120 color="white" />
-        </div>
         <div class="box-content">
-            <div class="step about-text animate__animated animate__fadeIn poppyText outlined-text" data-aos="zoom-in-up">
-                <div class="line-left"></div>
-                <div class="line-right"></div>
-                3
-            </div>
-            <span class="typed-text outlined-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="1000">
-                <h2 class="outlined-text" data-aos="fade-up">Swap ETH for $POPPY
+
+            <span class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                <h2 data-aos="fade-up">Swap ETH for $POPPY
                 </h2>
                 <ol>
                     <p data-aos="fade-up">
                         Enjoy tax-free swapping of ETH for $POPPY tokens. <br>No need to worry about specific slippage,
                         although
                         it's
-                        recommended to adjust during market volatility.<br><br> Get ready for an exhilarating journey into
+                        recommended to adjust during market volatility.<br><br> Get ready for an exhilarating journey
+                        into
                         the
                         world
                         of
@@ -125,22 +124,61 @@
             </span>
         </div>
     </div>
-    <p class="typed-text poppyText outlined-text" style="font-size:3rem; text-align: center;">Uniswap</p>
-
-    <div class="shadow-box" data-aos="zoom-in" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-        <iframe
-            src="https://app.uniswap.org/#/swap?exactField=input&exactAmount=10&inputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f"
-            loading="lazy" height="660px" width="100%"
-            style="border: 0;                                                                                                                                                                                                                                                                                                                               margin: 0 auto;
-                                                                                                                                                                                                                                                                                                                                                                                      display: block;
-                                                                                                                                                                                                                                                                                                                                                                                      border-radius: 50px;
-                                                                                                                                                                                                                                                                                                                                                                                      max-width: auto;
-                                                                                                                                                                                                                                                                                                                                          min-width: auto;                                                                                                                                                                                                                                                                                                                           " />
-    </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            isShadowBoxVisible: 0
+        };
+    },
+    methods: {
+        toggleShadowBox(index) {
+            if (this.isShadowBoxVisible === index) {
+                this.isShadowBoxVisible = 0; // Close the shadow box if it's already open
+            } else {
+                this.isShadowBoxVisible = index; // Open the selected shadow box
+            }
+        }
+    }
+};
+</script>
 <style>
+.shadow-box-transition-enter-active,
+.shadow-box-transition-leave-active {
+    transition: max-height 0.5s;
+}
+
+.shadow-box-transition-enter,
+.shadow-box-transition-leave-to {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.unopened-box {
+    font-size: 1.4rem;
+    background-color: #15202b;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    padding-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 50px;
+    width: 700px;
+    transition: all 0.5s ease-in-out;
+}
+
+.unopened-box:hover {
+    color: yellow;
+}
+
 .shadow-box {
-    backdrop-filter: blur(7px);
+    background-color: #10181f;
 
 }
 
@@ -179,7 +217,7 @@ li::after {
 
 
 .box-content {
-    margin-left: 20%;
+    margin-left: 70px;
     padding-left: 10px;
 }
 
@@ -196,9 +234,10 @@ li::after {
 
 .step {
     position: absolute;
-    top: calc(-35px);
+    top: 0;
+    margin-right: 15px;
     /* 50% of the box's height minus half of the circle's height */
-    left: calc(50% - 225px);
+    left: 0;
     transform: translate(-50% - 35px);
     width: 70px;
     /* adjust as needed */
@@ -207,7 +246,7 @@ li::after {
     line-height: 70px;
     /* match with height */
     border-radius: 50%;
-    background: rgb(31, 31, 31);
+    background: #10181f;
     text-align: center;
     position: relative;
     overflow: visible;
@@ -223,7 +262,6 @@ li::after {
     /* width + twice the border-width */
     height: 74px;
     /* height + twice the border-width */
-    border: 4px solid white;
     border-radius: 50%;
     top: -2px;
     /* Move it up by the border-width */
@@ -245,7 +283,7 @@ li::after {
     /* line length */
     height: 4px;
     /* same as border-width */
-    background: white;
+    background: #efd602;
 }
 
 .line-right {
@@ -260,7 +298,7 @@ li::after {
     /* line length */
     height: 4px;
     /* same as border-width */
-    background: white;
+    background: #efd602;
 }
 
 

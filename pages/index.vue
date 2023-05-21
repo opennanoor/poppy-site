@@ -16,25 +16,7 @@ import Roadmap from '../components/Roadmap.vue'
                             <div data-aos="fade-down-right">
                                 <About />
                             </div>
-
                         </section>
-                        <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 24 150 28" preserveAspectRatio="none">
-                            <defs>
-                                <path id="gentle-wave" d="M-160 44c30 0 
-                                        58-18 88-18s
-                                        58 18 88 18 
-                                        58-18 88-18 
-                                        58 18 88 18
-                                        v44h-352z" />
-                            </defs>
-                            <g class="parallax">
-                                <use xlink:href="#gentle-wave" x="50" y="0" fill="#D5BE88" />
-                                <use xlink:href="#gentle-wave" x="50" y="3" fill="#d0ba84" />
-                                <use xlink:href="#gentle-wave" x="50" y="6" fill="#a5956f" />
-                                <use xlink:href="#gentle-wave" x="50" y="6" fill="#ab9766" />
-                            </g>
-                        </svg>
                         <section id="buy-poppy" class="section">
                             <div>
                                 <BuyPoppy />
@@ -59,8 +41,8 @@ import Roadmap from '../components/Roadmap.vue'
   
 <style>
 ::selection {
-    background-color: #D5BE88;
-    color: white;
+    background-color: #efd602;
+    color: #333333;
 }
 
 .parallax>use {
@@ -102,6 +84,8 @@ import Roadmap from '../components/Roadmap.vue'
     height: 50px;
     max-height: 100vh;
     margin: 0;
+    bottom: 0;
+    position: absolute;
 }
 
 
@@ -136,7 +120,7 @@ h1 {
 #line {
     height: 100px;
     width: 10px;
-    background-color: white;
+    background-color: rgb(39, 16, 143);
     position: relative;
     top: 0;
     display: block;
@@ -200,7 +184,6 @@ h1 {
 }
 
 .typed-text {
-    color: rgb(247, 247, 247);
     font-size: 1.3rem;
     font-family: 'Michroma';
     /* Specify the Michroma font and fallback to Sans-serif */

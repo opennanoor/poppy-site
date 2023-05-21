@@ -11,21 +11,19 @@
 @media (min-width: 600px) {
 
   .shadow-box {
-    font-size: 28px;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     border-radius: 50px;
-    padding-bottom: 40px;
     padding-left: 10px;
     padding-right: 10px;
     max-width: 1100px;
     text-align: left;
     box-sizing: border-box;
-    margin-bottom: 70px;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px #000000;
+    color: #c2c3c8;
+    background-color: #10181f;
   }
 }
 

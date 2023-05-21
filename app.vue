@@ -76,13 +76,7 @@ export default {
           color: {
             value: '#ffffff'
           },
-          links: {
-            color: '#ffffff',
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1
-          },
+
           collisions: {
             enable: false
           },
@@ -101,13 +95,13 @@ export default {
               enable: true,
               area: 800
             },
-            value: 40
+            value: 60
           },
           opacity: {
             value: 0.1
           },
           shape: {
-            type: 'star'
+            type: 'circle'
           },
           size: {
             value: { min: 1, max: 5 },

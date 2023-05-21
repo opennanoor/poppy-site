@@ -161,7 +161,7 @@ const circleSpacing = 100; // Distance between small circles
 const bigCircles = reactive([
     {
         diameter: 300,
-        color: '#3F4E4F',
+        color: '#1b242e',
         smallCircles: Array.from({ length: 5 }, (_, i) => ({ top: 0, left: 0, angle: i * (2 * Math.PI) / 5 })),
         startAngle: 292,
         spacing: 100
@@ -231,12 +231,13 @@ const getSmallCirclePositions = (bigCircle, smallCircle) => {
 </script>
 <style>
 .box {
+    color: #adb0bc;
     max-width: 500px;
     width: 450px;
     /* adjust as necessary */
     height: 70px;
     /* adjust as necessary */
-    background-color: #5353535e;
+    background-color: #1b242e;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

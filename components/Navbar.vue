@@ -273,7 +273,7 @@ header {
 }
 
 .nav-link:hover {
-  color: rgb(239, 135, 0);
+  color: #efd602;
 }
 
 nav {
@@ -468,9 +468,6 @@ nav {
     left: 0;
   }
 
-
-
-
   .nav-items .nav-link:hover::after {
     transform: scaleX(1);
     transition: transform 0.2s ease-in-out;
@@ -484,6 +481,6 @@ nav {
 
 
 .nav-link-active {
-  color: rgb(239, 135, 0);
+  color: #efd602;
 }
 </style>
