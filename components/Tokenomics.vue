@@ -33,15 +33,15 @@
     padding: 10px;
     font-size: 0.8rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start !important;
+    /* change this */
     align-items: center;
     position: relative;
     max-width: 1100px;
     text-align: left;
     box-sizing: border-box;
     margin-bottom: 70px;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px #000000;
+    color: #c2c3c8
   }
 }
 </style>

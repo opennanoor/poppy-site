@@ -7,7 +7,9 @@
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             1
         </div>Create a wallet
-        <Icon style="align-items: right;right:0" name="typcn:plus" size=24 color="white" />
+        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
+            <Icon name="typcn:plus" size=24 color="white" />
+        </div>
     </div>
     <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
 
@@ -40,6 +42,9 @@
             2
         </div>
         Obtain ETH
+        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
+            <Icon name="typcn:plus" size=24 color="white" />
+        </div>
     </div>
     <div v-if="isShadowBoxVisible === 2" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
         data-aos-duration="1500">
@@ -69,6 +74,9 @@
             3
         </div>
         Visit uniswap
+        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
+            <Icon name="typcn:plus" size=24 color="white" />
+        </div>
     </div>
     <div v-if="isShadowBoxVisible === 3" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
         data-aos-duration="1500">
@@ -100,6 +108,9 @@
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             4
         </div>Swap Eth for $POPPY
+        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
+            <Icon name="typcn:plus" size=24 color="white" />
+        </div>
     </div>
     <div v-if="isShadowBoxVisible === 4" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
         data-aos-duration="1500">
@@ -156,6 +167,7 @@ export default {
 }
 
 .unopened-box {
+    justify-content: space-between;
     font-size: 1.4rem;
     background-color: #15202b;
     color: white;
@@ -166,7 +178,6 @@ export default {
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     flex-direction: row;
     height: 50px;
     width: 700px;
@@ -306,6 +317,9 @@ li::after {
 
 
 @media only screen and (max-width: 600px) {
+    .unopened-box {
+        justify-content: start;
+    }
 
     .showIcon {
         display: none;
@@ -314,11 +328,9 @@ li::after {
     .box-content {
         margin-left: 0;
         padding-left: 0;
-        text-align: center;
     }
 
     .step {
-        left: calc(50% - 35px);
         /* Adjust the value to center the circle horizontally */
         transform: none;
         /* Reset the transform */
