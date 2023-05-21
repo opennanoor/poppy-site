@@ -11,37 +11,41 @@
 @media (min-width: 600px) {
 
   .shadow-box {
-    font-size: 1rem;
+    /* Removed fixed positioning */
+    padding: 10px;
+    font-size: 0.8rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start !important;
+    /* removed 'align-items: center;' so the content fills the container vertically */
     position: relative;
-    border-radius: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
     max-width: 1100px;
     text-align: left;
     box-sizing: border-box;
     color: #c2c3c8;
-    background-color: #10181f;
+    padding-top: 14rem;
+    /* Ensure it fills the entire width */
+    width: 100%;
   }
 }
 
 
 @media (max-width: 600px) {
   .shadow-box {
+    /* Removed fixed positioning */
     padding: 10px;
     font-size: 0.8rem;
     display: flex;
     justify-content: flex-start !important;
-    /* change this */
-    align-items: center;
+    /* removed 'align-items: center;' so the content fills the container vertically */
     position: relative;
     max-width: 1100px;
     text-align: left;
     box-sizing: border-box;
     margin-bottom: 70px;
-    color: #c2c3c8
+    padding-top: 5rem;
+    color: #c2c3c8;
+    /* Ensure it fills the entire width */
+    width: 100%;
   }
 }
 </style>

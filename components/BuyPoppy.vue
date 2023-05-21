@@ -11,7 +11,8 @@
             <Icon name="typcn:plus" size=24 color="white" />
         </div>
     </div>
-    <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+        ref="shadowBox1">
 
         <div class="box-content">
 
@@ -46,8 +47,8 @@
             <Icon name="typcn:plus" size=24 color="white" />
         </div>
     </div>
-    <div v-if="isShadowBoxVisible === 2" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-        data-aos-duration="1500">
+    <div v-if="isShadowBoxVisible === 2" ref="shadowBox2" class="shadow-box" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
 
         <div class="box-content">
             <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
@@ -78,8 +79,8 @@
             <Icon name="typcn:plus" size=24 color="white" />
         </div>
     </div>
-    <div v-if="isShadowBoxVisible === 3" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-        data-aos-duration="1500">
+    <div v-if="isShadowBoxVisible === 3" ref="shadowBox3" class="shadow-box" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
 
         <div class="box-content">
             <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
@@ -112,8 +113,8 @@
             <Icon name="typcn:plus" size=24 color="white" />
         </div>
     </div>
-    <div v-if="isShadowBoxVisible === 4" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-        data-aos-duration="1500">
+    <div v-if="isShadowBoxVisible === 4" ref="shadowBox4" class="shadow-box" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
 
         <div class="box-content">
 
@@ -149,21 +150,25 @@ export default {
                 this.isShadowBoxVisible = 0; // Close the shadow box if it's already open
             } else {
                 this.isShadowBoxVisible = index; // Open the selected shadow box
+                this.$nextTick(() => {
+                    const element = this.$refs['shadowBox' + index];
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        const absoluteTop = window.pageYOffset + rect.top;
+                        window.scrollTo({
+                            top: absoluteTop,
+                            behavior: 'smooth' // optional, for smooth scrolling
+                        });
+                    }
+                });
             }
         }
     }
 };
 </script>
 <style>
-.shadow-box-transition-enter-active,
-.shadow-box-transition-leave-active {
-    transition: max-height 0.5s;
-}
-
-.shadow-box-transition-enter,
-.shadow-box-transition-leave-to {
-    max-height: 0;
-    overflow: hidden;
+.active-menu {
+    color: #efd602;
 }
 
 .unopened-box {
@@ -186,11 +191,6 @@ export default {
 
 .unopened-box:hover {
     color: yellow;
-}
-
-.shadow-box {
-    background-color: #10181f;
-
 }
 
 ol {
@@ -223,8 +223,6 @@ li::after {
     color: rgb(228, 48, 16);
     font-weight: bold;
 }
-
-
 
 
 .box-content {

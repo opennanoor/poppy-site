@@ -59,14 +59,6 @@
   object-fit: cover;
 }
 
-.shadow-box {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
 .typed-text.outlined-text {
   order: 0;
   text-align: left;
@@ -129,15 +121,6 @@
     max-width: 200px;
     object-fit: cover;
     margin: 0 auto;
-  }
-
-  .shadow-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
   .svg-section {
