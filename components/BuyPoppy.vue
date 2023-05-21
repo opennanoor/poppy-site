@@ -185,7 +185,7 @@ export default {
     align-items: center;
     flex-direction: row;
     height: 50px;
-    width: 700px;
+    max-width: 700px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -317,7 +317,11 @@ li::after {
 @media only screen and (max-width: 600px) {
     .unopened-box {
         justify-content: start;
+        max-width: 550px;
+
     }
+
+
 
     .showIcon {
         display: none;

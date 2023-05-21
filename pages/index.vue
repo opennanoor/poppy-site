@@ -237,6 +237,10 @@ html {
     width: 100%;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .cursor {
     cursor: url('/images/cursor.png'), auto;
 }
