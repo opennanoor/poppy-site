@@ -283,10 +283,14 @@ body {
 }
 
 .poppyText {
-    font-size: 4rem;
+    font-size: 3rem;
     /* Increase the font size for the paragraphs */
     font-family: Playtime;
     /* Specify the Michroma font and fallback to Sans-serif */
+}
+
+.poppyText:hover {
+    color: #efd602;
 }
 
 .typed-text span {

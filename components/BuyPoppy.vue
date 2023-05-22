@@ -2,8 +2,8 @@
     <h2 class="about-text animate__animated animate__fadeIn poppyText " style="animation-duration: 3s;font-size:3rem">How to
         buy
     </h2>
-    <div @click="toggleShadowBox(1)" data-aos="fade-up"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+    <div @click="toggleShadowBox(1)" data-aos="fade-down"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             1
         </div>Create a wallet
@@ -11,34 +11,33 @@
             <Icon name="typcn:plus" size=24 color="white" />
         </div>
     </div>
-    <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+    <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
         ref="shadowBox1">
 
-        <div class="box-content">
+        <div class="box-content typed-text-roboto">
 
-            <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-            <h2 data-aos="fade-up">Mobile Users</h2>
+            <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+            <h2 data-aos="fade-down">Mobile Users</h2>
             <ol>
-                <li data-aos="fade-up">Visit the App Store or Google Play Store.</li>
-                <li data-aos="fade-up">Search for "MetaMask" or your desired wallet.</li>
-                <li data-aos="fade-up">Download the app for free.</li>
-                <li data-aos="fade-up">Open the app and follow the on-screen instructions to create a wallet.</li>
+                <li data-aos="fade-down">Visit the App Store or Google Play Store.</li>
+                <li data-aos="fade-down">Search for "MetaMask" or your desired wallet.</li>
+                <li data-aos="fade-down">Download the app for free.</li>
+                <li data-aos="fade-down">Open the app and follow the on-screen instructions to create a wallet.</li>
             </ol>
-            <h2 data-aos="fade-up">Desktop Users</h2>
+            <h2 data-aos="fade-down">Desktop Users</h2>
             <ol>
-                <li data-aos="fade-up">Open Google Chrome on your computer.</li>
-                <li data-aos="fade-up">Go to metamask.io.</li>
-                <li data-aos="fade-up">Download the Google Chrome extension and follow the setup instructions.</li>
+                <li data-aos="fade-down">Open Google Chrome on your computer.</li>
+                <li data-aos="fade-down">Go to metamask.io.</li>
+                <li data-aos="fade-down">Download the Google Chrome extension and follow the setup instructions.</li>
             </ol>
-            <p class="warning" data-aos="fade-up">
-                <Icon name="material-symbols:warning-outline-rounded" size="40" color="red" />
-                Remember to secure your wallet with a strong password and keep backup phrases safe.
             </p>
+            <p class="warning" data-aos="fade-down">
+                Remember to secure your wallet with a strong password and keep backup phrases safe.
             </p>
         </div>
     </div>
-    <div class="create-wallet" data-aos="fade-up" @click="toggleShadowBox(2)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+    <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(2)"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             2
         </div>
@@ -47,30 +46,28 @@
             <Icon name="typcn:plus" size=24 color="white" />
         </div>
     </div>
-    <div v-if="isShadowBoxVisible === 2" ref="shadowBox2" class="shadow-box" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+    <div v-if="isShadowBoxVisible === 2" ref="shadowBox2" class="shadow-box" data-aos="fade-down"
+        data-aos-anchor-placement="top-bottom">
 
-        <div class="box-content">
-            <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-            <h2 data-aos="fade-up">Get ETH
+        <div class="box-content typed-text-roboto">
+            <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+            <h2 data-aos="fade-down">Get ETH
             </h2>
             <ol>
-                <li data-aos="fade-up">Obtain ETH by purchasing it directly in MetaMask, transferring from another
+                <li data-aos="fade-down">Obtain ETH by purchasing it directly in MetaMask, transferring from another
                     wallet,
                     or buying from an exchange and withdrawing it to your wallet.
                 </li>
-                <li data-aos="fade-up">Make sure you have enough ETH for the swap. Remember to use the ERC-20 Network,
-                    as
-                    $POPPY is an ERC-20 token.</li>
+                <li data-aos="fade-down">Make sure you have enough ETH for the swap.</li>
             </ol>
-            <p class="warning" data-aos="fade-up">
-                <Icon name="" size=40 color="red" />
+            <p class="warning" data-aos="fade-down">
+                Remember to use the ERC-20 Network, as $POPPY is an ERC-20 token.
             </p>
             </p>
         </div>
     </div>
-    <div class="create-wallet" data-aos="fade-up" @click="toggleShadowBox(3)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+    <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(3)"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             3
         </div>
@@ -79,33 +76,27 @@
             <Icon name="typcn:plus" size=24 color="white" />
         </div>
     </div>
-    <div v-if="isShadowBoxVisible === 3" ref="shadowBox3" class="shadow-box" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+    <div v-if="isShadowBoxVisible === 3" ref="shadowBox3" class="shadow-box" data-aos="fade-down"
+        data-aos-anchor-placement="top-bottom">
 
-        <div class="box-content">
-            <p class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-            <h2 data-aos="fade-up">Uniswap
-            </h2>
+        <div class="box-content typed-text-roboto">
+            <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
             <ol>
-                <li data-aos="fade-up">Visit Uniswap: Open app.uniswap.org in Google Chrome or in your Metamask app
+                <li data-aos="fade-down">Open app.uniswap.org in Google Chrome or in your Metamask app
                     browser.
                 </li>
-                <li data-aos="fade-up">Connect Wallet: Link your digital wallet to Uniswap.</li>
-                <li data-aos="fade-up">Find $POPPY Token: Paste the $POPPY token address into the Uniswap search bar,
+                <li data-aos="fade-down">Link your digital wallet to Uniswap.</li>
+                <li data-aos="fade-down">Paste the $POPPY token address into the Uniswap search bar,
                     select
                     "Poppy", and
                     confirm.</li>
-                <li data-aos="fade-up">Sign the Prompt: When Metamask asks for a wallet signature, sign to confirm.</li>
+                <li data-aos="fade-down">Sign the Prompt: When Metamask asks for a wallet signature, sign to confirm.</li>
             </ol>
-            <p class="warning" data-aos="fade-up">
-                <Icon name="ic:outline-warning-amber" size=40 color="red" />
-                Remember to ensure the token address is correct before confirming the transaction.
-            </p>
             </p>
         </div>
     </div>
-    <div class="create-wallet" data-aos="fade-up" @click="toggleShadowBox(4)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text' : 'unopened-box typed-text'">
+    <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(4)"
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             4
         </div>Swap Eth for $POPPY
@@ -114,15 +105,15 @@
         </div>
     </div>
     <div v-if="isShadowBoxVisible === 4" ref="shadowBox4" class="shadow-box" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+        data-aos-anchor-placement="top-bottom">
 
-        <div class="box-content">
+        <div class="box-content typed-text-roboto">
 
-            <span class="typed-text" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                <h2 data-aos="fade-up">Swap ETH for $POPPY
+            <span data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+                <h2 data-aos="fade-down">Swap ETH for $POPPY
                 </h2>
                 <ol>
-                    <p data-aos="fade-up">
+                    <p data-aos="fade-down">
                         Enjoy tax-free swapping of ETH for $POPPY tokens. <br>No need to worry about specific slippage,
                         although
                         it's
@@ -152,21 +143,35 @@ export default {
                 this.isShadowBoxVisible = index; // Open the selected shadow box
                 this.$nextTick(() => {
                     const element = this.$refs['shadowBox' + index];
-                    if (element) {
+                    if (element && window.innerWidth < 971) {
                         const rect = element.getBoundingClientRect();
-                        const absoluteTop = window.pageYOffset + rect.top;
+                        let offset;
+
+                        if (window.innerWidth < 971) { // Small screens (width less than 768px)
+                            offset = -100;
+                        }
+                        const absoluteTop = window.pageYOffset + rect.top + offset;
                         window.scrollTo({
                             top: absoluteTop,
                             behavior: 'smooth' // optional, for smooth scrolling
                         });
+
                     }
                 });
             }
         }
+
     }
 };
 </script>
 <style>
+.typed-text-roboto {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(196, 195, 195);
+}
+
 .active-menu {
     color: #efd602;
 }
@@ -174,8 +179,8 @@ export default {
 .unopened-box {
     justify-content: space-between;
     font-size: 1.4rem;
-    background-color: #15202b;
-    color: white;
+    background-color: #0f161d;
+    color: #a5a5a5;
     border-radius: 10px;
     padding: 10px;
     margin-top: 20px;
@@ -201,7 +206,7 @@ ol {
 
 li {
     counter-increment: item;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
     display: flex;
     align-items: flex-start;
 }
@@ -220,7 +225,7 @@ li::after {
 }
 
 .warning {
-    color: rgb(228, 48, 16);
+    color: #B22222;
     font-weight: bold;
 }
 
@@ -244,6 +249,7 @@ li::after {
 .step {
     position: absolute;
     top: 0;
+    color: #c2c3c8 !important;
     margin-right: 15px;
     /* 50% of the box's height minus half of the circle's height */
     left: 0;
@@ -320,8 +326,6 @@ li::after {
         max-width: 550px;
 
     }
-
-
 
     .showIcon {
         display: none;
