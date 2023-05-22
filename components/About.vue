@@ -1,7 +1,6 @@
 <template>
   <div class="image-container">
-    <img src="https://cdn.discordapp.com/attachments/1106185526584823918/1110279104445550713/the-gist-of-it.gif"
-      alt="Your Image">
+    <img src="/images/monster.webp" alt="Monster">
   </div>
   <div class="image-section">
     <img class="revolutionary-image splide-image"
@@ -61,23 +60,9 @@ export default {
   background: linear-gradient(to right, transparent 0%, #00b4cc8f 20%, #00b4cca9 80%, transparent 100%);
 }
 
-
-
-
-.splide-image {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease-out;
-}
-
-.splide-image:hover {
-  transform: translate(-5px, -5px);
-  /* Adjust the translation values as per your requirement */
-}
-
 .image-container {
   position: absolute;
-  left: -490px;
+  left: -40px;
   top: 410px;
 }
 
