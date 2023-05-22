@@ -28,17 +28,17 @@
               <Icon name="line-md:telegram" size=48 color="white" />
             </a>
           </div>
-          <div class="svg-section">
+          <div class="svg-section" style="justify-content: flex-end;">
             <div class="svg-wrapper">
-              <Icon name="line-md:discord" size=48 color="grey" />
+              <Icon name="line-md:discord" size=48 color="#00b5cc" />
               <span class="svg-text typed-text outlined-text">Discord</span>
             </div>
             <div class="svg-wrapper">
-              <Icon name="line-md:twitter" size=48 color="grey" />
+              <Icon name="line-md:twitter" size=48 color="#00b5cc" />
               <span class="svg-text typed-text outlined-text">Telegram</span>
             </div>
             <div class="svg-wrapper">
-              <Icon name="line-md:telegram" size=48 color="grey" />
+              <Icon name="line-md:telegram" size=48 color="#00b5cc" />
               <span class="svg-text typed-text outlined-text">Uniswap</span>
             </div>
           </div>
@@ -66,8 +66,8 @@ const debounce = (func, delay) => {
 const titlePrefix = ref("Poppy - ")
 const isMenuOpen = ref(false)
 const scrolled = ref(false)
-const currentLogo = ref("https://cdn.discordapp.com/attachments/1105881842630017137/1110288332941963315/8BkJ-unscreen.gif");
-const logoImages = ref(["https://cdn.discordapp.com/attachments/1105881842630017137/1110288332941963315/8BkJ-unscreen.gif", "https://cdn.discordapp.com/attachments/1105881842630017137/1110288332941963315/8BkJ-unscreen.gif"]);
+const currentLogo = ref("/images/logo.png");
+const logoImages = ref(["/images/logo.png", "/images/logo.png"]);
 const intervalId = ref(null)
 const activeLink = ref(null)
 
@@ -273,7 +273,7 @@ header {
   /* Adjust the width as needed */
   height: auto;
   margin-right: 10px;
-  margin-top: 35px;
+  margin-top: 45px;
   /* Adjust the margin as needed */
   z-index: 1000;
 }
@@ -287,7 +287,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #efd602;
+  color: #afdc27;
 }
 
 nav {

@@ -2,131 +2,131 @@
     <h2 class="about-text animate__animated animate__fadeIn poppyText " style="animation-duration: 3s;font-size:3rem">How to
         buy
     </h2>
-    <div @click="toggleShadowBox(1)" data-aos="fade-down"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
-        style="font-weight: 700;">
-        <div class="step animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
-            1
-        </div>Create a wallet
-        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
-            <Icon name="typcn:plus" size=24 color="white" />
-        </div>
-    </div>
-    <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
-        ref="shadowBox1">
-        <div class="box-content typed-text-roboto">
-            <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
-            <h2 data-aos="fade-down">Mobile Users</h2>
-            <ol>
-                <li data-aos="fade-down">Visit the App Store or Google Play Store.</li>
-                <li data-aos="fade-down">Search for "MetaMask" or your desired wallet.</li>
-                <li data-aos="fade-down">Download the app for free.</li>
-                <li data-aos="fade-down">Open the app and follow the on-screen instructions to create a wallet.</li>
-            </ol>
-            <h2 data-aos="fade-down">Desktop Users</h2>
-            <ol>
-                <li data-aos="fade-down">Open Google Chrome on your computer.</li>
-                <li data-aos="fade-down">Go to metamask.io.</li>
-                <li data-aos="fade-down">Download the Google Chrome extension and follow the setup instructions.</li>
-            </ol>
-            </p>
-            <p class="warning" data-aos="fade-down">
-                Remember to secure your wallet with a strong password and keep backup phrases safe.
-            </p>
-        </div>
-    </div>
-    <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(2)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
-        style="font-weight: 700;">
-        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
-            2
-        </div>
-        Obtain ETH
-        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
-            <Icon name="typcn:plus" size=24 color="white" />
-        </div>
-    </div>
-    <div v-if="isShadowBoxVisible === 2" ref="shadowBox2" class="shadow-box" data-aos="fade-down"
-        data-aos-anchor-placement="top-bottom">
+    <div style="position: relative;">
+        <div style="float: left; width:700px;">
+            <div @click="toggleShadowBox(1)" data-aos="fade-down"
+                :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+                style="font-weight: 700;">
+                <div class="step animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+                    1
+                </div>Create a wallet
+            </div>
+            <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-down"
+                data-aos-anchor-placement="top-bottom" ref="shadowBox1">
+                <div class="box-content typed-text-roboto">
+                    <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+                    <h2 data-aos="fade-down">Mobile Users</h2>
+                    <ol>
+                        <li data-aos="fade-down">Visit the App Store or Google Play Store.</li>
+                        <li data-aos="fade-down">Search for "MetaMask" or your desired wallet.</li>
+                        <li data-aos="fade-down">Download the app for free.</li>
+                        <li data-aos="fade-down">Open the app and follow the on-screen instructions to create a wallet.</li>
+                    </ol>
+                    <h2 data-aos="fade-down">Desktop Users</h2>
+                    <ol>
+                        <li data-aos="fade-down">Open Google Chrome on your computer.</li>
+                        <li data-aos="fade-down">Go to metamask.io.</li>
+                        <li data-aos="fade-down">Download the Google Chrome extension and follow the setup instructions.
+                        </li>
+                    </ol>
+                    </p>
+                    <p class="warning" data-aos="fade-down">
+                        Remember to secure your wallet with a strong password and keep backup phrases safe.
+                    </p>
+                </div>
+            </div>
+            <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(2)"
+                :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+                style="font-weight: 700;">
+                <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+                    2
+                </div>
+                Obtain ETH
+            </div>
+            <div v-if="isShadowBoxVisible === 2" ref="shadowBox2" class="shadow-box" data-aos="fade-down"
+                data-aos-anchor-placement="top-bottom">
 
-        <div class="box-content typed-text-roboto">
-            <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
-            <h2 data-aos="fade-down">Get ETH
-            </h2>
-            <ol>
-                <li data-aos="fade-down">Obtain ETH by purchasing it directly in MetaMask, transferring from another
-                    wallet,
-                    or buying from an exchange and withdrawing it to your wallet.
-                </li>
-                <li data-aos="fade-down">Make sure you have enough ETH for the swap.</li>
-            </ol>
-            <p class="warning" data-aos="fade-down">
-                Remember to use the ERC-20 Network, as $POPPY is an ERC-20 token.
-            </p>
-            </p>
-        </div>
-    </div>
-    <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(3)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
-        style="font-weight: 700;">
-        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
-            3
-        </div>
-        Visit uniswap
-        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
-            <Icon name="typcn:plus" size=24 color="white" />
-        </div>
-    </div>
-    <div v-if="isShadowBoxVisible === 3" ref="shadowBox3" class="shadow-box" data-aos="fade-down"
-        data-aos-anchor-placement="top-bottom">
+                <div class="box-content typed-text-roboto">
+                    <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+                    <h2 data-aos="fade-down">Get ETH
+                    </h2>
+                    <ol>
+                        <li data-aos="fade-down">Obtain ETH by purchasing it directly in MetaMask, transferring from another
+                            wallet,
+                            or buying from an exchange and withdrawing it to your wallet.
+                        </li>
+                        <li data-aos="fade-down">Make sure you have enough ETH for the swap.</li>
+                    </ol>
+                    <p class="warning" data-aos="fade-down">
+                        Remember to use the ERC-20 Network, as $POPPY is an ERC-20 token.
+                    </p>
+                    </p>
+                </div>
+            </div>
+            <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(3)"
+                :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+                style="font-weight: 700;">
+                <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+                    3
+                </div>
+                Visit uniswap
+            </div>
+            <div v-if="isShadowBoxVisible === 3" ref="shadowBox3" class="shadow-box" data-aos="fade-down"
+                data-aos-anchor-placement="top-bottom">
 
-        <div class="box-content typed-text-roboto">
-            <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
-            <ol>
-                <li data-aos="fade-down">Open app.uniswap.org in Google Chrome or in your Metamask app
-                    browser.
-                </li>
-                <li data-aos="fade-down">Link your digital wallet to Uniswap.</li>
-                <li data-aos="fade-down">Paste the $POPPY token address into the Uniswap search bar,
-                    select
-                    "Poppy", and
-                    confirm.</li>
-                <li data-aos="fade-down">Sign the Prompt: When Metamask asks for a wallet signature, sign to confirm.</li>
-            </ol>
-            </p>
-        </div>
-    </div>
-    <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(4)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
-        style="font-weight: 700;">
-        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
-            4
-        </div>Swap Eth for $POPPY
-        <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
-            <Icon name="typcn:plus" size=24 color="white" />
-        </div>
-    </div>
-    <div v-if="isShadowBoxVisible === 4" ref="shadowBox4" class="shadow-box" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom">
+                <div class="box-content typed-text-roboto">
+                    <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+                    <ol>
+                        <li data-aos="fade-down">Open app.uniswap.org in Google Chrome or in your Metamask app
+                            browser.
+                        </li>
+                        <li data-aos="fade-down">Link your digital wallet to Uniswap.</li>
+                        <li data-aos="fade-down">Paste the $POPPY token address into the Uniswap search bar,
+                            select
+                            "Poppy", and
+                            confirm.</li>
+                        <li data-aos="fade-down">Sign the Prompt: When Metamask asks for a wallet signature, sign to
+                            confirm.
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(4)"
+                :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+                style="font-weight: 700;">
+                <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+                    4
+                </div>Swap Eth for $POPPY
+            </div>
+            <div v-if="isShadowBoxVisible === 4" ref="shadowBox4" class="shadow-box" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
 
-        <div class="box-content typed-text-roboto">
+                <div class="box-content typed-text-roboto">
 
-            <span data-aos="fade-down" data-aos-anchor-placement="top-bottom">
-                <h2 data-aos="fade-down">Swap ETH for $POPPY
-                </h2>
-                <ol>
-                    <p data-aos="fade-down">
-                        Enjoy tax-free swapping of ETH for $POPPY tokens. <br>No need to worry about specific slippage,
-                        although
-                        it's
-                        recommended to adjust during market volatility.<br><br> Get ready for an exhilarating journey
-                        into
-                        the
-                        world
-                        of
-                        Poppy, where your adventure may take you to the moon and beyond!</p>
-                </ol>
-            </span>
+                    <span data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+                        <h2 data-aos="fade-down">Swap ETH for $POPPY
+                        </h2>
+                        <ol>
+                            <p data-aos="fade-down">
+                                Enjoy tax-free swapping of ETH for $POPPY tokens. <br>No need to worry about specific
+                                slippage,
+                                although
+                                it's
+                                recommended to adjust during market volatility.<br><br> Get ready for an exhilarating
+                                journey
+                                into
+                                the
+                                world
+                                of
+                                Poppy, where your adventure may take you to the moon and beyond!</p>
+                        </ol>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div v-if="isDesktop" style="position: absolute; top: 0; right: 0;">
+            <img src="/images/help.png" class="hide-on-phone" alt="Image" data-aos="fade-up-left" style="z-index: 2;">
         </div>
     </div>
 </template>
@@ -134,8 +134,16 @@
 export default {
     data() {
         return {
-            isShadowBoxVisible: 0
+            isShadowBoxVisible: 0,
+            isDesktop: false
         };
+    },
+    mounted() {
+        this.checkScreenWidth();
+        window.addEventListener('resize', this.checkScreenWidth);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.checkScreenWidth);
     },
     methods: {
         toggleShadowBox(index) {
@@ -145,27 +153,26 @@ export default {
                 this.isShadowBoxVisible = index; // Open the selected shadow box
                 this.$nextTick(() => {
                     const element = this.$refs['shadowBox' + index];
-                    if (element && window.innerWidth < 971) {
+                    if (element && !this.isDesktop) {
                         const rect = element.getBoundingClientRect();
-                        let offset;
+                        const offset = -100; // Adjust the offset as per your requirement
 
-                        if (window.innerWidth < 971) { // Small screens (width less than 768px)
-                            offset = -100;
-                        }
                         const absoluteTop = window.pageYOffset + rect.top + offset;
                         window.scrollTo({
                             top: absoluteTop,
                             behavior: 'smooth' // optional, for smooth scrolling
                         });
-
                     }
                 });
             }
+        },
+        checkScreenWidth() {
+            this.isDesktop = window.innerWidth >= 971; // Adjust the threshold as per your requirement
         }
-
     }
 };
 </script>
+
 <style>
 .typed-text-roboto {
     font-family: 'Roboto', sans-serif;

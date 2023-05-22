@@ -290,7 +290,7 @@ body {
 }
 
 .poppyText:hover {
-    color: #efd602;
+    color: #afdc27;
 }
 
 .typed-text span {

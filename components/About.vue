@@ -4,15 +4,37 @@
       alt="Your Image">
   </div>
   <div class="image-section">
-    <img class="revolutionary-image"
+    <img class="revolutionary-image splide-image"
       src="https://media.discordapp.net/attachments/1106185526584823918/1110280748663066754/Rick-And-Morty-Logo.png?width=1193&height=671"
-      alt="Poppy Image">
+      @mouseover="moveImage" @mouseleave="resetImage" alt="Poppy Image">
   </div>
   <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
   </h2>
 </template>
-
+<script>
+export default {
+  methods: {
+    moveImage(event) {
+      event.target.style.transform = 'translate(-5px, -5px)'; /* Adjust the translation values as per your requirement */
+    },
+    resetImage(event) {
+      event.target.style.transform = 'none';
+    }
+  }
+};
+</script>
 <style>
+.splide-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-out;
+}
+
+.splide-image:hover {
+  transform: translate(-5px, -5px);
+  /* Adjust the translation values as per your requirement */
+}
+
 .image-container {
   position: absolute;
   left: -450px;

@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         { src: "/plugins/aos.client.ts", mode: "client" },
         { src: "/plugins/router.scrollBehaviour.ts", mode: "client" },
         { src: "/plugins/particles.vue3.ts", ssr: false, },
+        { src: "/plugins/slidejs.vue3.ts", ssr: false, },
     ],
 
     modules: ['nuxt-icon', '@nuxt/image-edge', '@vueuse/nuxt'],
