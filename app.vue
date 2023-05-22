@@ -101,7 +101,7 @@ export default {
             value: 0.6
           },
           shape: {
-            type: 'circle'
+            type: 'star'
           },
           size: {
             value: { min: 1, max: 2 },
