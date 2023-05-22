@@ -29,18 +29,13 @@
             </a>
           </div>
           <div class="svg-section" style="justify-content: flex-end;">
-            <div class="svg-wrapper">
-              <Icon name="line-md:discord" size=48 color="#00b5cc" />
-              <span class="svg-text typed-text outlined-text">Discord</span>
-            </div>
-            <div class="svg-wrapper">
-              <Icon name="line-md:twitter" size=48 color="#00b5cc" />
-              <span class="svg-text typed-text outlined-text">Telegram</span>
-            </div>
-            <div class="svg-wrapper">
-              <Icon name="line-md:telegram" size=48 color="#00b5cc" />
-              <span class="svg-text typed-text outlined-text">Uniswap</span>
-            </div>
+            <Icon name="line-md:discord" size=48 color="#00b5cc" />
+            <span class="svg-text typed-text outlined-text">Discord</span>
+            <Icon name="line-md:twitter" size=48 color="#00b5cc" />
+            <span class="svg-text typed-text outlined-text">Telegram</span>
+            <Icon name="line-md:telegram" size=48 color="#00b5cc" />
+            <span class="svg-text typed-text outlined-text">Uniswap</span>
+
           </div>
         </div>
       </div>
@@ -269,7 +264,7 @@ header {
 
 .logo {
   transition: opacity 0.5s ease-in-out;
-  width: 170px;
+  width: 150px;
   /* Adjust the width as needed */
   height: auto;
   margin-right: 10px;

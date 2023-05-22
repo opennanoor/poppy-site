@@ -7,6 +7,10 @@
     <img class="revolutionary-image splide-image"
       src="https://media.discordapp.net/attachments/1106185526584823918/1110280748663066754/Rick-And-Morty-Logo.png?width=1193&height=671"
       @mouseover="moveImage" @mouseleave="resetImage" alt="Poppy Image">
+    <div class="taxes">0% TAXES</div>
+    <span class="typed-text-roboto abouttxt">Step through the portal to an exhilarating crypto adventure with Mortycoin,
+      where the dimension of meme-inspired wealth awaits, free from the burden of taxes.</span>
+
   </div>
   <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
   </h2>
@@ -24,6 +28,42 @@ export default {
 };
 </script>
 <style>
+.abouttxt {
+  font-size: 26px !important;
+  color: white !important;
+  margin-top: 22px;
+  letter-spacing: 4px;
+  margin-left: 240px;
+  text-transform: uppercase;
+}
+
+.taxes {
+  font-family: Poppins, sans-serif !important;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-size: 20px;
+  color: #f5f5f5 !important;
+  font-weight: 700 !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: -80px;
+  margin-right: 90px;
+  /* Add a margin to create space between the elements */
+  width: 200px;
+  /* Adjust the width as needed */
+  height: 60px;
+  /* Adjust the height as needed */
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  background: linear-gradient(to right, transparent 0%, #00b4cc8f 20%, #00b4cca9 80%, transparent 100%);
+}
+
+
+
+
 .splide-image {
   width: 100%;
   height: 100%;
@@ -37,7 +77,7 @@ export default {
 
 .image-container {
   position: absolute;
-  left: -450px;
+  left: -490px;
   top: 410px;
 }
 
@@ -69,10 +109,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -80px;
+  flex-direction: column;
+
 }
 
 .revolutionary-image {
-  width: 50%;
+  width: 60%;
   height: auto;
   object-fit: cover;
 }
