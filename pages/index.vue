@@ -14,7 +14,7 @@ import Roadmap from '../components/Roadmap.vue'
                     <div class="padding">
                         <section id="about" class="section">
                             <div data-aos="fade-down-right">
-                                <About />
+                                <About class="section-box" />
                             </div>
                         </section>
                         <section id="buy-poppy" class="section">
@@ -38,14 +38,15 @@ import Roadmap from '../components/Roadmap.vue'
         </div>
     </body>
 </template>
-  
-<style>
+<style
+
 ::selection {
     background-color: #efd602;
     color: #333333;
 }
 
-.parallax>use {
+.parallax>
+use {
     animation: move-forever 12s linear infinite;
 }
 
@@ -98,7 +99,6 @@ import Roadmap from '../components/Roadmap.vue'
     font-weight: 100;
     font-size: 5em;
     user-select: none;
-    cursor: default;
 }
 
 /*prevent many large-by-comparison ripples by shrinking the height*/
@@ -215,15 +215,15 @@ h1 {
 
 @font-face {
     font-family: 'Poppy Font Frompoppyplaytime';
-    src: url('/fonts/PoppyFontFrompoppyplaytime-Regular.ttf') format('truetype');
+    src: url('/fonts/get_schwifty.ttf') format('truetype');
     /* Add additional font formats if available */
     /* Adjust the file path as per your project structure */
     /* Make sure to update the font file name and format accordingly */
 }
 
 @font-face {
-    font-family: 'Playtime';
-    src: url('/fonts/Playtime.ttf') format('truetype');
+    font-family: 'get_schwifty';
+    src: url('/fonts/get_schwifty.ttf') format('truetype');
     /* Add additional font formats if available */
     /* Adjust the file path as per your project structure */
     /* Make sure to update the font file name and format accordingly */
@@ -242,7 +242,7 @@ body {
 }
 
 .cursor {
-    cursor: url('/images/cursor.png'), auto;
+    cursor: url('/images/cursor.cur'), auto;
 }
 
 .mainbg {
@@ -251,7 +251,7 @@ body {
 
 .mainbg::before {
     content: "";
-    background: url("/images/bg.webp") 100% top no-repeat;
+    background: url("/images/bg.wep") 100% top no-repeat;
     background-size: 100% auto;
     position: absolute;
     top: 0;
@@ -285,7 +285,7 @@ body {
 .poppyText {
     font-size: 3rem;
     /* Increase the font size for the paragraphs */
-    font-family: Playtime;
+    font-family: get_schwifty;
     /* Specify the Michroma font and fallback to Sans-serif */
 }
 

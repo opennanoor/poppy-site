@@ -300,7 +300,6 @@ const getSmallCirclePositions = (bigCircle, smallCircle) => {
 }
 
 .circle-small {
-    cursor: url('/images/cursor.png'), auto;
     width: 75px;
     height: 75px;
 }

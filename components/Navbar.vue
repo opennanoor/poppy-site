@@ -28,6 +28,20 @@
               <Icon name="line-md:telegram" size=48 color="white" />
             </a>
           </div>
+          <div class="svg-section">
+            <div class="svg-wrapper">
+              <Icon name="line-md:discord" size=48 color="grey" />
+              <span class="svg-text typed-text outlined-text">Discord</span>
+            </div>
+            <div class="svg-wrapper">
+              <Icon name="line-md:twitter" size=48 color="grey" />
+              <span class="svg-text typed-text outlined-text">Telegram</span>
+            </div>
+            <div class="svg-wrapper">
+              <Icon name="line-md:telegram" size=48 color="grey" />
+              <span class="svg-text typed-text outlined-text">Uniswap</span>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -52,8 +66,8 @@ const debounce = (func, delay) => {
 const titlePrefix = ref("Poppy - ")
 const isMenuOpen = ref(false)
 const scrolled = ref(false)
-const currentLogo = ref("/images/logo.png");
-const logoImages = ref(["/images/logo.png", "/images/logo1.png"]);
+const currentLogo = ref("https://cdn.discordapp.com/attachments/1105881842630017137/1110288332941963315/8BkJ-unscreen.gif");
+const logoImages = ref(["https://cdn.discordapp.com/attachments/1105881842630017137/1110288332941963315/8BkJ-unscreen.gif", "https://cdn.discordapp.com/attachments/1105881842630017137/1110288332941963315/8BkJ-unscreen.gif"]);
 const intervalId = ref(null)
 const activeLink = ref(null)
 
@@ -426,7 +440,7 @@ nav {
   .social-icon {
     width: 24px;
     height: 24px;
-    fill: #fff;
+    fill: #b1de28;
   }
 
   .hamburger {
@@ -461,7 +475,7 @@ nav {
     /* Let's keep this as 0 */
     padding-top: 0;
     /* Adjust the padding as necessary, but initially setting it to 0 */
-    background-color: #c4a80eef;
+    background-color: #b1de28;
     overflow-y: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 999;
@@ -481,6 +495,6 @@ nav {
 
 
 .nav-link-active {
-  color: #efd602;
+  color: #b1de28;
 }
 </style>

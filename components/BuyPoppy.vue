@@ -3,8 +3,9 @@
         buy
     </h2>
     <div @click="toggleShadowBox(1)" data-aos="fade-down"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
-        <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+        style="font-weight: 700;">
+        <div class="step animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             1
         </div>Create a wallet
         <div style="display: flex; justify-content:flex-end;margin-right: 20px;">
@@ -13,9 +14,7 @@
     </div>
     <div v-if="isShadowBoxVisible === 1" class="shadow-box" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
         ref="shadowBox1">
-
         <div class="box-content typed-text-roboto">
-
             <p data-aos="fade-down" data-aos-anchor-placement="top-bottom">
             <h2 data-aos="fade-down">Mobile Users</h2>
             <ol>
@@ -37,7 +36,8 @@
         </div>
     </div>
     <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(2)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+        style="font-weight: 700;">
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             2
         </div>
@@ -67,7 +67,8 @@
         </div>
     </div>
     <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(3)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+        style="font-weight: 700;">
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             3
         </div>
@@ -96,7 +97,8 @@
         </div>
     </div>
     <div class="create-wallet" data-aos="fade-down" @click="toggleShadowBox(4)"
-        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'">
+        :class="isShadowBoxVisible === 0 ? 'unopened-box typed-text-roboto' : 'unopened-box typed-text-roboto'"
+        style="font-weight: 700;">
         <div class="step about-text animate__animated animate__fadeIn poppyText" data-aos="zoom-in-up">
             4
         </div>Swap Eth for $POPPY
@@ -173,17 +175,18 @@ export default {
 }
 
 .active-menu {
-    color: #efd602;
+    color: #23e204;
 }
 
 .unopened-box {
-    justify-content: space-between;
+    border-left: #23e204 6px solid;
+    justify-content: left;
     font-size: 1.4rem;
     background-color: #0f161d;
     color: #a5a5a5;
     border-radius: 10px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     padding-left: 10px;
     cursor: pointer;
     display: flex;
@@ -195,7 +198,7 @@ export default {
 }
 
 .unopened-box:hover {
-    color: yellow;
+    color: #23e204;
 }
 
 ol {

@@ -1,28 +1,24 @@
 <template>
+  <div class="image-container">
+    <img src="https://cdn.discordapp.com/attachments/1106185526584823918/1110279104445550713/the-gist-of-it.gif"
+      alt="Your Image">
+  </div>
   <div class="image-section">
     <img class="revolutionary-image"
-      src="https://cdn.discordapp.com/attachments/1107007792033828924/1108493765292871710/07f41dffdad45c7d548681cbf9376416.png"
+      src="https://media.discordapp.net/attachments/1106185526584823918/1110280748663066754/Rick-And-Morty-Logo.png?width=1193&height=671"
       alt="Poppy Image">
   </div>
   <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
   </h2>
-  <div class="svg-section">
-    <div class="svg-wrapper">
-      <Icon name="line-md:discord" size=72 color="white" />
-      <span class="svg-text typed-text outlined-text">Discord</span>
-    </div>
-    <div class="svg-wrapper">
-      <Icon name="line-md:twitter" size=72 color="white" />
-      <span class="svg-text typed-text outlined-text">Telegram</span>
-    </div>
-    <div class="svg-wrapper">
-      <Icon name="line-md:telegram" size=72 color="white" />
-      <span class="svg-text typed-text outlined-text">Uniswap</span>
-    </div>
-  </div>
 </template>
 
 <style>
+.image-container {
+  position: absolute;
+  left: -450px;
+  top: 410px;
+}
+
 .disclaimer {
   text-align: center;
   line-height: 1.6;
@@ -78,8 +74,8 @@
 
 .svg-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: right;
   /* Ensure the section covers the full height of the viewport */
 }
 

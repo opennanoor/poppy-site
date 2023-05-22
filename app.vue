@@ -61,7 +61,7 @@ export default {
               distance: 400,
               duration: 2,
               opacity: 0.1,
-              size: 20
+              size: 10
             },
             push: {
               quantity: 4
@@ -74,7 +74,7 @@ export default {
         },
         particles: {
           color: {
-            value: '#ffffff'
+            value: '#076a06'
           },
 
           collisions: {
@@ -95,16 +95,16 @@ export default {
               enable: true,
               area: 800
             },
-            value: 60
+            value: 80
           },
           opacity: {
-            value: 0.1
+            value: 0.6
           },
           shape: {
             type: 'circle'
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 1, max: 2 },
           }
         },
         detectRetina: true
