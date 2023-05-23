@@ -1,38 +1,65 @@
 <template>
   <div class="image-container">
-    <img src="/images/monster.webp" alt="Monster">
+    <div v-if="isBigScreen">
+      <img src="/images/monster.webp" alt="Monster">
+    </div>
   </div>
   <div class="image-section">
-    <img class="revolutionary-image splide-image"
+    <img class="revolutionary-image"
       src="https://media.discordapp.net/attachments/1106185526584823918/1110280748663066754/Rick-And-Morty-Logo.png?width=1193&height=671"
       @mouseover="moveImage" @mouseleave="resetImage" alt="Poppy Image">
     <div class="taxes">0% TAXES</div>
-    <span class="typed-text-roboto abouttxt">Step through the portal to an exhilarating crypto adventure with Mortycoin,
-      where the dimension of meme-inspired wealth awaits, free from the burden of taxes.</span>
 
   </div>
-  <h2 class="about-text animate__animated animate__fadeIn " style="animation-duration: 3s;">
-  </h2>
+  <p class="typed-text-roboto abouttxt" data-aos="fade-up">Step through the portal to an exhilarating crypto
+    adventure with Mortycoin,
+    where the dimension of meme-inspired wealth awaits, free from the burden of taxes.</p>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      isBigScreen: false,
+    };
+  },
+  mounted() {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)"); // Set your desired breakpoint here
+
+    // Initial check on component mount
+    this.isBigScreen = mediaQuery.matches;
+
+    // Update the value when the screen size changes
+    mediaQuery.addListener(this.updateScreenSize);
+  },
+  beforeUnmount() {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)"); // Set your desired breakpoint here
+
+    // Remove the listener to prevent memory leaks
+    mediaQuery.removeListener(this.updateScreenSize);
+  },
   methods: {
+    updateScreenSize(event) {
+      this.isBigScreen = event.matches;
+    },
     moveImage(event) {
       event.target.style.transform = 'translate(-5px, -5px)'; /* Adjust the translation values as per your requirement */
     },
     resetImage(event) {
       event.target.style.transform = 'none';
-    }
-  }
+    },
+  },
 };
 </script>
+
 <style>
 .abouttxt {
   font-size: 26px !important;
   color: white !important;
   margin-top: 22px;
   letter-spacing: 4px;
-  margin-left: 240px;
+  justify-content: start;
+  align-items: start;
+  padding-left: 200px;
   text-transform: uppercase;
 }
 
@@ -62,7 +89,7 @@ export default {
 
 .image-container {
   position: absolute;
-  left: -40px;
+  left: -70px;
   top: 410px;
 }
 
@@ -150,6 +177,23 @@ export default {
 }
 
 @media screen and (max-width: 640px) {
+  .abouttxt {
+    font-size: 26px !important;
+    color: white !important;
+    margin-top: 22px;
+    align-items: center;
+    letter-spacing: 4px;
+    justify-content: center;
+    text-transform: uppercase;
+    padding-left: 0px;
+  }
+
+  .image-container {
+    position: absolute;
+    left: -40px;
+    top: 410px;
+  }
+
   .svg-wrapper {
     display: none;
     /* Hide the icon on small screens */

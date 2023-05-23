@@ -126,6 +126,7 @@
             </div>
         </div>
         <div v-if="isDesktop" style="position: absolute; top: 0; right: 0;">
+            <div class="smoke-shadow"></div>
             <img src="/images/help.png" class="hide-on-phone" alt="Image" data-aos="fade-up-left" style="z-index: 2;">
         </div>
     </div>
@@ -174,6 +175,18 @@ export default {
 </script>
 
 <style>
+.smoke-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* less than the image's z-index, so it will be behind the image */
+    box-shadow: 0 0 10px 10px rgba(238, 238, 238, 0.1);
+    border-radius: 50%;
+}
+
 .typed-text-roboto {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
